@@ -23,11 +23,20 @@
     "footerNote": "Free time tools with no install and no sign-up. Your settings and history stay in this browser and are never sent to a server.",
     "viewInLang": "View in English",
     "clock24": false,
-    "soundNames": { "bell": "Bell", "chime": "Chime", "beep": "Beep", "digital": "Digital alarm" }
+    "soundNames": {
+      "bell": "Bell",
+      "chime": "Chime",
+      "beep": "Beep",
+      "digital": "Digital alarm"
+    },
+    "groups": {
+      "timer": "Timers",
+      "calc": "Calculators"
+    }
   },
   "hub": {
-    "title": "TimerDesk – Free Online Timers for Study, Exams & Classrooms",
-    "description": "Free online Pomodoro timer, fullscreen exam timer and visual timer for kids and classrooms. No install, no sign-up, works on any device with fullscreen and keep-screen-on.",
+    "title": "TimerDesk – Free Online Timers & Date Calculators for Study and Class",
+    "description": "Free Pomodoro timer, exam timer, exam countdown, study stopwatch, visual timer, date calculator and age calculator. No install, no sign-up, with fullscreen and keep-screen-on.",
     "h1": "Free timers for focus, exams and classrooms",
     "intro": "Deep work, mock exams, classroom activities. Simple timers that run right in your browser, with no install and no account.",
     "aboutH2": "About TimerDesk",
@@ -87,12 +96,28 @@
         }
       ],
       "faq": [
-        { "q": "Does the timer keep running if I switch tabs or minimize the window?", "a": "Yes. Remaining time is calculated from the real end time, so it stays accurate in a background tab, and the tab title shows the time left. Closing the tab stops the timer." },
-        { "q": "Can I change the 25-minute focus length?", "a": "Yes. In <strong>Settings</strong> you can set focus from 1 to 180 minutes and adjust short breaks, long breaks and how often long breaks happen." },
-        { "q": "Where is my focus history saved?", "a": "Only in your browser's local storage. Nothing is sent to a server, so history doesn't sync across devices and is removed if you clear your browser's site data." },
-        { "q": "Does it work on my phone?", "a": "Yes, it works in any modern mobile or tablet browser. Where supported, the screen stays on while the timer runs." },
-        { "q": "I can't hear the alarm.", "a": "Check that your device isn't on silent and press <strong>Test sound</strong> in Settings. Some browsers block audio until you interact with the page, so start the timer with a tap or click." }
-      ]
+        {
+          "q": "Does the timer keep running if I switch tabs or minimize the window?",
+          "a": "Yes. Remaining time is calculated from the real end time, so it stays accurate in a background tab, and the tab title shows the time left. Closing the tab stops the timer."
+        },
+        {
+          "q": "Can I change the 25-minute focus length?",
+          "a": "Yes. In <strong>Settings</strong> you can set focus from 1 to 180 minutes and adjust short breaks, long breaks and how often long breaks happen."
+        },
+        {
+          "q": "Where is my focus history saved?",
+          "a": "Only in your browser's local storage. Nothing is sent to a server, so history doesn't sync across devices and is removed if you clear your browser's site data."
+        },
+        {
+          "q": "Does it work on my phone?",
+          "a": "Yes, it works in any modern mobile or tablet browser. Where supported, the screen stays on while the timer runs."
+        },
+        {
+          "q": "I can't hear the alarm.",
+          "a": "Check that your device isn't on silent and press <strong>Test sound</strong> in Settings. Some browsers block audio until you interact with the page, so start the timer with a tap or click."
+        }
+      ],
+      "group": "timer"
     },
     "exam-timer": {
       "nav": "Exam Timer",
@@ -123,7 +148,13 @@
         "next": "Next",
         "allDone": "All sections are finished",
         "startsAt": "Starts at",
-        "presetOrder": ["sat", "ielts", "toeic", "csat", "custom"],
+        "presetOrder": [
+          "sat",
+          "ielts",
+          "toeic",
+          "csat",
+          "custom"
+        ],
         "presets": {
           "csat": "Korean CSAT (Suneung)",
           "toeic": "TOEIC Listening & Reading",
@@ -176,12 +207,28 @@
         }
       ],
       "faq": [
-        { "q": "Can I pause the exam timer?", "a": "Yes. Press <strong>Pause</strong> to stop, and when you resume, the rest of the schedule shifts later by the paused time. Handy for practice sessions." },
-        { "q": "When do the alerts sound?", "a": "At the start of each section, 10 and 5 minutes before the end (you can turn these off in Settings), and when a section ends. The countdown turns orange at 10 minutes and red at 5 minutes." },
-        { "q": "What happens if I enter a start time that has already passed?", "a": "The timer jumps to whichever section should be running now. If the whole schedule would already be over, it's moved to the same time tomorrow." },
-        { "q": "Is it accurate if I switch to another tab?", "a": "Yes. Everything is calculated from the real clock, so the remaining time is correct when you come back." },
-        { "q": "Can I build a schedule for my school exam?", "a": "Add or delete sections and change names and times in the table to match any exam. Changes are saved automatically in your browser." }
-      ]
+        {
+          "q": "Can I pause the exam timer?",
+          "a": "Yes. Press <strong>Pause</strong> to stop, and when you resume, the rest of the schedule shifts later by the paused time. Handy for practice sessions."
+        },
+        {
+          "q": "When do the alerts sound?",
+          "a": "At the start of each section, 10 and 5 minutes before the end (you can turn these off in Settings), and when a section ends. The countdown turns orange at 10 minutes and red at 5 minutes."
+        },
+        {
+          "q": "What happens if I enter a start time that has already passed?",
+          "a": "The timer jumps to whichever section should be running now. If the whole schedule would already be over, it's moved to the same time tomorrow."
+        },
+        {
+          "q": "Is it accurate if I switch to another tab?",
+          "a": "Yes. Everything is calculated from the real clock, so the remaining time is correct when you come back."
+        },
+        {
+          "q": "Can I build a schedule for my school exam?",
+          "a": "Add or delete sections and change names and times in the table to match any exam. Changes are saved automatically in your browser."
+        }
+      ],
+      "group": "timer"
     },
     "visual-timer": {
       "nav": "Visual Timer",
@@ -193,7 +240,13 @@
       "card": "A shrinking colored disc shows time left, great for kids and classes",
       "ui": {
         "color": "Color",
-        "colors": { "red": "Red", "blue": "Blue", "green": "Green", "orange": "Orange", "purple": "Purple" },
+        "colors": {
+          "red": "Red",
+          "blue": "Blue",
+          "green": "Green",
+          "orange": "Orange",
+          "purple": "Purple"
+        },
         "dialLabel": "Disc showing the time remaining. Drag to set the time.",
         "dragHint": "Drag around the disc with your finger or mouse to set the time.",
         "scale": "Dial range",
@@ -215,10 +268,316 @@
         }
       ],
       "faq": [
-        { "q": "Can I set more than 60 minutes?", "a": "Yes. Change the <strong>Dial range</strong> to 120 minutes in Settings to set up to 2 hours." },
-        { "q": "Why are the numbers counterclockwise?", "a": "The numbers run counterclockwise from 12 so that the edge of the disc moves clockwise, like a clock hand, as time runs out. It's the same layout used by classic classroom visual timers." },
-        { "q": "Can I show it fullscreen on a classroom TV?", "a": "Press the fullscreen button at the top right (or the F key) and the disc fills the screen. The screen stays on while the timer runs." },
-        { "q": "Can I use it without sound?", "a": "Set the volume to 0 in Settings and the disc will just flash when time is up. Good for libraries and quiet rooms." }
+        {
+          "q": "Can I set more than 60 minutes?",
+          "a": "Yes. Change the <strong>Dial range</strong> to 120 minutes in Settings to set up to 2 hours."
+        },
+        {
+          "q": "Why are the numbers counterclockwise?",
+          "a": "The numbers run counterclockwise from 12 so that the edge of the disc moves clockwise, like a clock hand, as time runs out. It's the same layout used by classic classroom visual timers."
+        },
+        {
+          "q": "Can I show it fullscreen on a classroom TV?",
+          "a": "Press the fullscreen button at the top right (or the F key) and the disc fills the screen. The screen stays on while the timer runs."
+        },
+        {
+          "q": "Can I use it without sound?",
+          "a": "Set the volume to 0 in Settings and the disc will just flash when time is up. Good for libraries and quiet rooms."
+        }
+      ],
+      "group": "timer"
+    },
+    "exam-countdown": {
+      "nav": "Exam Countdown",
+      "icon": "⏳",
+      "group": "timer",
+      "title": "Exam Countdown Timer – Days, Hours and Minutes Until Your Exam",
+      "description": "Free live countdown to your exam day. Shows the D-day plus days, hours, minutes and seconds left, works fullscreen on a desk or classroom screen, and creates a shareable link.",
+      "h1": "Exam Countdown Timer",
+      "lead": "Set your exam date and watch the countdown tick down to the second. Share the link with your study group so everyone sees the same countdown.",
+      "card": "Live countdown to exam day with a shareable link",
+      "ui": {
+        "days": "days",
+        "hours": "hours",
+        "minutes": "minutes",
+        "seconds": "seconds",
+        "setTarget": "Set your exam date",
+        "label": "Name",
+        "labelPlaceholder": "e.g. Finals, SAT, Bar exam",
+        "date": "Date",
+        "time": "Time",
+        "apply": "Apply",
+        "copyLink": "Copy link",
+        "copied": "Copied",
+        "custom": "My exam",
+        "myCountdown": "My exam",
+        "pickDate": "Pick your exam date below",
+        "passed": "Exam time has passed. Well done!",
+        "presetOrder": [
+          "custom",
+          "csat"
+        ],
+        "presets": {
+          "csat": "Korean CSAT 2027"
+        },
+        "notes": {
+          "csat": "The 2027 Korean CSAT (Suneung) takes place on Thursday, November 19, 2026. The countdown runs to the 08:40 start of period 1 (Korea time on your device clock).",
+          "custom": "Enter a date and press Apply. It's saved in this browser, and Copy link shares the same countdown."
+        }
+      },
+      "sections": [
+        {
+          "h2": "How the countdown works",
+          "html": "<p>The big number is the <strong>D-day</strong>: D-1 means the exam is tomorrow and D-DAY means it's today. It counts calendar days, so it ticks down at midnight. Below it, the days, hours, minutes and seconds count down to the exact start time you set.</p>"
+        },
+        {
+          "h2": "Ways to use it",
+          "html": "<ul><li><strong>On your desk</strong>: Go fullscreen (F key) on a tablet or second monitor for a constant reminder while you study. The screen stays on in fullscreen.</li><li><strong>In the classroom</strong>: Put the countdown to finals or a standardized test on the classroom TV.</li><li><strong>With your study group</strong>: Press <em>Copy link</em> and send it. Anyone who opens it sees the same exam name and date.</li></ul>"
+        },
+        {
+          "h2": "Tips for the final weeks",
+          "html": "<ul><li>Work backwards from the D-day: block out review weeks and full-length practice tests first.</li><li>Run your practice tests with the <a href='/en/exam-timer/'>exam timer</a> so the section timing feels familiar.</li><li>Track real study hours with the <a href='/en/study-stopwatch/'>study stopwatch</a> to see whether you're on pace.</li></ul>"
+        }
+      ],
+      "faq": [
+        {
+          "q": "How do I set my own exam date?",
+          "a": "Choose <strong>My exam</strong>, enter a name, date and start time, then press Apply. Your countdown is saved in this browser."
+        },
+        {
+          "q": "Can I share the countdown?",
+          "a": "Yes. <strong>Copy link</strong> creates a URL with your exam name and date. Whoever opens it sees the same countdown."
+        },
+        {
+          "q": "Which time zone does it use?",
+          "a": "Your device's clock and time zone. If you share a link across time zones, the countdown runs to that local time in each viewer's zone."
+        },
+        {
+          "q": "Will my screen turn off?",
+          "a": "In fullscreen the timer asks the browser to keep the screen on, where supported."
+        }
+      ]
+    },
+    "study-stopwatch": {
+      "nav": "Study Stopwatch",
+      "icon": "⏱️",
+      "group": "timer",
+      "title": "Study Stopwatch – Track Study Time by Subject (Free Study Timer)",
+      "description": "Free online study stopwatch. Tap a subject to start timing, switch subjects with one tap, and see today's total, per-subject time and a 7-day chart. Keeps counting after a refresh.",
+      "h1": "Study Stopwatch",
+      "lead": "Tap a subject to start the clock and tap another to switch. Your study time for today and each subject adds up automatically.",
+      "card": "Time each subject with one tap, see daily and weekly totals",
+      "ui": {
+        "totalToday": "Studied today",
+        "pickSubject": "Tap a subject to start timing",
+        "addPlaceholder": "Add a subject (e.g. History)",
+        "add": "Add",
+        "weekTotal": "Last 7 days",
+        "bestSubject": "Top subject",
+        "week": "Study time, last 7 days",
+        "resetToday": "Clear today",
+        "resetConfirm": "Clear all of today's study time?",
+        "remove": "Remove subject",
+        "removeConfirm": "Remove this subject from the list? Time already logged stays in your totals.",
+        "longRunConfirm": "The stopwatch was running for {h} hours. Add that time to your log?\n(Cancel discards the last session)",
+        "minUnit": " min",
+        "hourUnit": " h",
+        "defaultSubjects": [
+          "Math",
+          "Reading",
+          "Writing",
+          "Science"
+        ]
+      },
+      "sections": [
+        {
+          "h2": "Why time your study by subject?",
+          "html": "<p>Hours at a desk aren't the same as hours of focused study. Timing only the minutes you actually work, subject by subject, shows how much you really studied today and where your time goes. Most people find one subject quietly getting far less time than they thought.</p>"
+        },
+        {
+          "h2": "How to use it",
+          "html": "<ol><li>Tap a <strong>subject card</strong> to start timing it.</li><li>Tap a different card to switch. The previous subject stops automatically.</li><li>Use the big button (or the space bar) to pause for breaks; press it again to resume the last subject.</li><li>Add subjects with the box below the cards and remove them with ×.</li></ol><p>If you refresh or close the tab while it's running, it keeps counting. If it was left running for more than 6 hours, you'll be asked whether to keep that time.</p>"
+        },
+        {
+          "h2": "Tips",
+          "html": "<ul><li><strong>Pause for every break</strong>. Logged time is only useful if it's honest.</li><li><strong>Use the weekly chart</strong> to spot your weakest day and raise that target first.</li><li><strong>Pair it with the <a href='/en/pomodoro-timer/'>Pomodoro timer</a></strong> on days when focus is hard: work in 25-minute blocks and log the time here.</li></ul>"
+        }
+      ],
+      "faq": [
+        {
+          "q": "Does it keep running if I refresh or close the tab?",
+          "a": "Yes. The start time is saved, so the elapsed time is added when you come back. After more than 6 hours you'll be asked whether to keep it."
+        },
+        {
+          "q": "Where is my data stored?",
+          "a": "Only in your browser's local storage. Nothing is sent to a server, it isn't shared across devices, and clearing site data erases it."
+        },
+        {
+          "q": "What happens if I study past midnight?",
+          "a": "The session is split at midnight, so time is credited to the correct day."
+        },
+        {
+          "q": "If I remove a subject, is its time deleted?",
+          "a": "No. It disappears from the list but its logged time stays in your daily total and weekly chart."
+        }
+      ]
+    },
+    "dday-calculator": {
+      "nav": "Date Calculator",
+      "icon": "📅",
+      "group": "calc",
+      "title": "Date Calculator – Days Between Dates, Add Days & Milestones",
+      "description": "Free date calculator: count the days between two dates, find the date N days from now, and list 100-day and anniversary milestones from any start date.",
+      "h1": "Date Calculator",
+      "lead": "Count days between dates, add or subtract days, and find milestone dates like 100 days or 1,000 days. Results update as you type.",
+      "card": "Days between dates, add days, 100-day milestones",
+      "ui": {
+        "tabOrder": [
+          "between",
+          "add",
+          "milestone"
+        ],
+        "tabs": {
+          "milestone": "Milestones",
+          "between": "Days between dates",
+          "add": "Add or subtract days"
+        },
+        "startDate": "Start date",
+        "countFirst": "Count the start date as day 1",
+        "milestone": "Milestone",
+        "dateCol": "Date",
+        "remainCol": "Countdown",
+        "pickStart": "Enter a start date",
+        "todayIs": "Today is day {n}",
+        "notYet": "{n} days until it starts",
+        "since": "Since {date}",
+        "dayN": "{n} days",
+        "yearN": "{n}-year anniversary",
+        "fromDate": "Start date",
+        "toDate": "End date",
+        "inclusive": "Include the start date (+1 day)",
+        "pickBoth": "Enter both dates",
+        "daysResult": "{n} days",
+        "weeksResult": "{w} weeks {d} days",
+        "monthsResult": "about {m} months",
+        "hoursResult": "{h} hours",
+        "baseDate": "Start date",
+        "days": "Days",
+        "direction": "Direction",
+        "after": "days after",
+        "before": "days before",
+        "pickBase": "Enter a start date",
+        "fromToday": "{dday} from today"
+      },
+      "sections": [
+        {
+          "h2": "Three calculators in one",
+          "html": "<ul><li><strong>Days between dates</strong>: the number of days between two dates, plus weeks, months and hours. Turn on <em>Include the start date</em> when both the first and last day should count, as with trip or event days.</li><li><strong>Add or subtract days</strong>: the date that falls N days after or before any date, with the weekday.</li><li><strong>Milestones</strong>: from a start date (a relationship, a baby's birth, a habit streak), every milestone from 100 to 10,000 days plus 1st–10th anniversaries, with the next one highlighted.</li></ul>"
+        },
+        {
+          "h2": "Counting the first day",
+          "html": "<p>Some traditions count the first day as day 1. In Korea, for example, a couple's 100th day falls 99 days after they started dating. Others, like most contracts, start counting the day after. The milestones tab lets you choose; anniversaries always land on the same calendar date each year.</p>"
+        }
+      ],
+      "faq": [
+        {
+          "q": "Does it account for leap years?",
+          "a": "Yes. Every result uses the real calendar, including February 29."
+        },
+        {
+          "q": "When should I include the start date?",
+          "a": "When both the first and last days count. From the 3rd to the 5th is 2 days without it and 3 days with it."
+        },
+        {
+          "q": "How are anniversaries calculated?",
+          "a": "On the same calendar date each year. A February 29 start date shows March 1 in non-leap years."
+        }
+      ]
+    },
+    "age-calculator": {
+      "nav": "Age Calculator",
+      "icon": "🎂",
+      "group": "calc",
+      "title": "Age Calculator – Exact Age in Years, Months and Days",
+      "description": "Free age calculator: enter a date of birth to get exact age in years, months and days, total days lived, days until the next birthday, and the zodiac signs.",
+      "h1": "Age Calculator",
+      "lead": "Enter a date of birth to see the exact age today, or on any date you choose, plus days lived and a countdown to the next birthday.",
+      "card": "Exact age in years, months, days and next birthday",
+      "ui": {
+        "birth": "Date of birth",
+        "base": "Age on",
+        "today": "Today",
+        "intlAge": "Age",
+        "pickBirth": "Enter a date of birth",
+        "futureBirth": "The date is before the date of birth",
+        "ageUnit": "{n} years",
+        "ymd": "{y} years, {m} months, {d} days",
+        "happyBirthday": "Happy birthday!",
+        "showKoreanAges": false,
+        "yearAge": "",
+        "yearAgeSub": "",
+        "countingAge": "",
+        "countingAgeSub": "",
+        "daysLived": "Days lived",
+        "daysUnit": "{n} days",
+        "weeksUnit": "{n} weeks",
+        "nextBirthday": "Next birthday",
+        "turns": "turning {n}",
+        "chineseZodiac": "Chinese zodiac",
+        "zodiacNote": "By calendar year; births before Lunar New Year belong to the previous year",
+        "westernZodiac": "Star sign",
+        "animals": {
+          "rat": "Rat",
+          "ox": "Ox",
+          "tiger": "Tiger",
+          "rabbit": "Rabbit",
+          "dragon": "Dragon",
+          "snake": "Snake",
+          "horse": "Horse",
+          "goat": "Goat",
+          "monkey": "Monkey",
+          "rooster": "Rooster",
+          "dog": "Dog",
+          "pig": "Pig"
+        },
+        "signs": {
+          "aries": "Aries",
+          "taurus": "Taurus",
+          "gemini": "Gemini",
+          "cancer": "Cancer",
+          "leo": "Leo",
+          "virgo": "Virgo",
+          "libra": "Libra",
+          "scorpio": "Scorpio",
+          "sagittarius": "Sagittarius",
+          "capricorn": "Capricorn",
+          "aquarius": "Aquarius",
+          "pisces": "Pisces"
+        }
+      },
+      "sections": [
+        {
+          "h2": "How age is calculated",
+          "html": "<p>Age is the number of full years since birth: this year minus the birth year, <strong>minus one if this year's birthday hasn't happened yet</strong>. Someone born on October 15, 2000 is 25 until October 14, 2026, and turns 26 on October 15.</p><p>The detailed result breaks it down into years, months and days. People born on February 29 are counted as having their birthday on March 1 in non-leap years.</p>"
+        },
+        {
+          "h2": "Age on a specific date",
+          "html": "<p>Change <em>Age on</em> to any date to find someone's age on that day, which is useful for school entry cutoffs, eligibility rules, insurance or historical dates.</p>"
+        }
+      ],
+      "faq": [
+        {
+          "q": "How many days old am I?",
+          "a": "The <strong>Days lived</strong> card shows the exact number of days (and weeks) from your date of birth to the chosen date."
+        },
+        {
+          "q": "What if I was born on February 29?",
+          "a": "In non-leap years the calculator treats March 1 as your birthday for counting age."
+        },
+        {
+          "q": "Is the Chinese zodiac exact?",
+          "a": "It's based on the calendar year. The zodiac year actually starts at Lunar New Year (late January to mid February), so if you were born early in the year, check whether you belong to the previous sign."
+        }
       ]
     }
   }

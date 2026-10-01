@@ -107,13 +107,18 @@ def json_ld(objs):
 
 
 def nav_html(lang, current=None):
+    """헤더 메뉴: 현재 도구와 같은 그룹(타이머/계산기)만 + 다른 그룹 허브 링크."""
+    tools = L[lang]["tools"]
+    group = tools[current].get("group", "timer") if current else "timer"
     links = []
     for slug in TOOLS:
-        if slug not in L[lang]["tools"]:
+        if slug not in tools or tools[slug].get("group", "timer") != group:
             continue
-        t = L[lang]["tools"][slug]
         cur = ' aria-current="page"' if slug == current else ""
-        links.append(f'<a href="{path_of("tool", lang, slug)}"{cur}>{esc(t["nav"])}</a>')
+        links.append(f'<a href="{path_of("tool", lang, slug)}"{cur}>{esc(tools[slug]["nav"])}</a>')
+    for g, label in L[lang]["ui"]["groups"].items():
+        if g != group and any(tools[s].get("group", "timer") == g for s in TOOLS if s in tools):
+            links.append(f'<a class="nav-group" href="{path_of("hub", lang)}#{g}">{esc(label)} →</a>')
     return "".join(links)
 
 
@@ -125,15 +130,24 @@ def lang_switch(alts, lang):
     return "".join(out)
 
 
-def cards_html(lang, exclude=None):
+def cards_html(lang, exclude=None, group=None):
     out = []
     for slug in TOOLS:
-        if slug == exclude or slug not in L[lang]["tools"]:
+        t = L[lang]["tools"].get(slug)
+        if slug == exclude or not t or (group and t.get("group", "timer") != group):
             continue
-        t = L[lang]["tools"][slug]
         out.append(f'<a class="card" href="{path_of("tool", lang, slug)}"><span class="card-icon">{t["icon"]}</span>'
                    f'<strong>{esc(t["nav"])}</strong><span>{esc(t["card"])}</span></a>')
-    return f'<div class="cards">{"".join(out)}</div>'
+    return f'<div class="cards">{"".join(out)}</div>' if out else ""
+
+
+def grouped_cards(lang):
+    out = []
+    for g, label in L[lang]["ui"]["groups"].items():
+        cards = cards_html(lang, group=g)
+        if cards:
+            out.append(f'<section class="tool-group" id="{g}"><h2>{esc(label)}</h2>{cards}</section>')
+    return "".join(out)
 
 
 def write_page(path, lang, kind, title, description, body, alts, xdef, scripts="", ld=None, current=None):
@@ -197,7 +211,7 @@ def build_hub(lang):
     S, h = L[lang], L[lang]["hub"]
     alts, xdef = alternates("hub")
     body = (f'<section class="hero"><h1>{esc(h["h1"])}</h1><p class="lead">{h["intro"]}</p></section>'
-            f"{cards_html(lang)}"
+            f"{grouped_cards(lang)}"
             f'<article class="content"><section><h2>{esc(h["aboutH2"])}</h2>{h["aboutHtml"]}</section></article>')
     ld = [{"@context": "https://schema.org", "@type": "WebSite", "name": SITE["brand"], "url": url(path_of("hub", lang)),
            "inLanguage": lang}]
@@ -222,7 +236,7 @@ def build_root():
     suggest = {lg: {"name": L[lg]["name"], "msg": L[lg]["ui"]["viewInLang"], "href": path_of("hub", lg)} for lg in LANGS}
     body = (f'<div class="lang-suggest" id="langSuggest" hidden></div>'
             f'<section class="hero"><h1>{esc(h["h1"])}</h1><p class="lead">{h["intro"]}</p>'
-            f'<div class="lang-picks">{picks}</div></section>{cards_html(DEFAULT)}')
+            f'<div class="lang-picks">{picks}</div></section>{grouped_cards(DEFAULT)}')
     scripts = ("<script>(function(){var S=" + json.dumps(suggest, ensure_ascii=False) + ";"
                "var l=(navigator.language||'').slice(0,2).toLowerCase();"
                f"if(l!=='{DEFAULT}'&&S[l]){{var b=document.getElementById('langSuggest');"

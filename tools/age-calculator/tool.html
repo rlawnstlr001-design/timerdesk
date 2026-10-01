@@ -1,0 +1,15 @@
+<div class="tool calc age" id="tool">
+  <div class="calc-inputs">
+    <label class="field"><span>{{t.birth}}</span><input type="date" id="birth" min="1900-01-01"></label>
+    <label class="field"><span>{{t.base}}</span><input type="date" id="base"></label>
+    <div class="field-actions"><button class="btn ghost small" id="todayBtn" type="button">{{t.today}}</button></div>
+  </div>
+
+  <div class="calc-result">
+    <div class="result-label">{{t.intlAge}}</div>
+    <div class="result-big" id="ageMain">-</div>
+    <div class="result-sub" id="ageDetail"></div>
+  </div>
+
+  <div class="result-cards" id="cards"></div>
+</div>

@@ -1,0 +1,41 @@
+<div class="tool calc dday" id="tool">
+  <div class="tool-bar">
+    <div class="tabs" id="tabs" role="tablist"></div>
+  </div>
+
+  <section class="calc-panel" data-panel="milestone">
+    <div class="calc-inputs">
+      <label class="field"><span>{{t.startDate}}</span><input type="date" id="msStart"></label>
+      <label class="check"><input type="checkbox" id="msCountFirst" checked> {{t.countFirst}}</label>
+    </div>
+    <div class="calc-result">
+      <div class="result-big" id="msToday"></div>
+      <div class="result-sub" id="msTodaySub"></div>
+    </div>
+    <div class="ms-wrap"><table class="ms-table"><thead><tr><th>{{t.milestone}}</th><th>{{t.dateCol}}</th><th>{{t.remainCol}}</th></tr></thead><tbody id="msRows"></tbody></table></div>
+  </section>
+
+  <section class="calc-panel" data-panel="between" hidden>
+    <div class="calc-inputs">
+      <label class="field"><span>{{t.fromDate}}</span><input type="date" id="bwFrom"></label>
+      <label class="field"><span>{{t.toDate}}</span><input type="date" id="bwTo"></label>
+      <label class="check"><input type="checkbox" id="bwInclusive"> {{t.inclusive}}</label>
+    </div>
+    <div class="calc-result">
+      <div class="result-big" id="bwResult"></div>
+      <div class="result-sub" id="bwSub"></div>
+    </div>
+  </section>
+
+  <section class="calc-panel" data-panel="add" hidden>
+    <div class="calc-inputs">
+      <label class="field"><span>{{t.baseDate}}</span><input type="date" id="adBase"></label>
+      <label class="field"><span>{{t.days}}</span><input type="number" id="adDays" value="100" min="-100000" max="100000"></label>
+      <label class="field"><span>{{t.direction}}</span><select id="adDir"><option value="1">{{t.after}}</option><option value="-1">{{t.before}}</option></select></label>
+    </div>
+    <div class="calc-result">
+      <div class="result-big" id="adResult"></div>
+      <div class="result-sub" id="adSub"></div>
+    </div>
+  </section>
+</div>

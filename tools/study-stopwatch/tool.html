@@ -1,0 +1,32 @@
+<div class="tool study" id="tool">
+  <div class="tool-bar">
+    <span class="muted" id="todayLabel"></span>
+    <button class="icon-btn" id="fsBtn" title="{{ui.fullscreen}} (F)" aria-label="{{ui.fullscreen}}"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  </div>
+
+  <div class="study-total">
+    <small>{{t.totalToday}}</small>
+    <div class="big-time" id="total" role="timer" aria-live="off">0:00:00</div>
+    <div class="study-current" id="current">{{t.pickSubject}}</div>
+  </div>
+
+  <div class="subjects" id="subjects"></div>
+
+  <form class="add-subject" id="addForm">
+    <input id="newSub" maxlength="20" placeholder="{{t.addPlaceholder}}" aria-label="{{t.addPlaceholder}}">
+    <button class="btn ghost small" type="submit">+ {{t.add}}</button>
+  </form>
+
+  <div class="controls">
+    <button class="btn primary big" id="mainBtn" type="button" title="Space">{{ui.start}}</button>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><b id="weekTotal">0</b><small>{{t.weekTotal}}</small></div>
+    <div class="stat"><b id="bestSub">-</b><small>{{t.bestSubject}}</small></div>
+    <div class="week-box">
+      <div class="week-head"><small>{{t.week}}</small><button class="link-btn" id="resetToday" type="button">{{t.resetToday}}</button></div>
+      <div class="week" id="week"></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="tool countdown" id="tool">
+  <div class="tool-bar">
+    <div class="tabs" id="presets" role="tablist"></div>
+    <button class="icon-btn" id="fsBtn" title="{{ui.fullscreen}} (F)" aria-label="{{ui.fullscreen}}"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  </div>
+
+  <div class="cd-view">
+    <div class="cd-title" id="cdTitle"></div>
+    <div class="cd-dday" id="dday">D-0</div>
+    <div class="cd-grid" role="timer" aria-live="off">
+      <div><b id="cdD">0</b><small>{{t.days}}</small></div>
+      <div><b id="cdH">00</b><small>{{t.hours}}</small></div>
+      <div><b id="cdM">00</b><small>{{t.minutes}}</small></div>
+      <div><b id="cdS">00</b><small>{{t.seconds}}</small></div>
+    </div>
+    <div class="cd-target" id="cdTarget"></div>
+  </div>
+
+  <details class="settings" id="cdSettings">
+    <summary>{{t.setTarget}}</summary>
+    <div class="settings-grid">
+      <label class="field"><span>{{t.label}}</span><input id="cdLabel" maxlength="40" placeholder="{{t.labelPlaceholder}}"></label>
+      <label class="field"><span>{{t.date}}</span><input type="date" id="cdDate"></label>
+      <label class="field"><span>{{t.time}}</span><input type="time" id="cdTime" step="60"></label>
+      <div class="field-actions"><button class="btn primary small" id="applyBtn" type="button">{{t.apply}}</button></div>
+    </div>
+  </details>
+
+  <div class="controls">
+    <button class="btn ghost small" id="copyBtn" type="button">🔗 {{t.copyLink}}</button>
+  </div>
+  <p class="hint center" id="cdNote"></p>
+</div>
