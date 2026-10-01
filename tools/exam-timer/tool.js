@@ -11,7 +11,10 @@
     csat: { anchor: "08:40", items: [["kor", 80, 30], ["math", 100, 60], ["eng", 70, 30], ["hist", 30, 15], ["inq1", 30, 2], ["inq2", 30, 28], ["lang2", 40, 0]] },
     toeic: { items: [["lc", 45, 0], ["rc", 75, 0]] },
     sat: { items: [["rw1", 32, 0], ["rw2", 32, 10], ["m1", 35, 0], ["m2", 35, 0]] },
-    ielts: { items: [["listen", 30, 0], ["transfer", 10, 0], ["read", 60, 0], ["write", 60, 0]] }
+    ielts: { items: [["listen", 30, 0], ["transfer", 10, 0], ["read", 60, 0], ["write", 60, 0]] },
+    // 日本 大学入学共通テスト (2026·2027年度 同一時間割, 地歴公民·理科は2科目選択)
+    kyotsu1: { anchor: "09:30", items: [["jgeo", 130, 80], ["jkoku", 90, 50], ["jengr", 80, 40], ["jengl", 60, 0]] },
+    kyotsu2: { anchor: "09:30", items: [["jsci", 130, 80], ["jmath1", 70, 50], ["jmath2", 70, 50], ["jinfo", 60, 0]] }
   };
   var DEF = { preset: T.presetOrder[0], custom: null, warn10: true, warn5: true, sound: "chime", volume: 0.8 };
   var cfg = Object.assign({}, DEF, TD.load("exam-cfg", {}));

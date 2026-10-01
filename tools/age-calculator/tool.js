@@ -50,10 +50,9 @@
     $("#ageDetail").textContent = (isToday ? "🎉 " + T.happyBirthday + " · " : "") + T.ymd.replace("{y}", diff.y).replace("{m}", diff.m).replace("{d}", diff.d);
 
     var html = "";
-    if (T.showKoreanAges) {
-      html += card(T.yearAge, T.ageUnit.replace("{n}", t.y - b.y), T.yearAgeSub);
-      html += card(T.countingAge, T.ageUnit.replace("{n}", t.y - b.y + 1), T.countingAgeSub);
-    }
+    // 연 나이는 한국, 세는 나이(数え年·虚岁)는 한·일·중 — 언어 파일에서 켠다
+    if (T.showKoreanAges) html += card(T.yearAge, T.ageUnit.replace("{n}", t.y - b.y), T.yearAgeSub);
+    if (T.showKoreanAges || T.showCountingAge) html += card(T.countingAge, T.ageUnit.replace("{n}", t.y - b.y + 1), T.countingAgeSub);
     html += card(T.daysLived, T.daysUnit.replace("{n}", num(lived)), T.weeksUnit.replace("{n}", num(Math.floor(lived / 7))));
     html += card(T.nextBirthday, isToday ? "D-DAY" : "D-" + toNext, nextDate + " · " + T.turns.replace("{n}", age + (isToday ? 0 : 1)));
     // 띠: 양력 연도 기준 (설날 이전 출생은 전년도 띠일 수 있음)

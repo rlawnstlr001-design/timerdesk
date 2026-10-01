@@ -5,8 +5,8 @@
 
   var T = TD.i18n.t, $ = TD.$, pad = TD.pad;
   var root = $("#tool");
-  // 2027학년도 수능: 2026-11-19(목), 1교시 08:40 (교육부 발표)
-  var PRESETS = { csat: { date: "2026-11-19", time: "08:40" } };
+  // 2027학년도 수능: 2026-11-19(목) 08:40 (교육부) / 2027 共通テスト: 2027-01-16(土) 09:30 (大学入試センター)
+  var PRESETS = { csat: { date: "2026-11-19", time: "08:40" }, kyotsu: { date: "2027-01-16", time: "09:30" } };
   var cfg = Object.assign({ preset: T.presetOrder[0], title: "", date: "", time: "09:00" }, TD.load("countdown-cfg", {}));
 
   // 공유 링크로 들어온 경우 그 값을 우선

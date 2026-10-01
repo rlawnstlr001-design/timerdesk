@@ -123,11 +123,13 @@ def nav_html(lang, current=None):
 
 
 def lang_switch(alts, lang):
+    """언어 메뉴: 🌐 버튼을 누르면 펼쳐지는 목록 (링크는 HTML에 그대로 있어 크롤링됨)."""
     out = []
     for lg, p in alts.items():
         cur = ' aria-current="true"' if lg == lang else ""
         out.append(f'<a href="{p}" hreflang="{lg}" lang="{lg}"{cur}>{esc(L[lg]["name"])}</a>')
-    return "".join(out)
+    return (f'<details class="lang-menu"><summary aria-label="{esc(L[lang]["ui"]["language"])}">🌐 {esc(L[lang]["name"])}</summary>'
+            f'<div class="lang-list">{"".join(out)}</div></details>')
 
 
 def cards_html(lang, exclude=None, group=None):

@@ -314,3 +314,17 @@ h1 { font-size: clamp(26px, 4.2vw, 34px); line-height: 1.25; margin: 6px 0 8px; 
 .sal-table.compact thead th:first-child, .sal-table.compact td:first-child { text-align: left; }
 .sal-table.compact tr.hl td { background: var(--surface-2); }
 @media (max-width: 520px) { .sal-table th, .sal-table td { padding: 8px 6px; } .sal-table.compact { font-size: 12px; } }
+
+/* ---------- 언어 메뉴 ---------- */
+.lang { position: relative; }
+.lang-menu summary { list-style: none; cursor: pointer; font-size: 13px; color: var(--muted); padding: 5px 10px; border: 1px solid var(--line); border-radius: 999px; white-space: nowrap; }
+.lang-menu summary::-webkit-details-marker { display: none; }
+.lang-menu[open] summary { color: var(--text); background: var(--surface-2); }
+.lang-list { position: absolute; right: 0; top: calc(100% + 6px); z-index: 50; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow); padding: 6px; display: flex; flex-direction: column; min-width: 140px; }
+.lang-list a { padding: 8px 12px; border-radius: 8px; font-size: 14px; }
+.lang-list a:hover { background: var(--surface-2); color: var(--text); }
+
+/* 일본어 페이지는 일본어 글꼴 우선 (한국어 글꼴로 가나를 그리면 자간이 어색함) */
+html[lang="ja"] body, html[lang="ja"] button, html[lang="ja"] input, html[lang="ja"] select {
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Yu Gothic", Meiryo, "Noto Sans JP", sans-serif;
+}
