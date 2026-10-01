@@ -4,7 +4,7 @@
   "domain": "timerdesk.com",
   "defaultLang": "en",
   "languages": ["ko", "en"],
-  "tools": ["pomodoro-timer", "exam-timer", "visual-timer", "exam-countdown", "study-stopwatch", "dday-calculator", "age-calculator"],
+  "tools": ["pomodoro-timer", "exam-timer", "visual-timer", "exam-countdown", "study-stopwatch", "dday-calculator", "age-calculator", "salary-calculator"],
   "adsenseClient": "",
   "adsenseSlots": { "afterTool": "", "inContent": "" },
   "ga4": "",

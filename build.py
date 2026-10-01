@@ -190,7 +190,8 @@ def build_tool(lang, slug):
     scripts = (
         "<script>window.TD_I18N=" + json.dumps(i18n, ensure_ascii=False).replace("</", "<\\/") + ";</script>\n"
         f'<script src="/assets/common.js?v={VER["common"]}"></script>\n'
-        f'<script src="/assets/tools/{slug}.js?v={VER[slug]}"></script>'
+        + (f'<script src="/assets/tools/{slug}.data.js?v={VER[slug + ".data"]}"></script>\n' if slug + ".data" in VER else "")
+        + f'<script src="/assets/tools/{slug}.js?v={VER[slug]}"></script>'
     )
     ld = [
         {"@context": "https://schema.org", "@type": "WebApplication", "name": t["h1"], "url": url(path),
@@ -284,6 +285,10 @@ if __name__ == "__main__":
         src = ROOT / "tools" / slug / "tool.js"
         shutil.copy(src, DIST / "assets" / "tools" / f"{slug}.js")
         VER[slug] = asset_ver(src)
+        data = ROOT / "tools" / slug / "data.js"  # 선택: 도구가 쓰는 큰 데이터 (예: 간이세액표)
+        if data.exists():
+            shutil.copy(data, DIST / "assets" / "tools" / f"{slug}.data.js")
+            VER[slug + ".data"] = asset_ver(data)
     for lg in LANGS:
         build_hub(lg)
         build_privacy(lg)

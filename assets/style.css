@@ -300,3 +300,17 @@ h1 { font-size: clamp(26px, 4.2vw, 34px); line-height: 1.25; margin: 6px 0 8px; 
 .ms-table tr.next td { font-weight: 700; color: var(--accent); }
 .ms-table td:last-child { font-family: var(--mono); white-space: nowrap; }
 @media (max-width: 520px) { .calc-inputs .field { min-width: 0; flex: 1 1 140px; } .ms-table { font-size: 13px; } .ms-table th, .ms-table td { padding: 7px 6px; } }
+
+/* ---------- 연봉 실수령액 ---------- */
+.sal-table-wrap { overflow-x: auto; margin-top: 12px; }
+.sal-table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; font-size: 15px; }
+.sal-table th, .sal-table td { padding: 9px 12px; border-bottom: 1px solid var(--line); }
+.sal-table tbody th { text-align: left; font-weight: 500; color: var(--muted); }
+.sal-table td { text-align: right; white-space: nowrap; }
+.sal-table tr.strong th, .sal-table tr.strong td { color: var(--text); font-weight: 700; }
+.sal-table tr.net th, .sal-table tr.net td { color: var(--accent); font-weight: 800; font-size: 17px; border-bottom: 0; }
+.sal-table.compact { font-size: 14px; }
+.sal-table.compact thead th { color: var(--muted); font-weight: 600; font-size: 12px; text-align: right; }
+.sal-table.compact thead th:first-child, .sal-table.compact td:first-child { text-align: left; }
+.sal-table.compact tr.hl td { background: var(--surface-2); }
+@media (max-width: 520px) { .sal-table th, .sal-table td { padding: 8px 6px; } .sal-table.compact { font-size: 12px; } }
