@@ -360,6 +360,7 @@ html[lang="ja"] body, html[lang="ja"] button, html[lang="ja"] input, html[lang="
 .ht-clock { font-family: var(--mono); font-variant-numeric: tabular-nums; font-weight: 700; font-size: clamp(30px, 6vw, 44px); line-height: 1.1; letter-spacing: -.02em; }
 .ht-clock small { font-size: .45em; margin-left: .3em; color: var(--muted); letter-spacing: 0; }
 .ht-date { color: var(--muted); font-size: 14px; }
+.ht-tz { color: var(--muted); font-size: 12px; opacity: .85; }
 .home-timer:fullscreen .ht-num, .home-timer.pseudo-fs .ht-num { font-size: min(26vh, 17vw); }
 .home-timer:fullscreen .ht-colon, .home-timer.pseudo-fs .ht-colon { font-size: min(20vh, 13vw); }
 .home-timer:fullscreen .ht-quick, .home-timer.pseudo-fs .ht-quick { display: none; }

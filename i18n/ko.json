@@ -683,6 +683,7 @@
     "timeUp": "시간이 다 됐어요!",
     "restart": "다시 시작",
     "setFirst": "시간을 먼저 맞춰 주세요",
-    "minShort": "분"
+    "minShort": "분",
+    "tzNote": "내 기기의 시간대 기준으로 표시됩니다"
   }
 }

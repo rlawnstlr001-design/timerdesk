@@ -597,6 +597,7 @@
     "timeUp": "Zeit ist um!",
     "restart": "Neu starten",
     "setFirst": "Stell zuerst eine Zeit ein",
-    "minShort": " Min."
+    "minShort": " Min.",
+    "tzNote": "Angezeigt in der Zeitzone deines Geräts"
   }
 }

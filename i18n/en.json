@@ -591,6 +591,7 @@
     "timeUp": "Time's up!",
     "restart": "Restart",
     "setFirst": "Set a time first",
-    "minShort": " min"
+    "minShort": " min",
+    "tzNote": "Shown in your device's time zone"
   }
 }

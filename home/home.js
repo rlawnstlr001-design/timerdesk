@@ -116,7 +116,16 @@
     start(+b.dataset.m * 60);
   });
 
-  /* ---------- 현재 시각 ---------- */
+  /* ---------- 현재 시각 (보는 사람 기기의 시간대 — 언어와 무관) ---------- */
+  (function showZone() {
+    try {
+      var zone = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
+      var long = new Intl.DateTimeFormat(TD.lang, { timeZoneName: "long" }).formatToParts(new Date())
+        .filter(function (x) { return x.type === "timeZoneName"; })[0];
+      var city = zone.split("/").pop().replace(/_/g, " ");
+      $("#htTz").textContent = "🌐 " + (long ? long.value : zone) + (city && zone.indexOf("/") > 0 ? " · " + city : "");
+    } catch (e) { /* 미지원 브라우저 */ }
+  })();
   function tickClock() {
     var now = new Date();
     if (now.getSeconds() === lastSec) return;

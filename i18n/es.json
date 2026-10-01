@@ -597,6 +597,7 @@
     "timeUp": "¡Se acabó el tiempo!",
     "restart": "Repetir",
     "setFirst": "Primero fija un tiempo",
-    "minShort": " min"
+    "minShort": " min",
+    "tzNote": "Se muestra en la zona horaria de tu dispositivo"
   }
 }
