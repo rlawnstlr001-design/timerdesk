@@ -92,8 +92,9 @@
   });
   function step(k, d) {
     if (!isIdle()) return;
-    var v = clampSeg(k, IN[k].value) + d;
-    if (v > MAX[k]) v = 0; if (v < 0) v = MAX[k] - (MAX[k] % Math.abs(d)); // 순환
+    var v = clampSeg(k, IN[k].value) + d, span = MAX[k] + 1;
+    if (Math.abs(d) === 1) v = ((v % span) + span) % span; // 1씩: 59 → 00 순환
+    else if (v > MAX[k]) v = 0; else if (v < 0) v = MAX[k] - (MAX[k] % Math.abs(d)); // 10씩(초 ▲▼)
     IN[k].value = pad(v);
     last = readInputs();
     root.classList.remove("done", "no-hours");
@@ -102,6 +103,43 @@
   root.addEventListener("click", function (e) {
     var b = e.target.closest(".ht-step");
     if (b) step(b.dataset.step, +b.dataset.d);
+  });
+
+  /* ---------- 숫자 위에서 위아래로 끌어 조절 (클릭만 하면 직접 입력) ---------- */
+  var PX = 16, drag = null; // 16px 끌 때마다 1씩
+  [["h", inH], ["m", inM], ["s", inS]].forEach(function (p) {
+    var k = p[0], el = p[1];
+    el.addEventListener("pointerdown", function (e) {
+      if (!isIdle() || e.button > 0) return;
+      if (document.activeElement === el) return; // 이미 입력 중이면 커서 이동 등 기본 동작
+      e.preventDefault(); // 누르자마자 포커스가 가면 드래그 중 글자가 선택되므로 막는다
+      drag = { k: k, el: el, y: e.clientY, moved: false };
+      try { el.setPointerCapture(e.pointerId); } catch (err) { /* 무시 */ }
+    });
+    el.addEventListener("pointermove", function (e) {
+      if (!drag || drag.el !== el) return;
+      var dy = drag.y - e.clientY;
+      if (!drag.moved && Math.abs(dy) > 5) { drag.moved = true; root.classList.add("dragging"); }
+      if (!drag.moved) return;
+      var n = dy > 0 ? Math.floor(dy / PX) : Math.ceil(dy / PX);
+      if (n) { step(k, n); drag.y -= n * PX; }
+    });
+    function end() {
+      if (!drag || drag.el !== el) return;
+      var moved = drag.moved;
+      drag = null;
+      root.classList.remove("dragging");
+      if (!moved) { el.focus(); el.select(); } // 그냥 눌렀으면 직접 입력
+    }
+    el.addEventListener("pointerup", end);
+    el.addEventListener("pointercancel", function () { drag = null; root.classList.remove("dragging"); });
+    // 마우스 휠: 그 칸을 선택했을 때만 (페이지 스크롤을 가로채지 않도록)
+    el.addEventListener("wheel", function (e) {
+      if (!isIdle() || document.activeElement !== el) return;
+      e.preventDefault();
+      step(k, e.deltaY < 0 ? 1 : -1);
+      el.select();
+    }, { passive: false });
   });
 
   /* ---------- 바로 시작 ---------- */

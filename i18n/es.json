@@ -588,7 +588,7 @@
     }
   },
   "home": {
-    "hint": "Toca los números para escribir el tiempo",
+    "hint": "Arrastra los números arriba o abajo, o tócalos para escribir",
     "h": "h",
     "m": "min",
     "s": "s",

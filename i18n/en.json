@@ -582,7 +582,7 @@
     }
   },
   "home": {
-    "hint": "Tap the numbers to type a time",
+    "hint": "Drag the numbers up or down, or tap to type",
     "h": "hr",
     "m": "min",
     "s": "sec",

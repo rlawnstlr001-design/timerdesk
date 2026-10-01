@@ -588,7 +588,7 @@
     }
   },
   "home": {
-    "hint": "Tippe auf die Zahlen, um die Zeit einzugeben",
+    "hint": "Zahlen nach oben oder unten ziehen oder antippen und tippen",
     "h": "Std.",
     "m": "Min.",
     "s": "Sek.",

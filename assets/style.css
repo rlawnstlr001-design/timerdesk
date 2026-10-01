@@ -341,7 +341,11 @@ html[lang="ja"] body, html[lang="ja"] button, html[lang="ja"] input, html[lang="
 .ht-seg { display: flex; flex-direction: column; align-items: center; }
 .ht-num { width: 2.3ch; border: 0; background: transparent; text-align: center; color: var(--text); font-family: var(--mono); font-variant-numeric: tabular-nums; font-weight: 800; font-size: clamp(60px, 15vw, 136px); line-height: 1; letter-spacing: -.04em; padding: 0; border-radius: 14px; caret-color: var(--accent); }
 .ht-num:focus { outline: none; background: var(--surface-2); box-shadow: inset 0 -4px 0 var(--accent); }
-.home-timer:not(.locked) .ht-num:hover { background: var(--surface-2); cursor: text; }
+.home-timer:not(.locked) .ht-num { cursor: ns-resize; touch-action: none; user-select: none; -webkit-user-select: none; }
+.home-timer:not(.locked) .ht-num:hover { background: var(--surface-2); }
+.home-timer:not(.locked) .ht-num:focus { cursor: text; user-select: text; -webkit-user-select: text; }
+.home-timer.dragging, .home-timer.dragging * { cursor: ns-resize !important; }
+.home-timer.dragging .ht-num { transition: none; }
 .home-timer.no-hours .ht-seg:first-child .ht-num, .home-timer.no-hours .ht-colon:first-of-type { opacity: .3; }
 .ht-colon { font-family: var(--mono); font-weight: 800; font-size: clamp(48px, 11vw, 104px); line-height: 1; color: var(--muted); margin-top: -18px; }
 .ht-step { border: 0; background: transparent; color: var(--muted); font-size: 16px; width: 100%; padding: 4px 0; cursor: pointer; border-radius: 8px; }
