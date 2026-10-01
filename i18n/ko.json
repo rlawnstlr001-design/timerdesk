@@ -674,10 +674,15 @@
     }
   },
   "home": {
-    "clockLabel": "현재 시각",
-    "quick": "바로 시작 타이머",
-    "running": "타이머",
-    "minShort": "분",
-    "timeUp": "시간이 다 됐어요!"
+    "hint": "숫자를 눌러 시간을 바로 입력하세요",
+    "h": "시",
+    "m": "분",
+    "s": "초",
+    "quick": "바로 시작",
+    "nowLabel": "현재 시각",
+    "timeUp": "시간이 다 됐어요!",
+    "restart": "다시 시작",
+    "setFirst": "시간을 먼저 맞춰 주세요",
+    "minShort": "분"
   }
 }

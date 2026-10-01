@@ -1,23 +1,50 @@
-<div class="tool home-clock" id="tool">
+<div class="tool home-timer" id="tool">
   <div class="tool-bar">
-    <span class="hc-date" id="hcDate"></span>
+    <span class="ht-hint" id="htHint">{{t.hint}}</span>
     <button class="icon-btn" id="fsBtn" title="{{ui.fullscreen}} (F)" aria-label="{{ui.fullscreen}}"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
   </div>
 
-  <div class="hc-clock" role="timer" aria-live="off" aria-label="{{t.clockLabel}}"><span id="hcTime">--:--:--</span><small id="hcAmPm"></small></div>
-
-  <div class="hc-run" id="hcRun" hidden>
-    <div class="hc-run-label">{{t.running}}</div>
-    <div class="hc-remain" id="hcRemain">00:00</div>
-    <div class="progress" aria-hidden="true"><i id="hcBar"></i></div>
-    <div class="controls">
-      <button class="btn ghost small" id="hcCancel" type="button">{{ui.stop}}</button>
-      <button class="btn primary small" id="hcPause" type="button">{{ui.pause}}</button>
+  <!-- ① 큰 타이머: 숫자를 눌러 바로 입력, ▲▼로 조절 -->
+  <div class="ht-display" role="timer" aria-live="off">
+    <div class="ht-seg">
+      <button class="ht-step" type="button" data-step="h" data-d="1" aria-label="+1 {{t.h}}">▲</button>
+      <input class="ht-num" id="htH" inputmode="numeric" maxlength="2" value="00" aria-label="{{t.h}}" autocomplete="off">
+      <button class="ht-step" type="button" data-step="h" data-d="-1" aria-label="-1 {{t.h}}">▼</button>
+      <span class="ht-unit">{{t.h}}</span>
+    </div>
+    <span class="ht-colon">:</span>
+    <div class="ht-seg">
+      <button class="ht-step" type="button" data-step="m" data-d="1" aria-label="+1 {{t.m}}">▲</button>
+      <input class="ht-num" id="htM" inputmode="numeric" maxlength="2" value="05" aria-label="{{t.m}}" autocomplete="off">
+      <button class="ht-step" type="button" data-step="m" data-d="-1" aria-label="-1 {{t.m}}">▼</button>
+      <span class="ht-unit">{{t.m}}</span>
+    </div>
+    <span class="ht-colon">:</span>
+    <div class="ht-seg">
+      <button class="ht-step" type="button" data-step="s" data-d="10" aria-label="+10 {{t.s}}">▲</button>
+      <input class="ht-num" id="htS" inputmode="numeric" maxlength="2" value="00" aria-label="{{t.s}}" autocomplete="off">
+      <button class="ht-step" type="button" data-step="s" data-d="-10" aria-label="-10 {{t.s}}">▼</button>
+      <span class="ht-unit">{{t.s}}</span>
     </div>
   </div>
+  <div class="ht-msg" id="htMsg" aria-live="polite"></div>
+  <div class="progress" aria-hidden="true"><i id="htBar"></i></div>
 
-  <div class="hc-quick" id="hcQuick">
-    <span class="hc-label">{{t.quick}}</span>
-    <div class="presets" id="hcPresets"></div>
+  <div class="controls">
+    <button class="btn ghost" id="htReset" type="button" title="R">{{ui.reset}}</button>
+    <button class="btn primary big" id="htStart" type="button" title="Space / Enter">{{ui.start}}</button>
+  </div>
+
+  <!-- ② 바로 시작 -->
+  <div class="ht-quick">
+    <span class="ht-label">{{t.quick}}</span>
+    <div class="presets" id="htPresets"></div>
+  </div>
+
+  <!-- ③ 현재 시각 -->
+  <div class="ht-now">
+    <span class="ht-label">{{t.nowLabel}}</span>
+    <div class="ht-clock"><span id="htClock">--:--:--</span><small id="htAmPm"></small></div>
+    <div class="ht-date" id="htDate"></div>
   </div>
 </div>

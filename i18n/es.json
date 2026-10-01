@@ -588,10 +588,15 @@
     }
   },
   "home": {
-    "clockLabel": "Hora actual",
-    "quick": "Temporizador rápido",
-    "running": "Temporizador",
-    "minShort": " min",
-    "timeUp": "¡Se acabó el tiempo!"
+    "hint": "Toca los números para escribir el tiempo",
+    "h": "h",
+    "m": "min",
+    "s": "s",
+    "quick": "Inicio rápido",
+    "nowLabel": "Hora actual",
+    "timeUp": "¡Se acabó el tiempo!",
+    "restart": "Repetir",
+    "setFirst": "Primero fija un tiempo",
+    "minShort": " min"
   }
 }

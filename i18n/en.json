@@ -582,10 +582,15 @@
     }
   },
   "home": {
-    "clockLabel": "Current time",
-    "quick": "Quick timer",
-    "running": "Timer",
-    "minShort": " min",
-    "timeUp": "Time's up!"
+    "hint": "Tap the numbers to type a time",
+    "h": "hr",
+    "m": "min",
+    "s": "sec",
+    "quick": "Quick start",
+    "nowLabel": "Current time",
+    "timeUp": "Time's up!",
+    "restart": "Restart",
+    "setFirst": "Set a time first",
+    "minShort": " min"
   }
 }
