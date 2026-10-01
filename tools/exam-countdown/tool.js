@@ -10,7 +10,8 @@
   var cfg = Object.assign({ preset: T.presetOrder[0], title: "", date: "", time: "09:00" }, TD.load("countdown-cfg", {}));
 
   // 공유 링크로 들어온 경우 그 값을 우선
-  var q = new URLSearchParams(location.search);
+  // 네이버 앱 등은 `&`를 `&#38;`로 바꿔 열어 title이 #뒤로 밀린다 → 해시도 쿼리로 읽는다
+  var q = new URLSearchParams(location.search + "&" + decodeURIComponent(location.hash).replace(/^#(38;)?/, ""));
   if (q.get("d") && /^\d{4}-\d{2}-\d{2}$/.test(q.get("d"))) {
     cfg = { preset: "custom", title: (q.get("title") || "").slice(0, 40), date: q.get("d"), time: /^\d{2}:\d{2}$/.test(q.get("t") || "") ? q.get("t") : "" };  // 시각이 없으면 날짜만 표시
   }
