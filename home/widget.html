@@ -1,0 +1,23 @@
+<div class="tool home-clock" id="tool">
+  <div class="tool-bar">
+    <span class="hc-date" id="hcDate"></span>
+    <button class="icon-btn" id="fsBtn" title="{{ui.fullscreen}} (F)" aria-label="{{ui.fullscreen}}"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  </div>
+
+  <div class="hc-clock" role="timer" aria-live="off" aria-label="{{t.clockLabel}}"><span id="hcTime">--:--:--</span><small id="hcAmPm"></small></div>
+
+  <div class="hc-run" id="hcRun" hidden>
+    <div class="hc-run-label">{{t.running}}</div>
+    <div class="hc-remain" id="hcRemain">00:00</div>
+    <div class="progress" aria-hidden="true"><i id="hcBar"></i></div>
+    <div class="controls">
+      <button class="btn ghost small" id="hcCancel" type="button">{{ui.stop}}</button>
+      <button class="btn primary small" id="hcPause" type="button">{{ui.pause}}</button>
+    </div>
+  </div>
+
+  <div class="hc-quick" id="hcQuick">
+    <span class="hc-label">{{t.quick}}</span>
+    <div class="presets" id="hcPresets"></div>
+  </div>
+</div>

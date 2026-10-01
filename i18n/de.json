@@ -23,13 +23,21 @@
     "footerNote": "Kostenlose Zeit-Tools ohne Installation und ohne Anmeldung. Einstellungen und Verlauf bleiben nur in diesem Browser und werden nie an einen Server gesendet.",
     "viewInLang": "Auf Deutsch ansehen",
     "clock24": true,
-    "soundNames": { "bell": "Glocke", "chime": "Gong", "beep": "Piepton", "digital": "Digitalwecker" },
-    "groups": { "timer": "Timer", "calc": "Rechner" }
+    "soundNames": {
+      "bell": "Glocke",
+      "chime": "Gong",
+      "beep": "Piepton",
+      "digital": "Digitalwecker"
+    },
+    "groups": {
+      "timer": "Timer",
+      "calc": "Rechner"
+    }
   },
   "hub": {
-    "title": "TimerDesk – Kostenlose Timer und Datumsrechner für Lernen und Unterricht",
-    "description": "Kostenloser Pomodoro-Timer, Prüfungstimer, Prüfungs-Countdown, Lern-Stoppuhr, visueller Timer, Tagerechner und Altersrechner. Ohne Installation, ohne Anmeldung, mit Vollbild und Bildschirm-Wachhaltefunktion.",
-    "h1": "Kostenlose Timer für Lernen, Prüfungen und Unterricht",
+    "title": "TimerDesk – Online-Uhr, Timer und Lern-Tools kostenlos",
+    "description": "Große Online-Uhr mit Sekunden und Schnell-Timer per Klick, dazu Pomodoro-Timer, Prüfungstimer, Countdown, Lern-Stoppuhr, Tage- und Altersrechner. Kostenlos, ohne Installation, im Vollbild.",
+    "h1": "Online-Uhr und kostenlose Timer",
     "intro": "Konzentriert lernen, Probeklausuren mit echter Zeit schreiben oder die Zeit im Klassenzimmer zeigen. Timer, die direkt im Browser laufen, ohne Installation und ohne Konto.",
     "aboutH2": "Über TimerDesk",
     "aboutHtml": "<p>TimerDesk ist eine Sammlung von Zeit-Tools für Schülerinnen und Schüler, Studierende, Lehrkräfte und alle, die sich konzentrieren möchten. Alles ist kostenlos, ohne Login, und Einstellungen sowie Verlauf werden nur in deinem Browser gespeichert.</p><p>Alle Timer unterstützen <strong>Vollbild</strong> und halten den <strong>Bildschirm wach</strong>, ideal für Smartboard oder Beamer. Die Zeit wird anhand der echten Uhr berechnet und bleibt genau, auch wenn du den Tab wechselst.</p>"
@@ -75,16 +83,40 @@
         "minUnit": " Min."
       },
       "sections": [
-        { "h2": "Was ist die Pomodoro-Technik?", "html": "<p>Die Pomodoro-Technik ist eine Zeitmanagement-Methode, die Francesco Cirillo Ende der 1980er-Jahre als Student entwickelte, als er mit einem tomatenförmigen Küchenwecker lernte. <em>Pomodoro</em> ist Italienisch für Tomate.</p><p>Das Prinzip ist einfach: <strong>25 Minuten konzentriert an einer Aufgabe arbeiten</strong>, dann <strong>5 Minuten Pause</strong>. Das ist ein Pomodoro. Nach vier Einheiten folgt eine längere Pause von 15 bis 30 Minuten. Ein festes Ende macht den Einstieg leichter, und die geplante Pause verhindert, dass du ausbrennst.</p>" },
-        { "h2": "So funktioniert der Timer", "html": "<ol><li>Drück <strong>Start</strong> für eine 25-minütige Fokuseinheit. Auch die Leertaste startet und pausiert.</li><li>Wenn die Fokuszeit endet, ertönt ein Alarm und die kurze Pause beginnt automatisch.</li><li>Nach vier Einheiten kommt die lange Pause. Die Punkte unter dem Timer zeigen, wo du im Zyklus stehst.</li><li>Jede abgeschlossene Einheit wird zu <strong>Fokusminuten heute</strong> und zum 7-Tage-Diagramm addiert.</li></ol><p>Unter <strong>Einstellungen</strong> änderst du die Dauer der Einheiten, den Abstand der langen Pause, den Alarmton und den Autostart. Die Einstellungen bleiben gespeichert.</p>" },
-        { "h2": "Tipps für mehr Konzentration", "html": "<ul><li><strong>Starte mit 25/5.</strong> Wenn dir 25 Minuten zu kurz werden, probiere 50/10.</li><li><strong>Schreib genau eine Aufgabe auf.</strong> „20 Übungsaufgaben aus Kapitel 3“ funktioniert besser als „Mathe lernen“.</li><li><strong>Handy weg in den Pausen.</strong> Steh auf, streck dich, trink Wasser. Ein einziges Video macht aus 5 Minuten Pause schnell 20.</li><li><strong>Setz dir ein Tagesziel in Pomodoros</strong> statt in Stunden: leichter zu messen und leichter zu schaffen.</li></ul>" }
+        {
+          "h2": "Was ist die Pomodoro-Technik?",
+          "html": "<p>Die Pomodoro-Technik ist eine Zeitmanagement-Methode, die Francesco Cirillo Ende der 1980er-Jahre als Student entwickelte, als er mit einem tomatenförmigen Küchenwecker lernte. <em>Pomodoro</em> ist Italienisch für Tomate.</p><p>Das Prinzip ist einfach: <strong>25 Minuten konzentriert an einer Aufgabe arbeiten</strong>, dann <strong>5 Minuten Pause</strong>. Das ist ein Pomodoro. Nach vier Einheiten folgt eine längere Pause von 15 bis 30 Minuten. Ein festes Ende macht den Einstieg leichter, und die geplante Pause verhindert, dass du ausbrennst.</p>"
+        },
+        {
+          "h2": "So funktioniert der Timer",
+          "html": "<ol><li>Drück <strong>Start</strong> für eine 25-minütige Fokuseinheit. Auch die Leertaste startet und pausiert.</li><li>Wenn die Fokuszeit endet, ertönt ein Alarm und die kurze Pause beginnt automatisch.</li><li>Nach vier Einheiten kommt die lange Pause. Die Punkte unter dem Timer zeigen, wo du im Zyklus stehst.</li><li>Jede abgeschlossene Einheit wird zu <strong>Fokusminuten heute</strong> und zum 7-Tage-Diagramm addiert.</li></ol><p>Unter <strong>Einstellungen</strong> änderst du die Dauer der Einheiten, den Abstand der langen Pause, den Alarmton und den Autostart. Die Einstellungen bleiben gespeichert.</p>"
+        },
+        {
+          "h2": "Tipps für mehr Konzentration",
+          "html": "<ul><li><strong>Starte mit 25/5.</strong> Wenn dir 25 Minuten zu kurz werden, probiere 50/10.</li><li><strong>Schreib genau eine Aufgabe auf.</strong> „20 Übungsaufgaben aus Kapitel 3“ funktioniert besser als „Mathe lernen“.</li><li><strong>Handy weg in den Pausen.</strong> Steh auf, streck dich, trink Wasser. Ein einziges Video macht aus 5 Minuten Pause schnell 20.</li><li><strong>Setz dir ein Tagesziel in Pomodoros</strong> statt in Stunden: leichter zu messen und leichter zu schaffen.</li></ul>"
+        }
       ],
       "faq": [
-        { "q": "Läuft der Timer weiter, wenn ich den Tab wechsle oder das Fenster minimiere?", "a": "Ja. Die Restzeit wird anhand der echten Endzeit berechnet und bleibt auch im Hintergrund genau; der Tab-Titel zeigt die verbleibende Zeit. Wenn du den Tab schließt, stoppt der Timer." },
-        { "q": "Kann ich die 25 Minuten ändern?", "a": "Ja. In den <strong>Einstellungen</strong> kannst du die Fokuszeit zwischen 1 und 180 Minuten wählen und die Pausen sowie deren Abstand anpassen." },
-        { "q": "Wo wird mein Verlauf gespeichert?", "a": "Nur im lokalen Speicher deines Browsers. Nichts wird an einen Server gesendet, es gibt keine Synchronisierung zwischen Geräten, und beim Löschen der Websitedaten ist der Verlauf weg." },
-        { "q": "Funktioniert er auf dem Handy?", "a": "Ja, in jedem aktuellen Browser auf Smartphone oder Tablet. Wo unterstützt, bleibt der Bildschirm an, solange der Timer läuft." },
-        { "q": "Ich höre den Alarm nicht.", "a": "Prüfe, ob das Gerät stumm geschaltet ist, und drück in den Einstellungen auf <strong>Ton testen</strong>. Manche Browser blockieren Ton, bis du die Seite antippst; starte den Timer daher mit einem Tippen oder Klick." }
+        {
+          "q": "Läuft der Timer weiter, wenn ich den Tab wechsle oder das Fenster minimiere?",
+          "a": "Ja. Die Restzeit wird anhand der echten Endzeit berechnet und bleibt auch im Hintergrund genau; der Tab-Titel zeigt die verbleibende Zeit. Wenn du den Tab schließt, stoppt der Timer."
+        },
+        {
+          "q": "Kann ich die 25 Minuten ändern?",
+          "a": "Ja. In den <strong>Einstellungen</strong> kannst du die Fokuszeit zwischen 1 und 180 Minuten wählen und die Pausen sowie deren Abstand anpassen."
+        },
+        {
+          "q": "Wo wird mein Verlauf gespeichert?",
+          "a": "Nur im lokalen Speicher deines Browsers. Nichts wird an einen Server gesendet, es gibt keine Synchronisierung zwischen Geräten, und beim Löschen der Websitedaten ist der Verlauf weg."
+        },
+        {
+          "q": "Funktioniert er auf dem Handy?",
+          "a": "Ja, in jedem aktuellen Browser auf Smartphone oder Tablet. Wo unterstützt, bleibt der Bildschirm an, solange der Timer läuft."
+        },
+        {
+          "q": "Ich höre den Alarm nicht.",
+          "a": "Prüfe, ob das Gerät stumm geschaltet ist, und drück in den Einstellungen auf <strong>Ton testen</strong>. Manche Browser blockieren Ton, bis du die Seite antippst; starte den Timer daher mit einem Tippen oder Klick."
+        }
       ]
     },
     "exam-timer": {
@@ -117,7 +149,12 @@
         "next": "Als Nächstes",
         "allDone": "Alle Teile sind beendet",
         "startsAt": "Beginn um",
-        "presetOrder": ["custom", "ielts", "toeic", "sat"],
+        "presetOrder": [
+          "custom",
+          "ielts",
+          "toeic",
+          "sat"
+        ],
         "presets": {
           "custom": "Eigener Ablauf",
           "ielts": "IELTS Academic (Papier)",
@@ -168,15 +205,36 @@
         }
       },
       "sections": [
-        { "h2": "Für Klassenzimmer und Probeprüfungen", "html": "<h3>Klassenarbeiten beaufsichtigen</h3><p>Im Vollbild füllen der Name des Prüfungsteils und die Restzeit den ganzen Bildschirm und sind auf Smartboard oder Beamer auch aus der letzten Reihe lesbar. 10 und 5 Minuten vor Ende wechseln die Ziffern die Farbe und ein Signal ertönt, du musst die Zeit also nicht ansagen.</p><h3>Komplette Probeprüfungen</h3><p>Wähle eine Vorlage wie IELTS oder SAT, die Pausen sind schon eingeplant. Wer mit echter Zeit übt, inklusive der kurzen Übergänge zwischen den Teilen, kennt das Tempo am Prüfungstag schon.</p><h3>Eigener Ablauf</h3><p>Für Klausuren, Abiturprüfungen oder Klassenarbeiten trägst du Namen, Dauer und Pausen einfach in die Tabelle ein. Deine Änderungen werden als eigener Ablauf gespeichert.</p>" },
-        { "h2": "Zeiten der Vorlagen", "html": "<div class='table-scroll'><table><thead><tr><th>Prüfung</th><th>Teile</th><th>Gesamt</th></tr></thead><tbody><tr><td>IELTS Academic (Papier)</td><td>Listening 30 Min. + 10 Min. Übertragen · Reading 60 Min. · Writing 60 Min.</td><td>2 Std. 40 Min.</td></tr><tr><td>TOEIC Listening & Reading</td><td>Listening 45 Min. · Reading 75 Min.</td><td>2 Std.</td></tr><tr><td>Digital SAT</td><td>Reading and Writing 32 + 32 Min. · 10 Min. Pause · Math 35 + 35 Min.</td><td>2 Std. 14 Min. + Pause</td></tr></tbody></table></div><p class='muted'>Die Zeiten folgen dem veröffentlichten Format der jeweiligen Prüfung. Prüfe sie vor dem Prüfungstag immer beim offiziellen Anbieter.</p>" },
-        { "h2": "So geht's", "html": "<ol><li>Wähle unter <strong>Ablauf</strong> eine Vorlage oder einen eigenen Ablauf.</li><li>Passe bei Bedarf Teile, Minuten und Pausen in der Tabelle an.</li><li>Lege die Startzeit fest. <em>Jetzt starten</em> beginnt sofort; mit einer Uhrzeit richtet sich der Ablauf nach der Uhr.</li><li>Drück <strong>Prüfung starten</strong> und schalte im Klassenzimmer auf Vollbild (Taste F).</li></ol>" }
+        {
+          "h2": "Für Klassenzimmer und Probeprüfungen",
+          "html": "<h3>Klassenarbeiten beaufsichtigen</h3><p>Im Vollbild füllen der Name des Prüfungsteils und die Restzeit den ganzen Bildschirm und sind auf Smartboard oder Beamer auch aus der letzten Reihe lesbar. 10 und 5 Minuten vor Ende wechseln die Ziffern die Farbe und ein Signal ertönt, du musst die Zeit also nicht ansagen.</p><h3>Komplette Probeprüfungen</h3><p>Wähle eine Vorlage wie IELTS oder SAT, die Pausen sind schon eingeplant. Wer mit echter Zeit übt, inklusive der kurzen Übergänge zwischen den Teilen, kennt das Tempo am Prüfungstag schon.</p><h3>Eigener Ablauf</h3><p>Für Klausuren, Abiturprüfungen oder Klassenarbeiten trägst du Namen, Dauer und Pausen einfach in die Tabelle ein. Deine Änderungen werden als eigener Ablauf gespeichert.</p>"
+        },
+        {
+          "h2": "Zeiten der Vorlagen",
+          "html": "<div class='table-scroll'><table><thead><tr><th>Prüfung</th><th>Teile</th><th>Gesamt</th></tr></thead><tbody><tr><td>IELTS Academic (Papier)</td><td>Listening 30 Min. + 10 Min. Übertragen · Reading 60 Min. · Writing 60 Min.</td><td>2 Std. 40 Min.</td></tr><tr><td>TOEIC Listening & Reading</td><td>Listening 45 Min. · Reading 75 Min.</td><td>2 Std.</td></tr><tr><td>Digital SAT</td><td>Reading and Writing 32 + 32 Min. · 10 Min. Pause · Math 35 + 35 Min.</td><td>2 Std. 14 Min. + Pause</td></tr></tbody></table></div><p class='muted'>Die Zeiten folgen dem veröffentlichten Format der jeweiligen Prüfung. Prüfe sie vor dem Prüfungstag immer beim offiziellen Anbieter.</p>"
+        },
+        {
+          "h2": "So geht's",
+          "html": "<ol><li>Wähle unter <strong>Ablauf</strong> eine Vorlage oder einen eigenen Ablauf.</li><li>Passe bei Bedarf Teile, Minuten und Pausen in der Tabelle an.</li><li>Lege die Startzeit fest. <em>Jetzt starten</em> beginnt sofort; mit einer Uhrzeit richtet sich der Ablauf nach der Uhr.</li><li>Drück <strong>Prüfung starten</strong> und schalte im Klassenzimmer auf Vollbild (Taste F).</li></ol>"
+        }
       ],
       "faq": [
-        { "q": "Kann ich die Prüfung pausieren?", "a": "Ja. Mit <strong>Pause</strong> hältst du an; beim Fortsetzen verschiebt sich der restliche Ablauf um die pausierte Zeit. Praktisch zum Üben." },
-        { "q": "Wann ertönen die Hinweise?", "a": "Zu Beginn jedes Teils, 10 und 5 Minuten vor Ende (in den Einstellungen abschaltbar) und am Ende jedes Teils. Bei 10 Minuten wird der Countdown orange, bei 5 Minuten rot." },
-        { "q": "Was passiert, wenn die Startzeit schon vorbei ist?", "a": "Der Timer springt zu dem Teil, der gerade laufen sollte. Wäre der ganze Ablauf schon vorbei, wird er auf dieselbe Uhrzeit am nächsten Tag gelegt." },
-        { "q": "Ist der Timer genau, wenn ich den Tab wechsle?", "a": "Ja. Alles wird anhand der echten Uhr berechnet, die Restzeit stimmt also, wenn du zurückkommst." }
+        {
+          "q": "Kann ich die Prüfung pausieren?",
+          "a": "Ja. Mit <strong>Pause</strong> hältst du an; beim Fortsetzen verschiebt sich der restliche Ablauf um die pausierte Zeit. Praktisch zum Üben."
+        },
+        {
+          "q": "Wann ertönen die Hinweise?",
+          "a": "Zu Beginn jedes Teils, 10 und 5 Minuten vor Ende (in den Einstellungen abschaltbar) und am Ende jedes Teils. Bei 10 Minuten wird der Countdown orange, bei 5 Minuten rot."
+        },
+        {
+          "q": "Was passiert, wenn die Startzeit schon vorbei ist?",
+          "a": "Der Timer springt zu dem Teil, der gerade laufen sollte. Wäre der ganze Ablauf schon vorbei, wird er auf dieselbe Uhrzeit am nächsten Tag gelegt."
+        },
+        {
+          "q": "Ist der Timer genau, wenn ich den Tab wechsle?",
+          "a": "Ja. Alles wird anhand der echten Uhr berechnet, die Restzeit stimmt also, wenn du zurückkommst."
+        }
       ]
     },
     "visual-timer": {
@@ -190,7 +248,13 @@
       "card": "Schrumpfende Farbscheibe zeigt die Restzeit, ideal für Kinder und Unterricht",
       "ui": {
         "color": "Farbe",
-        "colors": { "red": "Rot", "blue": "Blau", "green": "Grün", "orange": "Orange", "purple": "Lila" },
+        "colors": {
+          "red": "Rot",
+          "blue": "Blau",
+          "green": "Grün",
+          "orange": "Orange",
+          "purple": "Lila"
+        },
         "dialLabel": "Scheibe, die die Restzeit zeigt. Zum Einstellen ziehen.",
         "dragHint": "Zieh mit Finger oder Maus um die Scheibe, um die Zeit einzustellen.",
         "scale": "Skalenbereich",
@@ -198,15 +262,36 @@
         "showDigital": "Zeit zusätzlich als Zahl anzeigen"
       },
       "sections": [
-        { "h2": "Was ist ein visueller Timer?", "html": "<p>Ein visueller Timer zeigt die Restzeit als <strong>schrumpfende Farbfläche</strong> statt als Zahl. Auch Kinder, die die Uhr noch nicht lesen können, verstehen sofort: Wenn das Rot weg ist, ist die Zeit um.</p><p>Weil man den Zeitverlauf auf einen Blick sieht, sind visuelle Timer in Kita, Grundschule, Förderschule und zu Hause weit verbreitet. Auch Erwachsenen helfen sie, Meetings und Vorträge im Zeitrahmen zu halten.</p>" },
-        { "h2": "Ideen für den Einsatz", "html": "<ul><li><strong>Routinen für Kinder</strong>: 3 Minuten Zähneputzen, 10 Minuten Aufräumen, 30 Minuten Bildschirmzeit. Die Scheibe beendet die Aktivität, nicht du.</li><li><strong>Unterricht</strong>: Gruppenarbeit, Stillarbeit oder Pause aufs Smartboard legen, damit die Klasse die Zeit selbst im Blick hat.</li><li><strong>Meetings und Vorträge</strong>: 5 Minuten pro Person und 10 Minuten für Fragen, damit nichts ausufert.</li><li><strong>Konzentriertes Arbeiten</strong>: Wenn dich Zahlen ablenken, schalte <em>Zeit zusätzlich als Zahl anzeigen</em> aus und schau nur auf die Scheibe.</li></ul>" },
-        { "h2": "So geht's", "html": "<ol><li>Zieh um die Scheibe, um eine Zeit einzustellen, oder tipp auf eine Vorgabe von 1 bis 60 Minuten.</li><li>Drück <strong>Start</strong> (oder die Leertaste), und die Scheibe beginnt zu schrumpfen.</li><li>Ist die Zeit um, ertönt der Alarm und die Scheibe blinkt.</li><li>In den Einstellungen änderst du den Skalenbereich (10, 20, 30, 60 oder 120 Minuten), die Farbe und den Ton. Für kurze Aktivitäten sind 10 oder 20 Minuten besser zu erkennen.</li></ol>" }
+        {
+          "h2": "Was ist ein visueller Timer?",
+          "html": "<p>Ein visueller Timer zeigt die Restzeit als <strong>schrumpfende Farbfläche</strong> statt als Zahl. Auch Kinder, die die Uhr noch nicht lesen können, verstehen sofort: Wenn das Rot weg ist, ist die Zeit um.</p><p>Weil man den Zeitverlauf auf einen Blick sieht, sind visuelle Timer in Kita, Grundschule, Förderschule und zu Hause weit verbreitet. Auch Erwachsenen helfen sie, Meetings und Vorträge im Zeitrahmen zu halten.</p>"
+        },
+        {
+          "h2": "Ideen für den Einsatz",
+          "html": "<ul><li><strong>Routinen für Kinder</strong>: 3 Minuten Zähneputzen, 10 Minuten Aufräumen, 30 Minuten Bildschirmzeit. Die Scheibe beendet die Aktivität, nicht du.</li><li><strong>Unterricht</strong>: Gruppenarbeit, Stillarbeit oder Pause aufs Smartboard legen, damit die Klasse die Zeit selbst im Blick hat.</li><li><strong>Meetings und Vorträge</strong>: 5 Minuten pro Person und 10 Minuten für Fragen, damit nichts ausufert.</li><li><strong>Konzentriertes Arbeiten</strong>: Wenn dich Zahlen ablenken, schalte <em>Zeit zusätzlich als Zahl anzeigen</em> aus und schau nur auf die Scheibe.</li></ul>"
+        },
+        {
+          "h2": "So geht's",
+          "html": "<ol><li>Zieh um die Scheibe, um eine Zeit einzustellen, oder tipp auf eine Vorgabe von 1 bis 60 Minuten.</li><li>Drück <strong>Start</strong> (oder die Leertaste), und die Scheibe beginnt zu schrumpfen.</li><li>Ist die Zeit um, ertönt der Alarm und die Scheibe blinkt.</li><li>In den Einstellungen änderst du den Skalenbereich (10, 20, 30, 60 oder 120 Minuten), die Farbe und den Ton. Für kurze Aktivitäten sind 10 oder 20 Minuten besser zu erkennen.</li></ol>"
+        }
       ],
       "faq": [
-        { "q": "Kann ich mehr als 60 Minuten einstellen?", "a": "Ja. Stell den <strong>Skalenbereich</strong> in den Einstellungen auf 120 Minuten, dann sind bis zu 2 Stunden möglich." },
-        { "q": "Warum laufen die Zahlen gegen den Uhrzeigersinn?", "a": "So bewegt sich der Rand der Scheibe im Uhrzeigersinn wie ein Zeiger, während die Zeit abläuft. Das entspricht der Anordnung klassischer Zeitdauer-Uhren aus dem Klassenzimmer." },
-        { "q": "Kann ich ihn im Vollbild aufs Smartboard bringen?", "a": "Drück oben rechts auf Vollbild (oder die Taste F), dann füllt die Scheibe den Bildschirm. Solange der Timer läuft, bleibt der Bildschirm an." },
-        { "q": "Geht es auch ohne Ton?", "a": "Stell die Lautstärke in den Einstellungen auf 0, dann blinkt die Scheibe am Ende nur. Ideal für Bibliotheken und ruhige Räume." }
+        {
+          "q": "Kann ich mehr als 60 Minuten einstellen?",
+          "a": "Ja. Stell den <strong>Skalenbereich</strong> in den Einstellungen auf 120 Minuten, dann sind bis zu 2 Stunden möglich."
+        },
+        {
+          "q": "Warum laufen die Zahlen gegen den Uhrzeigersinn?",
+          "a": "So bewegt sich der Rand der Scheibe im Uhrzeigersinn wie ein Zeiger, während die Zeit abläuft. Das entspricht der Anordnung klassischer Zeitdauer-Uhren aus dem Klassenzimmer."
+        },
+        {
+          "q": "Kann ich ihn im Vollbild aufs Smartboard bringen?",
+          "a": "Drück oben rechts auf Vollbild (oder die Taste F), dann füllt die Scheibe den Bildschirm. Solange der Timer läuft, bleibt der Bildschirm an."
+        },
+        {
+          "q": "Geht es auch ohne Ton?",
+          "a": "Stell die Lautstärke in den Einstellungen auf 0, dann blinkt die Scheibe am Ende nur. Ideal für Bibliotheken und ruhige Räume."
+        }
       ]
     },
     "exam-countdown": {
@@ -219,27 +304,64 @@
       "lead": "Trag dein Prüfungsdatum ein und sieh zu, wie der Countdown sekundengenau läuft. Teil den Link mit deiner Lerngruppe, damit alle denselben Countdown sehen.",
       "card": "Wie viele Tage bis zur Prüfung, mit Link zum Teilen",
       "ui": {
-        "days": "Tage", "hours": "Stunden", "minutes": "Minuten", "seconds": "Sekunden",
-        "setTarget": "Prüfungsdatum festlegen", "label": "Name", "labelPlaceholder": "z. B. Abitur Mathe, Klausur",
-        "date": "Datum", "time": "Uhrzeit", "apply": "Übernehmen", "copyLink": "Link kopieren", "copied": "Kopiert",
-        "custom": "Meine Prüfung", "myCountdown": "Meine Prüfung", "pickDate": "Lege unten dein Prüfungsdatum fest",
+        "days": "Tage",
+        "hours": "Stunden",
+        "minutes": "Minuten",
+        "seconds": "Sekunden",
+        "setTarget": "Prüfungsdatum festlegen",
+        "label": "Name",
+        "labelPlaceholder": "z. B. Abitur Mathe, Klausur",
+        "date": "Datum",
+        "time": "Uhrzeit",
+        "apply": "Übernehmen",
+        "copyLink": "Link kopieren",
+        "copied": "Kopiert",
+        "custom": "Meine Prüfung",
+        "myCountdown": "Meine Prüfung",
+        "pickDate": "Lege unten dein Prüfungsdatum fest",
         "passed": "Die Prüfungszeit ist erreicht. Viel Erfolg!",
-        "presetOrder": ["custom"],
-        "presets": { "csat": "Koreanischer CSAT 2027", "kyotsu": "Japanischer Zentraltest 2027" },
+        "presetOrder": [
+          "custom"
+        ],
+        "presets": {
+          "csat": "Koreanischer CSAT 2027",
+          "kyotsu": "Japanischer Zentraltest 2027"
+        },
         "notes": {
           "custom": "Gib ein Datum ein und drück Übernehmen. Es wird in diesem Browser gespeichert, und mit Link kopieren teilst du denselben Countdown."
         }
       },
       "sections": [
-        { "h2": "So funktioniert der Countdown", "html": "<p>Die große Zahl ist der <strong>D-Day</strong>: D-1 heißt, die Prüfung ist morgen, D-DAY heißt, sie ist heute. Gezählt werden Kalendertage, die Zahl springt also um Mitternacht. Darunter laufen Tage, Stunden, Minuten und Sekunden bis zur genauen Startzeit, die du festgelegt hast.</p>" },
-        { "h2": "Einsatzideen", "html": "<ul><li><strong>Am Schreibtisch</strong>: Im Vollbild (Taste F) auf Tablet oder Zweitbildschirm hast du die verbleibende Zeit beim Lernen immer im Blick. Im Vollbild bleibt der Bildschirm an.</li><li><strong>Im Klassenzimmer</strong>: Den Countdown zum Abitur oder zur Abschlussprüfung aufs Smartboard bringen.</li><li><strong>Mit der Lerngruppe</strong>: Auf <em>Link kopieren</em> drücken und teilen. Wer ihn öffnet, sieht denselben Namen und dasselbe Datum.</li></ul>" },
-        { "h2": "Tipps für die letzten Wochen", "html": "<ul><li>Plane rückwärts vom D-Day: Reserviere zuerst Wiederholungswochen und komplette Probeprüfungen.</li><li>Schreib Probeprüfungen mit dem <a href='/de/exam-timer/'>Prüfungstimer</a>, damit dir die Zeiteinteilung vertraut ist.</li><li>Erfasse deine echte Lernzeit mit der <a href='/de/study-stopwatch/'>Lern-Stoppuhr</a>, um zu sehen, ob du im Plan liegst.</li></ul>" }
+        {
+          "h2": "So funktioniert der Countdown",
+          "html": "<p>Die große Zahl ist der <strong>D-Day</strong>: D-1 heißt, die Prüfung ist morgen, D-DAY heißt, sie ist heute. Gezählt werden Kalendertage, die Zahl springt also um Mitternacht. Darunter laufen Tage, Stunden, Minuten und Sekunden bis zur genauen Startzeit, die du festgelegt hast.</p>"
+        },
+        {
+          "h2": "Einsatzideen",
+          "html": "<ul><li><strong>Am Schreibtisch</strong>: Im Vollbild (Taste F) auf Tablet oder Zweitbildschirm hast du die verbleibende Zeit beim Lernen immer im Blick. Im Vollbild bleibt der Bildschirm an.</li><li><strong>Im Klassenzimmer</strong>: Den Countdown zum Abitur oder zur Abschlussprüfung aufs Smartboard bringen.</li><li><strong>Mit der Lerngruppe</strong>: Auf <em>Link kopieren</em> drücken und teilen. Wer ihn öffnet, sieht denselben Namen und dasselbe Datum.</li></ul>"
+        },
+        {
+          "h2": "Tipps für die letzten Wochen",
+          "html": "<ul><li>Plane rückwärts vom D-Day: Reserviere zuerst Wiederholungswochen und komplette Probeprüfungen.</li><li>Schreib Probeprüfungen mit dem <a href='/de/exam-timer/'>Prüfungstimer</a>, damit dir die Zeiteinteilung vertraut ist.</li><li>Erfasse deine echte Lernzeit mit der <a href='/de/study-stopwatch/'>Lern-Stoppuhr</a>, um zu sehen, ob du im Plan liegst.</li></ul>"
+        }
       ],
       "faq": [
-        { "q": "Wie lege ich mein Prüfungsdatum fest?", "a": "Gib unter <strong>Prüfungsdatum festlegen</strong> Name, Datum und Startzeit ein und drück Übernehmen. Der Countdown wird in diesem Browser gespeichert." },
-        { "q": "Kann ich den Countdown teilen?", "a": "Ja. <strong>Link kopieren</strong> erzeugt eine URL mit Prüfungsname und Datum. Wer sie öffnet, sieht denselben Countdown." },
-        { "q": "Welche Zeitzone wird verwendet?", "a": "Die Uhr und Zeitzone deines Geräts. Teilst du den Link über Zeitzonen hinweg, läuft der Countdown für alle bis zu dieser Ortszeit in ihrer Zone." },
-        { "q": "Geht der Bildschirm aus?", "a": "Im Vollbild bittet der Timer den Browser, den Bildschirm wach zu halten, sofern das unterstützt wird." }
+        {
+          "q": "Wie lege ich mein Prüfungsdatum fest?",
+          "a": "Gib unter <strong>Prüfungsdatum festlegen</strong> Name, Datum und Startzeit ein und drück Übernehmen. Der Countdown wird in diesem Browser gespeichert."
+        },
+        {
+          "q": "Kann ich den Countdown teilen?",
+          "a": "Ja. <strong>Link kopieren</strong> erzeugt eine URL mit Prüfungsname und Datum. Wer sie öffnet, sieht denselben Countdown."
+        },
+        {
+          "q": "Welche Zeitzone wird verwendet?",
+          "a": "Die Uhr und Zeitzone deines Geräts. Teilst du den Link über Zeitzonen hinweg, läuft der Countdown für alle bis zu dieser Ortszeit in ihrer Zone."
+        },
+        {
+          "q": "Geht der Bildschirm aus?",
+          "a": "Im Vollbild bittet der Timer den Browser, den Bildschirm wach zu halten, sofern das unterstützt wird."
+        }
       ]
     },
     "study-stopwatch": {
@@ -252,25 +374,58 @@
       "lead": "Tipp auf ein Fach, um die Uhr zu starten, und auf ein anderes, um zu wechseln. Deine Lernzeit für heute und für jedes Fach summiert sich automatisch.",
       "card": "Lernzeit pro Fach mit einem Tipp, mit Tages- und Wochensumme",
       "ui": {
-        "totalToday": "Heute gelernt", "pickSubject": "Tipp auf ein Fach, um zu starten",
-        "addPlaceholder": "Fach hinzufügen (z. B. Geschichte)", "add": "Hinzufügen",
-        "weekTotal": "Letzte 7 Tage", "bestSubject": "Meistgelerntes Fach", "week": "Lernzeit, letzte 7 Tage",
-        "resetToday": "Heute löschen", "resetConfirm": "Die gesamte Lernzeit von heute löschen?",
-        "remove": "Fach entfernen", "removeConfirm": "Dieses Fach aus der Liste entfernen? Bereits erfasste Zeit bleibt in den Summen.",
+        "totalToday": "Heute gelernt",
+        "pickSubject": "Tipp auf ein Fach, um zu starten",
+        "addPlaceholder": "Fach hinzufügen (z. B. Geschichte)",
+        "add": "Hinzufügen",
+        "weekTotal": "Letzte 7 Tage",
+        "bestSubject": "Meistgelerntes Fach",
+        "week": "Lernzeit, letzte 7 Tage",
+        "resetToday": "Heute löschen",
+        "resetConfirm": "Die gesamte Lernzeit von heute löschen?",
+        "remove": "Fach entfernen",
+        "removeConfirm": "Dieses Fach aus der Liste entfernen? Bereits erfasste Zeit bleibt in den Summen.",
         "longRunConfirm": "Die Stoppuhr lief {h} Stunden. Diese Zeit zum Verlauf hinzufügen?\n(Abbrechen verwirft die letzte Einheit)",
-        "minUnit": " Min.", "hourUnit": " Std.",
-        "defaultSubjects": ["Mathe", "Deutsch", "Englisch", "Biologie"]
+        "minUnit": " Min.",
+        "hourUnit": " Std.",
+        "defaultSubjects": [
+          "Mathe",
+          "Deutsch",
+          "Englisch",
+          "Biologie"
+        ]
       },
       "sections": [
-        { "h2": "Warum Lernzeit pro Fach messen?", "html": "<p>Am Schreibtisch sitzen ist nicht dasselbe wie konzentriert lernen. Wer nur die Minuten echter Arbeit misst, Fach für Fach, sieht, wie viel heute wirklich gelernt wurde und wohin die Zeit geht. Meist zeigt sich ein Fach, das deutlich weniger Zeit bekommt als gedacht.</p>" },
-        { "h2": "So geht's", "html": "<ol><li>Tipp auf eine <strong>Fachkarte</strong>, um die Zeit zu starten.</li><li>Tipp auf eine andere Karte, um zu wechseln. Das vorige Fach stoppt automatisch.</li><li>Mit dem großen Knopf (oder der Leertaste) pausierst du in Pausen; erneut drücken setzt das letzte Fach fort.</li><li>Fächer fügst du unten im Eingabefeld hinzu und entfernst sie mit dem ×.</li></ol><p>Lädst du die Seite neu oder schließt den Tab, während die Uhr läuft, zählt sie weiter. Lief sie länger als 6 Stunden, wirst du gefragt, ob die Zeit behalten werden soll.</p>" },
-        { "h2": "Tipps", "html": "<ul><li><strong>Bei jeder Pause anhalten.</strong> Erfasste Zeit ist nur nützlich, wenn sie ehrlich ist.</li><li><strong>Nutze das Wochendiagramm</strong>, um deinen schwächsten Tag zu finden und dort zuerst das Ziel zu erhöhen.</li><li><strong>Kombiniere sie mit dem <a href='/de/pomodoro-timer/'>Pomodoro-Timer</a></strong> an Tagen, an denen Konzentration schwerfällt: in 25-Minuten-Blöcken arbeiten und die Zeit hier erfassen.</li></ul>" }
+        {
+          "h2": "Warum Lernzeit pro Fach messen?",
+          "html": "<p>Am Schreibtisch sitzen ist nicht dasselbe wie konzentriert lernen. Wer nur die Minuten echter Arbeit misst, Fach für Fach, sieht, wie viel heute wirklich gelernt wurde und wohin die Zeit geht. Meist zeigt sich ein Fach, das deutlich weniger Zeit bekommt als gedacht.</p>"
+        },
+        {
+          "h2": "So geht's",
+          "html": "<ol><li>Tipp auf eine <strong>Fachkarte</strong>, um die Zeit zu starten.</li><li>Tipp auf eine andere Karte, um zu wechseln. Das vorige Fach stoppt automatisch.</li><li>Mit dem großen Knopf (oder der Leertaste) pausierst du in Pausen; erneut drücken setzt das letzte Fach fort.</li><li>Fächer fügst du unten im Eingabefeld hinzu und entfernst sie mit dem ×.</li></ol><p>Lädst du die Seite neu oder schließt den Tab, während die Uhr läuft, zählt sie weiter. Lief sie länger als 6 Stunden, wirst du gefragt, ob die Zeit behalten werden soll.</p>"
+        },
+        {
+          "h2": "Tipps",
+          "html": "<ul><li><strong>Bei jeder Pause anhalten.</strong> Erfasste Zeit ist nur nützlich, wenn sie ehrlich ist.</li><li><strong>Nutze das Wochendiagramm</strong>, um deinen schwächsten Tag zu finden und dort zuerst das Ziel zu erhöhen.</li><li><strong>Kombiniere sie mit dem <a href='/de/pomodoro-timer/'>Pomodoro-Timer</a></strong> an Tagen, an denen Konzentration schwerfällt: in 25-Minuten-Blöcken arbeiten und die Zeit hier erfassen.</li></ul>"
+        }
       ],
       "faq": [
-        { "q": "Läuft die Uhr weiter, wenn ich neu lade oder den Tab schließe?", "a": "Ja. Die Startzeit wird gespeichert, die vergangene Zeit wird beim Zurückkehren addiert. Nach mehr als 6 Stunden wirst du gefragt, ob sie behalten werden soll." },
-        { "q": "Wo werden meine Daten gespeichert?", "a": "Nur im lokalen Speicher deines Browsers. Nichts wird an einen Server gesendet, es gibt keine Synchronisierung zwischen Geräten, und beim Löschen der Websitedaten sind sie weg." },
-        { "q": "Was passiert, wenn ich über Mitternacht lerne?", "a": "Die Einheit wird um Mitternacht geteilt, sodass die Zeit dem richtigen Tag zugeordnet wird." },
-        { "q": "Wird die Zeit gelöscht, wenn ich ein Fach entferne?", "a": "Nein. Das Fach verschwindet aus der Liste, die erfasste Zeit bleibt aber in der Tagessumme und im Wochendiagramm." }
+        {
+          "q": "Läuft die Uhr weiter, wenn ich neu lade oder den Tab schließe?",
+          "a": "Ja. Die Startzeit wird gespeichert, die vergangene Zeit wird beim Zurückkehren addiert. Nach mehr als 6 Stunden wirst du gefragt, ob sie behalten werden soll."
+        },
+        {
+          "q": "Wo werden meine Daten gespeichert?",
+          "a": "Nur im lokalen Speicher deines Browsers. Nichts wird an einen Server gesendet, es gibt keine Synchronisierung zwischen Geräten, und beim Löschen der Websitedaten sind sie weg."
+        },
+        {
+          "q": "Was passiert, wenn ich über Mitternacht lerne?",
+          "a": "Die Einheit wird um Mitternacht geteilt, sodass die Zeit dem richtigen Tag zugeordnet wird."
+        },
+        {
+          "q": "Wird die Zeit gelöscht, wenn ich ein Fach entferne?",
+          "a": "Nein. Das Fach verschwindet aus der Liste, die erfasste Zeit bleibt aber in der Tagessumme und im Wochendiagramm."
+        }
       ]
     },
     "dday-calculator": {
@@ -283,26 +438,66 @@
       "lead": "Zähl die Tage zwischen zwei Daten, addiere oder subtrahiere Tage und finde Meilensteine wie 100 oder 1000 Tage. Die Ergebnisse aktualisieren sich beim Tippen.",
       "card": "Tage zwischen Daten, Tage addieren, 100-Tage-Jubiläen",
       "ui": {
-        "tabOrder": ["between", "add", "milestone"],
-        "tabs": { "milestone": "Jubiläen", "between": "Tage zwischen Daten", "add": "Tage addieren oder abziehen" },
-        "startDate": "Startdatum", "countFirst": "Startdatum als Tag 1 zählen",
-        "milestone": "Meilenstein", "dateCol": "Datum", "remainCol": "Countdown",
-        "pickStart": "Gib ein Startdatum ein", "todayIs": "Heute ist Tag {n}", "notYet": "Noch {n} Tage bis zum Start",
-        "since": "Seit {date}", "dayN": "{n} Tage", "yearN": "{n}. Jahrestag",
-        "fromDate": "Startdatum", "toDate": "Enddatum", "inclusive": "Startdatum mitzählen (+1 Tag)",
-        "pickBoth": "Gib beide Daten ein", "daysResult": "{n} Tage", "weeksResult": "{w} Wochen und {d} Tage",
-        "monthsResult": "etwa {m} Monate", "hoursResult": "{h} Stunden",
-        "baseDate": "Ausgangsdatum", "days": "Tage", "direction": "Richtung", "after": "Tage danach", "before": "Tage davor",
-        "pickBase": "Gib ein Ausgangsdatum ein", "fromToday": "{dday} ab heute"
+        "tabOrder": [
+          "between",
+          "add",
+          "milestone"
+        ],
+        "tabs": {
+          "milestone": "Jubiläen",
+          "between": "Tage zwischen Daten",
+          "add": "Tage addieren oder abziehen"
+        },
+        "startDate": "Startdatum",
+        "countFirst": "Startdatum als Tag 1 zählen",
+        "milestone": "Meilenstein",
+        "dateCol": "Datum",
+        "remainCol": "Countdown",
+        "pickStart": "Gib ein Startdatum ein",
+        "todayIs": "Heute ist Tag {n}",
+        "notYet": "Noch {n} Tage bis zum Start",
+        "since": "Seit {date}",
+        "dayN": "{n} Tage",
+        "yearN": "{n}. Jahrestag",
+        "fromDate": "Startdatum",
+        "toDate": "Enddatum",
+        "inclusive": "Startdatum mitzählen (+1 Tag)",
+        "pickBoth": "Gib beide Daten ein",
+        "daysResult": "{n} Tage",
+        "weeksResult": "{w} Wochen und {d} Tage",
+        "monthsResult": "etwa {m} Monate",
+        "hoursResult": "{h} Stunden",
+        "baseDate": "Ausgangsdatum",
+        "days": "Tage",
+        "direction": "Richtung",
+        "after": "Tage danach",
+        "before": "Tage davor",
+        "pickBase": "Gib ein Ausgangsdatum ein",
+        "fromToday": "{dday} ab heute"
       },
       "sections": [
-        { "h2": "Drei Rechner in einem", "html": "<ul><li><strong>Tage zwischen Daten</strong>: die Anzahl der Tage zwischen zwei Daten, dazu Wochen, Monate und Stunden. Aktiviere <em>Startdatum mitzählen</em>, wenn erster und letzter Tag zählen sollen, etwa bei Urlaubs- oder Veranstaltungstagen.</li><li><strong>Tage addieren oder abziehen</strong>: das Datum N Tage nach oder vor einem Datum, mit Wochentag. Praktisch für Fristen.</li><li><strong>Jubiläen</strong>: ab einem Startdatum (Beziehung, Geburt eines Babys, Challenge) alle Meilensteine von 100 bis 10.000 Tagen sowie die Jahrestage 1 bis 10, der nächste ist hervorgehoben.</li></ul>" },
-        { "h2": "Zählt der erste Tag mit?", "html": "<p>Das hängt vom Zweck ab. In manchen Kulturen, etwa in Korea, fällt der 100. Tag einer Beziehung 99 Tage nach dem Start, weil der erste Tag als Tag 1 zählt. Bei rechtlichen Fristen wird dagegen meist erst ab dem Folgetag gezählt (§ 187 BGB). Im Jubiläen-Tab kannst du wählen; Jahrestage fallen immer auf dasselbe Kalenderdatum.</p>" }
+        {
+          "h2": "Drei Rechner in einem",
+          "html": "<ul><li><strong>Tage zwischen Daten</strong>: die Anzahl der Tage zwischen zwei Daten, dazu Wochen, Monate und Stunden. Aktiviere <em>Startdatum mitzählen</em>, wenn erster und letzter Tag zählen sollen, etwa bei Urlaubs- oder Veranstaltungstagen.</li><li><strong>Tage addieren oder abziehen</strong>: das Datum N Tage nach oder vor einem Datum, mit Wochentag. Praktisch für Fristen.</li><li><strong>Jubiläen</strong>: ab einem Startdatum (Beziehung, Geburt eines Babys, Challenge) alle Meilensteine von 100 bis 10.000 Tagen sowie die Jahrestage 1 bis 10, der nächste ist hervorgehoben.</li></ul>"
+        },
+        {
+          "h2": "Zählt der erste Tag mit?",
+          "html": "<p>Das hängt vom Zweck ab. In manchen Kulturen, etwa in Korea, fällt der 100. Tag einer Beziehung 99 Tage nach dem Start, weil der erste Tag als Tag 1 zählt. Bei rechtlichen Fristen wird dagegen meist erst ab dem Folgetag gezählt (§ 187 BGB). Im Jubiläen-Tab kannst du wählen; Jahrestage fallen immer auf dasselbe Kalenderdatum.</p>"
+        }
       ],
       "faq": [
-        { "q": "Werden Schaltjahre berücksichtigt?", "a": "Ja. Alle Ergebnisse beruhen auf dem echten Kalender, einschließlich des 29. Februars." },
-        { "q": "Wann soll ich das Startdatum mitzählen?", "a": "Wenn erster und letzter Tag zählen. Vom 3. bis zum 5. sind es ohne 2 Tage und mit 3 Tage." },
-        { "q": "Wie werden Jahrestage berechnet?", "a": "Jedes Jahr am selben Kalenderdatum. Bei einem Start am 29. Februar wird in Nicht-Schaltjahren der 1. März angezeigt." }
+        {
+          "q": "Werden Schaltjahre berücksichtigt?",
+          "a": "Ja. Alle Ergebnisse beruhen auf dem echten Kalender, einschließlich des 29. Februars."
+        },
+        {
+          "q": "Wann soll ich das Startdatum mitzählen?",
+          "a": "Wenn erster und letzter Tag zählen. Vom 3. bis zum 5. sind es ohne 2 Tage und mit 3 Tage."
+        },
+        {
+          "q": "Wie werden Jahrestage berechnet?",
+          "a": "Jedes Jahr am selben Kalenderdatum. Bei einem Start am 29. Februar wird in Nicht-Schaltjahren der 1. März angezeigt."
+        }
       ]
     },
     "age-calculator": {
@@ -315,27 +510,88 @@
       "lead": "Gib ein Geburtsdatum ein und sieh das genaue Alter heute oder an einem beliebigen Datum, dazu die gelebten Tage und den Countdown bis zum nächsten Geburtstag.",
       "card": "Genaues Alter in Jahren, Monaten, Tagen und nächster Geburtstag",
       "ui": {
-        "birth": "Geburtsdatum", "base": "Alter am", "today": "Heute", "intlAge": "Alter",
-        "pickBirth": "Gib ein Geburtsdatum ein", "futureBirth": "Das Datum liegt vor dem Geburtsdatum",
-        "ageUnit": "{n} Jahre", "ymd": "{y} Jahre, {m} Monate und {d} Tage", "happyBirthday": "Alles Gute zum Geburtstag!",
+        "birth": "Geburtsdatum",
+        "base": "Alter am",
+        "today": "Heute",
+        "intlAge": "Alter",
+        "pickBirth": "Gib ein Geburtsdatum ein",
+        "futureBirth": "Das Datum liegt vor dem Geburtsdatum",
+        "ageUnit": "{n} Jahre",
+        "ymd": "{y} Jahre, {m} Monate und {d} Tage",
+        "happyBirthday": "Alles Gute zum Geburtstag!",
         "showKoreanAges": false,
-        "yearAge": "", "yearAgeSub": "", "countingAge": "", "countingAgeSub": "",
-        "daysLived": "Gelebte Tage", "daysUnit": "{n} Tage", "weeksUnit": "{n} Wochen",
-        "nextBirthday": "Nächster Geburtstag", "turns": "wird {n}",
-        "chineseZodiac": "Chinesisches Tierkreiszeichen", "zodiacNote": "Nach Kalenderjahr; wer vor dem chinesischen Neujahr geboren ist, gehört zum Vorjahr",
+        "yearAge": "",
+        "yearAgeSub": "",
+        "countingAge": "",
+        "countingAgeSub": "",
+        "daysLived": "Gelebte Tage",
+        "daysUnit": "{n} Tage",
+        "weeksUnit": "{n} Wochen",
+        "nextBirthday": "Nächster Geburtstag",
+        "turns": "wird {n}",
+        "chineseZodiac": "Chinesisches Tierkreiszeichen",
+        "zodiacNote": "Nach Kalenderjahr; wer vor dem chinesischen Neujahr geboren ist, gehört zum Vorjahr",
         "westernZodiac": "Sternzeichen",
-        "animals": { "rat": "Ratte", "ox": "Büffel", "tiger": "Tiger", "rabbit": "Hase", "dragon": "Drache", "snake": "Schlange", "horse": "Pferd", "goat": "Ziege", "monkey": "Affe", "rooster": "Hahn", "dog": "Hund", "pig": "Schwein" },
-        "signs": { "aries": "Widder", "taurus": "Stier", "gemini": "Zwillinge", "cancer": "Krebs", "leo": "Löwe", "virgo": "Jungfrau", "libra": "Waage", "scorpio": "Skorpion", "sagittarius": "Schütze", "capricorn": "Steinbock", "aquarius": "Wassermann", "pisces": "Fische" }
+        "animals": {
+          "rat": "Ratte",
+          "ox": "Büffel",
+          "tiger": "Tiger",
+          "rabbit": "Hase",
+          "dragon": "Drache",
+          "snake": "Schlange",
+          "horse": "Pferd",
+          "goat": "Ziege",
+          "monkey": "Affe",
+          "rooster": "Hahn",
+          "dog": "Hund",
+          "pig": "Schwein"
+        },
+        "signs": {
+          "aries": "Widder",
+          "taurus": "Stier",
+          "gemini": "Zwillinge",
+          "cancer": "Krebs",
+          "leo": "Löwe",
+          "virgo": "Jungfrau",
+          "libra": "Waage",
+          "scorpio": "Skorpion",
+          "sagittarius": "Schütze",
+          "capricorn": "Steinbock",
+          "aquarius": "Wassermann",
+          "pisces": "Fische"
+        }
       },
       "sections": [
-        { "h2": "So wird das Alter berechnet", "html": "<p>Das Alter ist die Zahl der vollendeten Lebensjahre: aktuelles Jahr minus Geburtsjahr, <strong>minus eins, wenn der Geburtstag in diesem Jahr noch nicht war</strong>. Wer am 15. Oktober 2000 geboren ist, ist bis zum 14. Oktober 2026 25 Jahre alt und wird am 15. Oktober 26.</p><p>Das ausführliche Ergebnis zeigt Jahre, Monate und Tage. Bei Geburtstag am 29. Februar wird in Nicht-Schaltjahren der 1. März als Geburtstag gezählt.</p>" },
-        { "h2": "Alter an einem bestimmten Datum", "html": "<p>Stell <em>Alter am</em> auf ein beliebiges Datum, um zu sehen, wie alt jemand an diesem Tag war oder sein wird. Nützlich für Einschulungsstichtage, Altersgrenzen, Versicherungen oder historische Daten.</p>" }
+        {
+          "h2": "So wird das Alter berechnet",
+          "html": "<p>Das Alter ist die Zahl der vollendeten Lebensjahre: aktuelles Jahr minus Geburtsjahr, <strong>minus eins, wenn der Geburtstag in diesem Jahr noch nicht war</strong>. Wer am 15. Oktober 2000 geboren ist, ist bis zum 14. Oktober 2026 25 Jahre alt und wird am 15. Oktober 26.</p><p>Das ausführliche Ergebnis zeigt Jahre, Monate und Tage. Bei Geburtstag am 29. Februar wird in Nicht-Schaltjahren der 1. März als Geburtstag gezählt.</p>"
+        },
+        {
+          "h2": "Alter an einem bestimmten Datum",
+          "html": "<p>Stell <em>Alter am</em> auf ein beliebiges Datum, um zu sehen, wie alt jemand an diesem Tag war oder sein wird. Nützlich für Einschulungsstichtage, Altersgrenzen, Versicherungen oder historische Daten.</p>"
+        }
       ],
       "faq": [
-        { "q": "Wie viele Tage bin ich alt?", "a": "Die Karte <strong>Gelebte Tage</strong> zeigt die genaue Zahl der Tage (und Wochen) von deiner Geburt bis zum gewählten Datum." },
-        { "q": "Was ist, wenn ich am 29. Februar geboren bin?", "a": "In Nicht-Schaltjahren nimmt der Rechner den 1. März als Geburtstag für die Altersberechnung." },
-        { "q": "Ist das chinesische Tierkreiszeichen genau?", "a": "Es richtet sich nach dem Kalenderjahr. Das chinesische Jahr beginnt aber mit dem Neujahrsfest (Ende Januar bis Mitte Februar); wer Anfang des Jahres geboren ist, sollte prüfen, ob das vorherige Zeichen gilt." }
+        {
+          "q": "Wie viele Tage bin ich alt?",
+          "a": "Die Karte <strong>Gelebte Tage</strong> zeigt die genaue Zahl der Tage (und Wochen) von deiner Geburt bis zum gewählten Datum."
+        },
+        {
+          "q": "Was ist, wenn ich am 29. Februar geboren bin?",
+          "a": "In Nicht-Schaltjahren nimmt der Rechner den 1. März als Geburtstag für die Altersberechnung."
+        },
+        {
+          "q": "Ist das chinesische Tierkreiszeichen genau?",
+          "a": "Es richtet sich nach dem Kalenderjahr. Das chinesische Jahr beginnt aber mit dem Neujahrsfest (Ende Januar bis Mitte Februar); wer Anfang des Jahres geboren ist, sollte prüfen, ob das vorherige Zeichen gilt."
+        }
       ]
     }
+  },
+  "home": {
+    "clockLabel": "Aktuelle Uhrzeit",
+    "quick": "Schnell-Timer",
+    "running": "Timer",
+    "minShort": " Min.",
+    "timeUp": "Zeit ist um!"
   }
 }

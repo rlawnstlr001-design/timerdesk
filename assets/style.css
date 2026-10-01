@@ -328,3 +328,26 @@ h1 { font-size: clamp(26px, 4.2vw, 34px); line-height: 1.25; margin: 6px 0 8px; 
 html[lang="ja"] body, html[lang="ja"] button, html[lang="ja"] input, html[lang="ja"] select {
   font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Yu Gothic", Meiryo, "Noto Sans JP", sans-serif;
 }
+
+/* ---------- 첫 화면 시계 위젯 ---------- */
+.hero-home { padding-top: 22px; }
+.hero-home h1 { font-size: clamp(22px, 3.4vw, 28px); margin-bottom: 12px; }
+.hero-home .lead { margin-top: 16px; }
+.home-clock { text-align: center; padding: 14px 18px 18px; }
+.hc-date { color: var(--muted); font-weight: 600; font-size: 15px; }
+.hc-clock { font-family: var(--mono); font-variant-numeric: tabular-nums; font-weight: 800; letter-spacing: -.04em; line-height: 1; font-size: clamp(64px, 15vw, 132px); margin: 8px 0 14px; color: var(--text); }
+.hc-clock small { font-size: .28em; margin-left: .3em; font-weight: 700; color: var(--muted); letter-spacing: 0; }
+.home-clock.running .hc-clock, .home-clock.done .hc-clock { font-size: clamp(36px, 7vw, 56px); color: var(--muted); margin-bottom: 6px; }
+.hc-run { margin: 4px 0 10px; }
+.hc-run-label { color: var(--accent); font-weight: 700; font-size: 14px; }
+.hc-remain { font-family: var(--mono); font-variant-numeric: tabular-nums; font-weight: 800; font-size: clamp(56px, 13vw, 112px); line-height: 1.05; color: var(--accent); letter-spacing: -.03em; }
+.home-clock.done .hc-remain { color: var(--danger); font-family: var(--font); font-size: clamp(28px, 6vw, 44px); animation: flash .8s ease-in-out 6; }
+.hc-run .controls { margin: 10px 0 0; }
+.hc-quick { display: flex; flex-direction: column; align-items: center; gap: 6px; border-top: 1px solid var(--line); padding-top: 12px; }
+.hc-label { color: var(--muted); font-size: 13px; font-weight: 600; }
+.hc-quick .presets { margin-top: 0; }
+.home-clock:fullscreen .hc-clock, .home-clock.pseudo-fs .hc-clock { font-size: min(28vh, 19vw); }
+.home-clock:fullscreen.running .hc-clock, .home-clock.pseudo-fs.running .hc-clock { font-size: min(9vh, 8vw); }
+.home-clock:fullscreen .hc-remain, .home-clock.pseudo-fs .hc-remain { font-size: min(26vh, 20vw); }
+.home-clock:fullscreen .hc-date, .home-clock.pseudo-fs .hc-date { font-size: 20px; }
+@media (prefers-reduced-motion: reduce) { .home-clock.done .hc-remain { animation: none; } }

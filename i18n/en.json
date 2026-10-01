@@ -35,9 +35,9 @@
     }
   },
   "hub": {
-    "title": "TimerDesk – Free Online Timers & Date Calculators for Study and Class",
-    "description": "Free Pomodoro timer, exam timer, exam countdown, study stopwatch, visual timer, date calculator and age calculator. No install, no sign-up, with fullscreen and keep-screen-on.",
-    "h1": "Free timers for focus, exams and classrooms",
+    "title": "TimerDesk – Online Clock, Timers & Study Tools (Free)",
+    "description": "A big online clock with seconds and one-tap quick timers, plus a Pomodoro timer, exam timer, countdown, study stopwatch, date and age calculators. Free, no install, fullscreen.",
+    "h1": "Online clock & free study timers",
     "intro": "Deep work, mock exams, classroom activities. Simple timers that run right in your browser, with no install and no account.",
     "aboutH2": "About TimerDesk",
     "aboutHtml": "<p>TimerDesk is a set of focused time tools for students, teachers and anyone who needs to stay on track. Every tool is free, needs no login, and keeps your settings and history only in your own browser.</p><p>All timers support <strong>fullscreen</strong> and <strong>keep-screen-on</strong>, so they work well on a classroom TV or projector. Time is calculated from the real clock, so the countdown stays accurate even when you switch tabs.</p>"
@@ -580,5 +580,12 @@
         }
       ]
     }
+  },
+  "home": {
+    "clockLabel": "Current time",
+    "quick": "Quick timer",
+    "running": "Timer",
+    "minShort": " min",
+    "timeUp": "Time's up!"
   }
 }

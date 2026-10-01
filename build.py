@@ -210,15 +210,27 @@ def build_tool(lang, slug):
     write_page(path, lang, "tool", t["title"], t["description"], body, alts, xdef, scripts, ld, slug)
 
 
+def home_widget(lang):
+    """첫 화면 시계 위젯 (home/widget.html + home/home.js). (body_html, scripts) 반환."""
+    S = L[lang]
+    html = render((ROOT / "home" / "widget.html").read_text("utf-8"), {"ui": S["ui"], "t": S["home"]}, f"home/widget.html [{lang}]")
+    i18n = {"lang": lang, "ui": S["ui"], "t": S["home"]}
+    scripts = ("<script>window.TD_I18N=" + json.dumps(i18n, ensure_ascii=False).replace("</", "<\\/") + ";</script>\n"
+               f'<script src="/assets/common.js?v={VER["common"]}"></script>\n'
+               f'<script src="/assets/home.js?v={VER["home"]}"></script>')
+    return html, scripts
+
+
 def build_hub(lang):
     S, h = L[lang], L[lang]["hub"]
     alts, xdef = alternates("hub")
-    body = (f'<section class="hero"><h1>{esc(h["h1"])}</h1><p class="lead">{h["intro"]}</p></section>'
+    widget, scripts = home_widget(lang)
+    body = (f'<section class="hero hero-home"><h1>{esc(h["h1"])}</h1>{widget}<p class="lead">{h["intro"]}</p></section>'
             f"{grouped_cards(lang)}"
             f'<article class="content"><section><h2>{esc(h["aboutH2"])}</h2>{h["aboutHtml"]}</section></article>')
     ld = [{"@context": "https://schema.org", "@type": "WebSite", "name": SITE["brand"], "url": url(path_of("hub", lang)),
            "inLanguage": lang}]
-    write_page(path_of("hub", lang), lang, "hub", h["title"], h["description"], body, alts, xdef, ld=ld)
+    write_page(path_of("hub", lang), lang, "hub", h["title"], h["description"], body, alts, xdef, scripts, ld=ld)
 
 
 def build_privacy(lang):
@@ -237,10 +249,11 @@ def build_root():
     alts, xdef = alternates("hub")
     picks = "".join(f'<a class="lang-pick" href="{path_of("hub", lg)}" lang="{lg}">{esc(L[lg]["name"])}</a>' for lg in LANGS)
     suggest = {lg: {"name": L[lg]["name"], "msg": L[lg]["ui"]["viewInLang"], "href": path_of("hub", lg)} for lg in LANGS}
+    widget, wscripts = home_widget(DEFAULT)
     body = (f'<div class="lang-suggest" id="langSuggest" hidden></div>'
-            f'<section class="hero"><h1>{esc(h["h1"])}</h1><p class="lead">{h["intro"]}</p>'
+            f'<section class="hero hero-home"><h1>{esc(h["h1"])}</h1>{widget}<p class="lead">{h["intro"]}</p>'
             f'<div class="lang-picks">{picks}</div></section>{grouped_cards(DEFAULT)}')
-    scripts = ("<script>(function(){var S=" + json.dumps(suggest, ensure_ascii=False) + ";"
+    scripts = wscripts + ("<script>(function(){var S=" + json.dumps(suggest, ensure_ascii=False) + ";"
                "var l=(navigator.language||'').slice(0,2).toLowerCase();"
                f"if(l!=='{DEFAULT}'&&S[l]){{var b=document.getElementById('langSuggest');"
                "b.innerHTML='<a href=\"'+S[l].href+'\">'+S[l].msg+' →</a>';b.hidden=false;}})();</script>")
@@ -283,7 +296,9 @@ if __name__ == "__main__":
     shutil.copy(ROOT / "assets" / "common.js", DIST / "assets" / "common.js")
     shutil.copy(ROOT / "assets" / "favicon.svg", DIST / "favicon.svg")
     shutil.copy(ROOT / "assets" / "og.png", DIST / "og.png")  # 링크 카드·공유 미리보기
-    VER = {"css": asset_ver(ROOT / "assets" / "style.css"), "common": asset_ver(ROOT / "assets" / "common.js")}
+    VER = {"css": asset_ver(ROOT / "assets" / "style.css"), "common": asset_ver(ROOT / "assets" / "common.js"),
+           "home": asset_ver(ROOT / "home" / "home.js")}
+    shutil.copy(ROOT / "home" / "home.js", DIST / "assets" / "home.js")
     for slug in TOOLS:
         src = ROOT / "tools" / slug / "tool.js"
         shutil.copy(src, DIST / "assets" / "tools" / f"{slug}.js")

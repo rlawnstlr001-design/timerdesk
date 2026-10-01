@@ -23,13 +23,21 @@
     "footerNote": "Herramientas gratuitas sin instalación ni registro. Tus ajustes e historial se guardan solo en este navegador y nunca se envían a un servidor.",
     "viewInLang": "Ver en español",
     "clock24": true,
-    "soundNames": { "bell": "Campana", "chime": "Timbre", "beep": "Pitido", "digital": "Alarma digital" },
-    "groups": { "timer": "Temporizadores", "calc": "Calculadoras" }
+    "soundNames": {
+      "bell": "Campana",
+      "chime": "Timbre",
+      "beep": "Pitido",
+      "digital": "Alarma digital"
+    },
+    "groups": {
+      "timer": "Temporizadores",
+      "calc": "Calculadoras"
+    }
   },
   "hub": {
-    "title": "TimerDesk – Temporizadores y calculadoras de fechas gratis para estudiar",
-    "description": "Temporizador Pomodoro, temporizador de exámenes, cuenta regresiva para exámenes, cronómetro de estudio, temporizador visual, calculadora de días y de edad. Gratis, sin instalar nada, con pantalla completa.",
-    "h1": "Temporizadores gratis para estudiar y dar clase",
+    "title": "TimerDesk – Reloj online, temporizadores y herramientas de estudio gratis",
+    "description": "Reloj online grande con segundos y temporizadores de un toque, además de Pomodoro, temporizador de examen, cuenta regresiva, cronómetro de estudio y calculadoras de días y edad. Gratis y sin instalar.",
+    "h1": "Reloj online y temporizadores gratis",
     "intro": "Para concentrarte, hacer simulacros de examen con el tiempo real o mostrar el tiempo en el aula. Temporizadores que funcionan en tu navegador, sin instalar nada y sin cuenta.",
     "aboutH2": "Sobre TimerDesk",
     "aboutHtml": "<p>TimerDesk es un conjunto de herramientas de tiempo para estudiantes, profesores y cualquiera que necesite concentrarse. Todo es gratis, no hace falta iniciar sesión y tus ajustes e historial se guardan solo en tu navegador.</p><p>Todos los temporizadores tienen <strong>pantalla completa</strong> y mantienen la <strong>pantalla encendida</strong>, así que funcionan bien en la pizarra digital o el proyector. El tiempo se calcula con el reloj real, por lo que sigue siendo exacto aunque cambies de pestaña.</p>"
@@ -75,16 +83,40 @@
         "minUnit": " min"
       },
       "sections": [
-        { "h2": "¿Qué es la técnica Pomodoro?", "html": "<p>La técnica Pomodoro es un método de gestión del tiempo creado por Francesco Cirillo a finales de los años 80, cuando era estudiante universitario y usaba un temporizador de cocina con forma de tomate. <em>Pomodoro</em> significa tomate en italiano.</p><p>La idea es sencilla: <strong>concéntrate en una sola tarea durante 25 minutos</strong> y luego <strong>descansa 5 minutos</strong>. Eso es un pomodoro. Cada cuatro, haz un descanso más largo de 15 a 30 minutos. Tener un final claro ayuda a empezar, y el descanso programado evita que te agotes.</p>" },
-        { "h2": "Cómo usar este temporizador", "html": "<ol><li>Pulsa <strong>Iniciar</strong> para empezar una sesión de 25 minutos. La barra espaciadora también inicia y pausa.</li><li>Al terminar suena una alarma y empieza automáticamente un descanso corto.</li><li>Tras cuatro sesiones llega el descanso largo. Los puntos bajo el temporizador muestran en qué punto del ciclo estás.</li><li>Cada sesión completada se suma a <strong>Minutos de concentración hoy</strong> y al gráfico de 7 días.</li></ol><p>En <strong>Ajustes</strong> puedes cambiar la duración de las sesiones, el intervalo del descanso largo, el sonido y el inicio automático. Se recuerdan para la próxima vez.</p>" },
-        { "h2": "Consejos para concentrarte mejor", "html": "<ul><li><strong>Empieza con 25/5.</strong> Cuando 25 minutos se te queden cortos, prueba 50/10.</li><li><strong>Escribe una sola tarea.</strong> «Hacer 20 ejercicios del tema 3» funciona mejor que «estudiar mates».</li><li><strong>Deja el móvil en los descansos.</strong> Levántate, estírate o bebe agua. Un solo vídeo convierte un descanso de 5 minutos en 20.</li><li><strong>Ponte un objetivo diario en pomodoros</strong> en lugar de horas: es más fácil de medir y de cumplir.</li></ul>" }
+        {
+          "h2": "¿Qué es la técnica Pomodoro?",
+          "html": "<p>La técnica Pomodoro es un método de gestión del tiempo creado por Francesco Cirillo a finales de los años 80, cuando era estudiante universitario y usaba un temporizador de cocina con forma de tomate. <em>Pomodoro</em> significa tomate en italiano.</p><p>La idea es sencilla: <strong>concéntrate en una sola tarea durante 25 minutos</strong> y luego <strong>descansa 5 minutos</strong>. Eso es un pomodoro. Cada cuatro, haz un descanso más largo de 15 a 30 minutos. Tener un final claro ayuda a empezar, y el descanso programado evita que te agotes.</p>"
+        },
+        {
+          "h2": "Cómo usar este temporizador",
+          "html": "<ol><li>Pulsa <strong>Iniciar</strong> para empezar una sesión de 25 minutos. La barra espaciadora también inicia y pausa.</li><li>Al terminar suena una alarma y empieza automáticamente un descanso corto.</li><li>Tras cuatro sesiones llega el descanso largo. Los puntos bajo el temporizador muestran en qué punto del ciclo estás.</li><li>Cada sesión completada se suma a <strong>Minutos de concentración hoy</strong> y al gráfico de 7 días.</li></ol><p>En <strong>Ajustes</strong> puedes cambiar la duración de las sesiones, el intervalo del descanso largo, el sonido y el inicio automático. Se recuerdan para la próxima vez.</p>"
+        },
+        {
+          "h2": "Consejos para concentrarte mejor",
+          "html": "<ul><li><strong>Empieza con 25/5.</strong> Cuando 25 minutos se te queden cortos, prueba 50/10.</li><li><strong>Escribe una sola tarea.</strong> «Hacer 20 ejercicios del tema 3» funciona mejor que «estudiar mates».</li><li><strong>Deja el móvil en los descansos.</strong> Levántate, estírate o bebe agua. Un solo vídeo convierte un descanso de 5 minutos en 20.</li><li><strong>Ponte un objetivo diario en pomodoros</strong> en lugar de horas: es más fácil de medir y de cumplir.</li></ul>"
+        }
       ],
       "faq": [
-        { "q": "¿Sigue funcionando si cambio de pestaña o minimizo la ventana?", "a": "Sí. El tiempo restante se calcula a partir de la hora real de fin, así que sigue siendo exacto en segundo plano, y el título de la pestaña muestra el tiempo que queda. Si cierras la pestaña, se detiene." },
-        { "q": "¿Puedo cambiar los 25 minutos?", "a": "Sí. En <strong>Ajustes</strong> puedes poner la concentración entre 1 y 180 minutos y ajustar los descansos y su frecuencia." },
-        { "q": "¿Dónde se guarda mi historial?", "a": "Solo en el almacenamiento local de tu navegador. No se envía a ningún servidor, no se sincroniza entre dispositivos y se borra si eliminas los datos del sitio." },
-        { "q": "¿Funciona en el móvil?", "a": "Sí, en cualquier navegador moderno de móvil o tableta. Donde es compatible, la pantalla no se apaga mientras corre el temporizador." },
-        { "q": "No oigo la alarma.", "a": "Comprueba que el dispositivo no esté en silencio y pulsa <strong>Probar sonido</strong> en Ajustes. Algunos navegadores bloquean el audio hasta que tocas la página, así que inicia el temporizador con un toque o clic." }
+        {
+          "q": "¿Sigue funcionando si cambio de pestaña o minimizo la ventana?",
+          "a": "Sí. El tiempo restante se calcula a partir de la hora real de fin, así que sigue siendo exacto en segundo plano, y el título de la pestaña muestra el tiempo que queda. Si cierras la pestaña, se detiene."
+        },
+        {
+          "q": "¿Puedo cambiar los 25 minutos?",
+          "a": "Sí. En <strong>Ajustes</strong> puedes poner la concentración entre 1 y 180 minutos y ajustar los descansos y su frecuencia."
+        },
+        {
+          "q": "¿Dónde se guarda mi historial?",
+          "a": "Solo en el almacenamiento local de tu navegador. No se envía a ningún servidor, no se sincroniza entre dispositivos y se borra si eliminas los datos del sitio."
+        },
+        {
+          "q": "¿Funciona en el móvil?",
+          "a": "Sí, en cualquier navegador moderno de móvil o tableta. Donde es compatible, la pantalla no se apaga mientras corre el temporizador."
+        },
+        {
+          "q": "No oigo la alarma.",
+          "a": "Comprueba que el dispositivo no esté en silencio y pulsa <strong>Probar sonido</strong> en Ajustes. Algunos navegadores bloquean el audio hasta que tocas la página, así que inicia el temporizador con un toque o clic."
+        }
       ]
     },
     "exam-timer": {
@@ -117,7 +149,12 @@
         "next": "Siguiente",
         "allDone": "Todas las partes han terminado",
         "startsAt": "Empieza a las",
-        "presetOrder": ["custom", "ielts", "toeic", "sat"],
+        "presetOrder": [
+          "custom",
+          "ielts",
+          "toeic",
+          "sat"
+        ],
         "presets": {
           "custom": "Horario personalizado",
           "ielts": "IELTS Academic (papel)",
@@ -168,15 +205,36 @@
         }
       },
       "sections": [
-        { "h2": "Pensado para el aula y los simulacros", "html": "<h3>Vigilar un examen en clase</h3><p>Con la pantalla completa, el nombre de la parte y el tiempo restante ocupan toda la pantalla y se leen desde el fondo del aula en la pizarra digital o el proyector. A los 10 y 5 minutos del final los números cambian de color y suena un aviso, así que no hace falta anunciar el tiempo.</p><h3>Simulacros completos</h3><p>Elige una plantilla como IELTS o SAT y los descansos ya están incluidos. Practicar con el tiempo real, incluidas las pausas entre partes, te acostumbra al ritmo antes del día del examen.</p><h3>Tu propio horario</h3><p>Para exámenes del instituto, la selectividad (PAU/EBAU) u oposiciones, edita en la tabla los nombres de las partes, la duración y los descansos. Tus cambios se guardan como horario personalizado.</p>" },
-        { "h2": "Duración de las plantillas", "html": "<div class='table-scroll'><table><thead><tr><th>Examen</th><th>Partes</th><th>Total</th></tr></thead><tbody><tr><td>IELTS Academic (papel)</td><td>Listening 30 min + 10 min para pasar respuestas · Reading 60 min · Writing 60 min</td><td>2 h 40 min</td></tr><tr><td>TOEIC Listening & Reading</td><td>Listening 45 min · Reading 75 min</td><td>2 h</td></tr><tr><td>SAT digital</td><td>Reading and Writing 32 + 32 min · descanso 10 min · Math 35 + 35 min</td><td>2 h 14 min + descanso</td></tr></tbody></table></div><p class='muted'>Los tiempos siguen el formato publicado de cada examen. Confírmalos siempre con la entidad oficial antes del día del examen.</p>" },
-        { "h2": "Cómo se usa", "html": "<ol><li>Elige una plantilla en <strong>Horario</strong> o crea un horario personalizado.</li><li>Si hace falta, edita en la tabla las partes, los minutos y los descansos.</li><li>Fija la hora de inicio. <em>Empezar ya</em> arranca al momento; si escribes una hora, el horario se ajusta al reloj.</li><li>Pulsa <strong>Empezar examen</strong> y pon la pantalla completa (tecla F) en el aula.</li></ol>" }
+        {
+          "h2": "Pensado para el aula y los simulacros",
+          "html": "<h3>Vigilar un examen en clase</h3><p>Con la pantalla completa, el nombre de la parte y el tiempo restante ocupan toda la pantalla y se leen desde el fondo del aula en la pizarra digital o el proyector. A los 10 y 5 minutos del final los números cambian de color y suena un aviso, así que no hace falta anunciar el tiempo.</p><h3>Simulacros completos</h3><p>Elige una plantilla como IELTS o SAT y los descansos ya están incluidos. Practicar con el tiempo real, incluidas las pausas entre partes, te acostumbra al ritmo antes del día del examen.</p><h3>Tu propio horario</h3><p>Para exámenes del instituto, la selectividad (PAU/EBAU) u oposiciones, edita en la tabla los nombres de las partes, la duración y los descansos. Tus cambios se guardan como horario personalizado.</p>"
+        },
+        {
+          "h2": "Duración de las plantillas",
+          "html": "<div class='table-scroll'><table><thead><tr><th>Examen</th><th>Partes</th><th>Total</th></tr></thead><tbody><tr><td>IELTS Academic (papel)</td><td>Listening 30 min + 10 min para pasar respuestas · Reading 60 min · Writing 60 min</td><td>2 h 40 min</td></tr><tr><td>TOEIC Listening & Reading</td><td>Listening 45 min · Reading 75 min</td><td>2 h</td></tr><tr><td>SAT digital</td><td>Reading and Writing 32 + 32 min · descanso 10 min · Math 35 + 35 min</td><td>2 h 14 min + descanso</td></tr></tbody></table></div><p class='muted'>Los tiempos siguen el formato publicado de cada examen. Confírmalos siempre con la entidad oficial antes del día del examen.</p>"
+        },
+        {
+          "h2": "Cómo se usa",
+          "html": "<ol><li>Elige una plantilla en <strong>Horario</strong> o crea un horario personalizado.</li><li>Si hace falta, edita en la tabla las partes, los minutos y los descansos.</li><li>Fija la hora de inicio. <em>Empezar ya</em> arranca al momento; si escribes una hora, el horario se ajusta al reloj.</li><li>Pulsa <strong>Empezar examen</strong> y pon la pantalla completa (tecla F) en el aula.</li></ol>"
+        }
       ],
       "faq": [
-        { "q": "¿Puedo pausar el examen?", "a": "Sí. Pulsa <strong>Pausa</strong> y, al reanudar, el resto del horario se retrasa el tiempo que estuvo parado. Muy útil para practicar." },
-        { "q": "¿Cuándo suenan los avisos?", "a": "Al empezar cada parte, 10 y 5 minutos antes del final (se pueden desactivar en Ajustes) y al terminar cada parte. La cuenta se pone naranja a los 10 minutos y roja a los 5." },
-        { "q": "¿Qué pasa si pongo una hora de inicio que ya ha pasado?", "a": "El temporizador salta a la parte que debería estar en curso. Si todo el horario ya habría terminado, se pasa a la misma hora del día siguiente." },
-        { "q": "¿Es exacto si cambio de pestaña?", "a": "Sí. Todo se calcula con el reloj real, así que el tiempo restante es correcto cuando vuelves." }
+        {
+          "q": "¿Puedo pausar el examen?",
+          "a": "Sí. Pulsa <strong>Pausa</strong> y, al reanudar, el resto del horario se retrasa el tiempo que estuvo parado. Muy útil para practicar."
+        },
+        {
+          "q": "¿Cuándo suenan los avisos?",
+          "a": "Al empezar cada parte, 10 y 5 minutos antes del final (se pueden desactivar en Ajustes) y al terminar cada parte. La cuenta se pone naranja a los 10 minutos y roja a los 5."
+        },
+        {
+          "q": "¿Qué pasa si pongo una hora de inicio que ya ha pasado?",
+          "a": "El temporizador salta a la parte que debería estar en curso. Si todo el horario ya habría terminado, se pasa a la misma hora del día siguiente."
+        },
+        {
+          "q": "¿Es exacto si cambio de pestaña?",
+          "a": "Sí. Todo se calcula con el reloj real, así que el tiempo restante es correcto cuando vuelves."
+        }
       ]
     },
     "visual-timer": {
@@ -190,7 +248,13 @@
       "card": "Un disco de color que se encoge, ideal para niños y clases",
       "ui": {
         "color": "Color",
-        "colors": { "red": "Rojo", "blue": "Azul", "green": "Verde", "orange": "Naranja", "purple": "Morado" },
+        "colors": {
+          "red": "Rojo",
+          "blue": "Azul",
+          "green": "Verde",
+          "orange": "Naranja",
+          "purple": "Morado"
+        },
         "dialLabel": "Disco que muestra el tiempo restante. Arrastra para fijar el tiempo.",
         "dragHint": "Arrastra alrededor del disco con el dedo o el ratón para fijar el tiempo.",
         "scale": "Rango del dial",
@@ -198,15 +262,36 @@
         "showDigital": "Mostrar tiempo en números"
       },
       "sections": [
-        { "h2": "¿Qué es un temporizador visual?", "html": "<p>Un temporizador visual muestra el tiempo restante como un <strong>área de color que se va reduciendo</strong> en lugar de con números. Incluso los niños que aún no saben leer la hora entienden enseguida que se acabó cuando ya no queda rojo.</p><p>Como el paso del tiempo se ve de un vistazo, se usa mucho en infantil y primaria, en educación especial y en casa. También ayuda a los adultos a respetar los tiempos de reuniones y presentaciones.</p>" },
-        { "h2": "Ideas para usarlo", "html": "<ul><li><strong>Rutinas de niños</strong>: 3 minutos para lavarse los dientes, 10 para recoger, 30 de pantalla. El disco marca el final en lugar de que tengas que decir «se acabó».</li><li><strong>Actividades en clase</strong>: pon el trabajo en grupo, los ejercicios o el recreo en la pizarra digital para que los alumnos miren el tiempo ellos mismos.</li><li><strong>Reuniones y charlas</strong>: 5 minutos por ponente y 10 de preguntas para que la reunión no se alargue.</li><li><strong>Estudio</strong>: si los números te distraen, desactiva <em>Mostrar tiempo en números</em> y mira solo el disco.</li></ul>" },
-        { "h2": "Cómo se usa", "html": "<ol><li>Arrastra alrededor del disco para fijar un tiempo o toca un botón de 1 a 60 minutos.</li><li>Pulsa <strong>Iniciar</strong> (o la barra espaciadora) y el disco empieza a encogerse.</li><li>Al terminar suena la alarma y el disco parpadea.</li><li>En Ajustes cambia el rango del dial (10, 20, 30, 60 o 120 minutos), el color y el sonido. Para actividades cortas, un rango de 10 o 20 minutos se ve mejor.</li></ol>" }
+        {
+          "h2": "¿Qué es un temporizador visual?",
+          "html": "<p>Un temporizador visual muestra el tiempo restante como un <strong>área de color que se va reduciendo</strong> en lugar de con números. Incluso los niños que aún no saben leer la hora entienden enseguida que se acabó cuando ya no queda rojo.</p><p>Como el paso del tiempo se ve de un vistazo, se usa mucho en infantil y primaria, en educación especial y en casa. También ayuda a los adultos a respetar los tiempos de reuniones y presentaciones.</p>"
+        },
+        {
+          "h2": "Ideas para usarlo",
+          "html": "<ul><li><strong>Rutinas de niños</strong>: 3 minutos para lavarse los dientes, 10 para recoger, 30 de pantalla. El disco marca el final en lugar de que tengas que decir «se acabó».</li><li><strong>Actividades en clase</strong>: pon el trabajo en grupo, los ejercicios o el recreo en la pizarra digital para que los alumnos miren el tiempo ellos mismos.</li><li><strong>Reuniones y charlas</strong>: 5 minutos por ponente y 10 de preguntas para que la reunión no se alargue.</li><li><strong>Estudio</strong>: si los números te distraen, desactiva <em>Mostrar tiempo en números</em> y mira solo el disco.</li></ul>"
+        },
+        {
+          "h2": "Cómo se usa",
+          "html": "<ol><li>Arrastra alrededor del disco para fijar un tiempo o toca un botón de 1 a 60 minutos.</li><li>Pulsa <strong>Iniciar</strong> (o la barra espaciadora) y el disco empieza a encogerse.</li><li>Al terminar suena la alarma y el disco parpadea.</li><li>En Ajustes cambia el rango del dial (10, 20, 30, 60 o 120 minutos), el color y el sonido. Para actividades cortas, un rango de 10 o 20 minutos se ve mejor.</li></ol>"
+        }
       ],
       "faq": [
-        { "q": "¿Puedo poner más de 60 minutos?", "a": "Sí. Cambia el <strong>Rango del dial</strong> a 120 minutos en Ajustes para llegar hasta 2 horas." },
-        { "q": "¿Por qué los números van en sentido contrario a las agujas del reloj?", "a": "Así el borde del disco avanza en el sentido de las agujas del reloj, como una manecilla, a medida que se acaba el tiempo. Es la misma disposición que usan los temporizadores visuales clásicos del aula." },
-        { "q": "¿Puedo mostrarlo a pantalla completa en la pizarra digital?", "a": "Pulsa el botón de pantalla completa arriba a la derecha (o la tecla F) y el disco ocupará toda la pantalla. La pantalla no se apaga mientras corre el temporizador." },
-        { "q": "¿Se puede usar sin sonido?", "a": "Pon el volumen a 0 en Ajustes y el disco solo parpadeará al terminar. Perfecto para bibliotecas y aulas silenciosas." }
+        {
+          "q": "¿Puedo poner más de 60 minutos?",
+          "a": "Sí. Cambia el <strong>Rango del dial</strong> a 120 minutos en Ajustes para llegar hasta 2 horas."
+        },
+        {
+          "q": "¿Por qué los números van en sentido contrario a las agujas del reloj?",
+          "a": "Así el borde del disco avanza en el sentido de las agujas del reloj, como una manecilla, a medida que se acaba el tiempo. Es la misma disposición que usan los temporizadores visuales clásicos del aula."
+        },
+        {
+          "q": "¿Puedo mostrarlo a pantalla completa en la pizarra digital?",
+          "a": "Pulsa el botón de pantalla completa arriba a la derecha (o la tecla F) y el disco ocupará toda la pantalla. La pantalla no se apaga mientras corre el temporizador."
+        },
+        {
+          "q": "¿Se puede usar sin sonido?",
+          "a": "Pon el volumen a 0 en Ajustes y el disco solo parpadeará al terminar. Perfecto para bibliotecas y aulas silenciosas."
+        }
       ]
     },
     "exam-countdown": {
@@ -219,27 +304,64 @@
       "lead": "Pon la fecha de tu examen y mira cómo baja la cuenta segundo a segundo. Comparte el enlace con tu grupo de estudio para que todos vean la misma cuenta regresiva.",
       "card": "Cuántos días faltan para tu examen, con enlace para compartir",
       "ui": {
-        "days": "días", "hours": "horas", "minutes": "minutos", "seconds": "segundos",
-        "setTarget": "Fija la fecha de tu examen", "label": "Nombre", "labelPlaceholder": "p. ej. Selectividad, oposiciones",
-        "date": "Fecha", "time": "Hora", "apply": "Aplicar", "copyLink": "Copiar enlace", "copied": "Copiado",
-        "custom": "Mi examen", "myCountdown": "Mi examen", "pickDate": "Elige abajo la fecha de tu examen",
+        "days": "días",
+        "hours": "horas",
+        "minutes": "minutos",
+        "seconds": "segundos",
+        "setTarget": "Fija la fecha de tu examen",
+        "label": "Nombre",
+        "labelPlaceholder": "p. ej. Selectividad, oposiciones",
+        "date": "Fecha",
+        "time": "Hora",
+        "apply": "Aplicar",
+        "copyLink": "Copiar enlace",
+        "copied": "Copiado",
+        "custom": "Mi examen",
+        "myCountdown": "Mi examen",
+        "pickDate": "Elige abajo la fecha de tu examen",
         "passed": "Ya ha pasado la hora del examen. ¡Buen trabajo!",
-        "presetOrder": ["custom"],
-        "presets": { "csat": "CSAT de Corea 2027", "kyotsu": "Examen común de Japón 2027" },
+        "presetOrder": [
+          "custom"
+        ],
+        "presets": {
+          "csat": "CSAT de Corea 2027",
+          "kyotsu": "Examen común de Japón 2027"
+        },
         "notes": {
           "custom": "Escribe una fecha y pulsa Aplicar. Se guarda en este navegador y con Copiar enlace compartes la misma cuenta regresiva."
         }
       },
       "sections": [
-        { "h2": "Cómo funciona la cuenta regresiva", "html": "<p>El número grande es el <strong>día D</strong>: D-1 significa que el examen es mañana y D-DAY que es hoy. Cuenta días de calendario, así que baja a medianoche. Debajo, los días, horas, minutos y segundos bajan hasta la hora exacta que hayas fijado.</p>" },
-        { "h2": "Formas de usarla", "html": "<ul><li><strong>En tu mesa</strong>: ponla a pantalla completa (tecla F) en una tableta o un segundo monitor para tener siempre presente el tiempo que queda. La pantalla no se apaga en modo pantalla completa.</li><li><strong>En el aula</strong>: proyecta la cuenta atrás para los finales, la selectividad o un examen oficial.</li><li><strong>Con tu grupo de estudio</strong>: pulsa <em>Copiar enlace</em> y compártelo. Quien lo abra verá el mismo nombre y fecha.</li></ul>" },
-        { "h2": "Consejos para las últimas semanas", "html": "<ul><li>Planifica hacia atrás desde el día D: reserva primero las semanas de repaso y los simulacros completos.</li><li>Haz los simulacros con el <a href='/es/exam-timer/'>temporizador de examen</a> para acostumbrarte al tiempo de cada parte.</li><li>Mide tus horas reales de estudio con el <a href='/es/study-stopwatch/'>cronómetro de estudio</a> para ver si vas al ritmo.</li></ul>" }
+        {
+          "h2": "Cómo funciona la cuenta regresiva",
+          "html": "<p>El número grande es el <strong>día D</strong>: D-1 significa que el examen es mañana y D-DAY que es hoy. Cuenta días de calendario, así que baja a medianoche. Debajo, los días, horas, minutos y segundos bajan hasta la hora exacta que hayas fijado.</p>"
+        },
+        {
+          "h2": "Formas de usarla",
+          "html": "<ul><li><strong>En tu mesa</strong>: ponla a pantalla completa (tecla F) en una tableta o un segundo monitor para tener siempre presente el tiempo que queda. La pantalla no se apaga en modo pantalla completa.</li><li><strong>En el aula</strong>: proyecta la cuenta atrás para los finales, la selectividad o un examen oficial.</li><li><strong>Con tu grupo de estudio</strong>: pulsa <em>Copiar enlace</em> y compártelo. Quien lo abra verá el mismo nombre y fecha.</li></ul>"
+        },
+        {
+          "h2": "Consejos para las últimas semanas",
+          "html": "<ul><li>Planifica hacia atrás desde el día D: reserva primero las semanas de repaso y los simulacros completos.</li><li>Haz los simulacros con el <a href='/es/exam-timer/'>temporizador de examen</a> para acostumbrarte al tiempo de cada parte.</li><li>Mide tus horas reales de estudio con el <a href='/es/study-stopwatch/'>cronómetro de estudio</a> para ver si vas al ritmo.</li></ul>"
+        }
       ],
       "faq": [
-        { "q": "¿Cómo pongo la fecha de mi examen?", "a": "Escribe un nombre, la fecha y la hora de inicio en <strong>Fija la fecha de tu examen</strong> y pulsa Aplicar. Se guarda en este navegador." },
-        { "q": "¿Puedo compartir la cuenta regresiva?", "a": "Sí. <strong>Copiar enlace</strong> crea una URL con el nombre y la fecha del examen. Quien la abra verá la misma cuenta regresiva." },
-        { "q": "¿Qué zona horaria usa?", "a": "La del reloj de tu dispositivo. Si compartes el enlace entre zonas horarias, cada persona verá la cuenta hasta esa hora en su zona." },
-        { "q": "¿Se apagará la pantalla?", "a": "En pantalla completa el temporizador pide al navegador que mantenga la pantalla encendida, si es compatible." }
+        {
+          "q": "¿Cómo pongo la fecha de mi examen?",
+          "a": "Escribe un nombre, la fecha y la hora de inicio en <strong>Fija la fecha de tu examen</strong> y pulsa Aplicar. Se guarda en este navegador."
+        },
+        {
+          "q": "¿Puedo compartir la cuenta regresiva?",
+          "a": "Sí. <strong>Copiar enlace</strong> crea una URL con el nombre y la fecha del examen. Quien la abra verá la misma cuenta regresiva."
+        },
+        {
+          "q": "¿Qué zona horaria usa?",
+          "a": "La del reloj de tu dispositivo. Si compartes el enlace entre zonas horarias, cada persona verá la cuenta hasta esa hora en su zona."
+        },
+        {
+          "q": "¿Se apagará la pantalla?",
+          "a": "En pantalla completa el temporizador pide al navegador que mantenga la pantalla encendida, si es compatible."
+        }
       ]
     },
     "study-stopwatch": {
@@ -252,25 +374,58 @@
       "lead": "Toca una asignatura para empezar a contar y toca otra para cambiar. Tu tiempo de estudio de hoy y de cada asignatura se suma automáticamente.",
       "card": "Mide cada asignatura con un toque, con totales diarios y semanales",
       "ui": {
-        "totalToday": "Estudiado hoy", "pickSubject": "Toca una asignatura para empezar",
-        "addPlaceholder": "Añadir asignatura (p. ej. Historia)", "add": "Añadir",
-        "weekTotal": "Últimos 7 días", "bestSubject": "Asignatura más estudiada", "week": "Tiempo de estudio, últimos 7 días",
-        "resetToday": "Borrar hoy", "resetConfirm": "¿Borrar todo el tiempo de estudio de hoy?",
-        "remove": "Quitar asignatura", "removeConfirm": "¿Quitar esta asignatura de la lista? El tiempo ya registrado se mantiene en los totales.",
+        "totalToday": "Estudiado hoy",
+        "pickSubject": "Toca una asignatura para empezar",
+        "addPlaceholder": "Añadir asignatura (p. ej. Historia)",
+        "add": "Añadir",
+        "weekTotal": "Últimos 7 días",
+        "bestSubject": "Asignatura más estudiada",
+        "week": "Tiempo de estudio, últimos 7 días",
+        "resetToday": "Borrar hoy",
+        "resetConfirm": "¿Borrar todo el tiempo de estudio de hoy?",
+        "remove": "Quitar asignatura",
+        "removeConfirm": "¿Quitar esta asignatura de la lista? El tiempo ya registrado se mantiene en los totales.",
         "longRunConfirm": "El cronómetro estuvo en marcha {h} horas. ¿Añadir ese tiempo a tu registro?\n(Cancelar descarta la última sesión)",
-        "minUnit": " min", "hourUnit": " h",
-        "defaultSubjects": ["Matemáticas", "Lengua", "Inglés", "Ciencias"]
+        "minUnit": " min",
+        "hourUnit": " h",
+        "defaultSubjects": [
+          "Matemáticas",
+          "Lengua",
+          "Inglés",
+          "Ciencias"
+        ]
       },
       "sections": [
-        { "h2": "¿Por qué medir el estudio por asignatura?", "html": "<p>No es lo mismo estar sentado delante de los apuntes que estudiar concentrado. Medir solo los minutos de trabajo real, asignatura por asignatura, muestra cuánto has estudiado de verdad hoy y en qué se te va el tiempo. Casi siempre aparece una asignatura que recibe mucho menos tiempo del que creías.</p>" },
-        { "h2": "Cómo se usa", "html": "<ol><li>Toca una <strong>tarjeta de asignatura</strong> para empezar a medirla.</li><li>Toca otra tarjeta para cambiar. La anterior se detiene sola.</li><li>Usa el botón grande (o la barra espaciadora) para pausar en los descansos; púlsalo otra vez para reanudar la última asignatura.</li><li>Añade asignaturas con el cuadro de abajo y quítalas con la ×.</li></ol><p>Si recargas o cierras la pestaña mientras cuenta, sigue sumando. Si se quedó en marcha más de 6 horas, te preguntará si quieres conservar ese tiempo.</p>" },
-        { "h2": "Consejos", "html": "<ul><li><strong>Pausa en cada descanso.</strong> El registro solo sirve si es honesto.</li><li><strong>Mira el gráfico semanal</strong> para detectar tu día más flojo y subir primero ese objetivo.</li><li><strong>Combínalo con el <a href='/es/pomodoro-timer/'>temporizador Pomodoro</a></strong> los días en que cuesta concentrarse: trabaja en bloques de 25 minutos y registra el tiempo aquí.</li></ul>" }
+        {
+          "h2": "¿Por qué medir el estudio por asignatura?",
+          "html": "<p>No es lo mismo estar sentado delante de los apuntes que estudiar concentrado. Medir solo los minutos de trabajo real, asignatura por asignatura, muestra cuánto has estudiado de verdad hoy y en qué se te va el tiempo. Casi siempre aparece una asignatura que recibe mucho menos tiempo del que creías.</p>"
+        },
+        {
+          "h2": "Cómo se usa",
+          "html": "<ol><li>Toca una <strong>tarjeta de asignatura</strong> para empezar a medirla.</li><li>Toca otra tarjeta para cambiar. La anterior se detiene sola.</li><li>Usa el botón grande (o la barra espaciadora) para pausar en los descansos; púlsalo otra vez para reanudar la última asignatura.</li><li>Añade asignaturas con el cuadro de abajo y quítalas con la ×.</li></ol><p>Si recargas o cierras la pestaña mientras cuenta, sigue sumando. Si se quedó en marcha más de 6 horas, te preguntará si quieres conservar ese tiempo.</p>"
+        },
+        {
+          "h2": "Consejos",
+          "html": "<ul><li><strong>Pausa en cada descanso.</strong> El registro solo sirve si es honesto.</li><li><strong>Mira el gráfico semanal</strong> para detectar tu día más flojo y subir primero ese objetivo.</li><li><strong>Combínalo con el <a href='/es/pomodoro-timer/'>temporizador Pomodoro</a></strong> los días en que cuesta concentrarse: trabaja en bloques de 25 minutos y registra el tiempo aquí.</li></ul>"
+        }
       ],
       "faq": [
-        { "q": "¿Sigue contando si recargo o cierro la pestaña?", "a": "Sí. Se guarda la hora de inicio, así que el tiempo transcurrido se suma al volver. Si pasan más de 6 horas, te pregunta si quieres conservarlo." },
-        { "q": "¿Dónde se guardan mis datos?", "a": "Solo en el almacenamiento local de tu navegador. No se envían a ningún servidor, no se comparten entre dispositivos y se borran si eliminas los datos del sitio." },
-        { "q": "¿Qué pasa si estudio pasada la medianoche?", "a": "La sesión se divide a medianoche, así que el tiempo se asigna al día correcto." },
-        { "q": "Si quito una asignatura, ¿se borra su tiempo?", "a": "No. Desaparece de la lista, pero su tiempo sigue en el total del día y en el gráfico semanal." }
+        {
+          "q": "¿Sigue contando si recargo o cierro la pestaña?",
+          "a": "Sí. Se guarda la hora de inicio, así que el tiempo transcurrido se suma al volver. Si pasan más de 6 horas, te pregunta si quieres conservarlo."
+        },
+        {
+          "q": "¿Dónde se guardan mis datos?",
+          "a": "Solo en el almacenamiento local de tu navegador. No se envían a ningún servidor, no se comparten entre dispositivos y se borran si eliminas los datos del sitio."
+        },
+        {
+          "q": "¿Qué pasa si estudio pasada la medianoche?",
+          "a": "La sesión se divide a medianoche, así que el tiempo se asigna al día correcto."
+        },
+        {
+          "q": "Si quito una asignatura, ¿se borra su tiempo?",
+          "a": "No. Desaparece de la lista, pero su tiempo sigue en el total del día y en el gráfico semanal."
+        }
       ]
     },
     "dday-calculator": {
@@ -283,26 +438,66 @@
       "lead": "Cuenta los días entre dos fechas, suma o resta días y encuentra hitos como los 100 o los 1000 días. Los resultados se actualizan mientras escribes.",
       "card": "Días entre fechas, sumar días e hitos de 100 días",
       "ui": {
-        "tabOrder": ["between", "add", "milestone"],
-        "tabs": { "milestone": "Aniversarios", "between": "Días entre fechas", "add": "Sumar o restar días" },
-        "startDate": "Fecha de inicio", "countFirst": "Contar la fecha de inicio como día 1",
-        "milestone": "Hito", "dateCol": "Fecha", "remainCol": "Faltan",
-        "pickStart": "Introduce una fecha de inicio", "todayIs": "Hoy es el día {n}", "notYet": "Faltan {n} días para empezar",
-        "since": "Desde el {date}", "dayN": "{n} días", "yearN": "{n}.º aniversario",
-        "fromDate": "Fecha inicial", "toDate": "Fecha final", "inclusive": "Incluir la fecha inicial (+1 día)",
-        "pickBoth": "Introduce las dos fechas", "daysResult": "{n} días", "weeksResult": "{w} semanas y {d} días",
-        "monthsResult": "unos {m} meses", "hoursResult": "{h} horas",
-        "baseDate": "Fecha de partida", "days": "Días", "direction": "Sentido", "after": "días después", "before": "días antes",
-        "pickBase": "Introduce una fecha de partida", "fromToday": "{dday} desde hoy"
+        "tabOrder": [
+          "between",
+          "add",
+          "milestone"
+        ],
+        "tabs": {
+          "milestone": "Aniversarios",
+          "between": "Días entre fechas",
+          "add": "Sumar o restar días"
+        },
+        "startDate": "Fecha de inicio",
+        "countFirst": "Contar la fecha de inicio como día 1",
+        "milestone": "Hito",
+        "dateCol": "Fecha",
+        "remainCol": "Faltan",
+        "pickStart": "Introduce una fecha de inicio",
+        "todayIs": "Hoy es el día {n}",
+        "notYet": "Faltan {n} días para empezar",
+        "since": "Desde el {date}",
+        "dayN": "{n} días",
+        "yearN": "{n}.º aniversario",
+        "fromDate": "Fecha inicial",
+        "toDate": "Fecha final",
+        "inclusive": "Incluir la fecha inicial (+1 día)",
+        "pickBoth": "Introduce las dos fechas",
+        "daysResult": "{n} días",
+        "weeksResult": "{w} semanas y {d} días",
+        "monthsResult": "unos {m} meses",
+        "hoursResult": "{h} horas",
+        "baseDate": "Fecha de partida",
+        "days": "Días",
+        "direction": "Sentido",
+        "after": "días después",
+        "before": "días antes",
+        "pickBase": "Introduce una fecha de partida",
+        "fromToday": "{dday} desde hoy"
       },
       "sections": [
-        { "h2": "Tres calculadoras en una", "html": "<ul><li><strong>Días entre fechas</strong>: los días que separan dos fechas, además de semanas, meses y horas. Activa <em>Incluir la fecha inicial</em> cuando deban contar el primer y el último día, como en un viaje o un evento.</li><li><strong>Sumar o restar días</strong>: la fecha que cae N días después o antes de otra, con el día de la semana. Útil para plazos y vencimientos.</li><li><strong>Aniversarios</strong>: desde una fecha de inicio (una relación, el nacimiento de un bebé, un reto), todos los hitos de 100 a 10 000 días y los aniversarios del 1.º al 10.º, con el próximo resaltado.</li></ul>" },
-        { "h2": "¿Se cuenta el primer día?", "html": "<p>Depende del uso. En algunos países, como Corea, el día 100 de una pareja cae 99 días después de empezar, porque el primer día cuenta como día 1. En los plazos legales y contratos se suele empezar a contar al día siguiente. En la pestaña de aniversarios puedes elegir; los aniversarios anuales siempre caen en la misma fecha del calendario.</p>" }
+        {
+          "h2": "Tres calculadoras en una",
+          "html": "<ul><li><strong>Días entre fechas</strong>: los días que separan dos fechas, además de semanas, meses y horas. Activa <em>Incluir la fecha inicial</em> cuando deban contar el primer y el último día, como en un viaje o un evento.</li><li><strong>Sumar o restar días</strong>: la fecha que cae N días después o antes de otra, con el día de la semana. Útil para plazos y vencimientos.</li><li><strong>Aniversarios</strong>: desde una fecha de inicio (una relación, el nacimiento de un bebé, un reto), todos los hitos de 100 a 10 000 días y los aniversarios del 1.º al 10.º, con el próximo resaltado.</li></ul>"
+        },
+        {
+          "h2": "¿Se cuenta el primer día?",
+          "html": "<p>Depende del uso. En algunos países, como Corea, el día 100 de una pareja cae 99 días después de empezar, porque el primer día cuenta como día 1. En los plazos legales y contratos se suele empezar a contar al día siguiente. En la pestaña de aniversarios puedes elegir; los aniversarios anuales siempre caen en la misma fecha del calendario.</p>"
+        }
       ],
       "faq": [
-        { "q": "¿Tiene en cuenta los años bisiestos?", "a": "Sí. Todos los resultados usan el calendario real, incluido el 29 de febrero." },
-        { "q": "¿Cuándo debo incluir la fecha inicial?", "a": "Cuando cuentan tanto el primer como el último día. Del 3 al 5 son 2 días sin incluirla y 3 días incluyéndola." },
-        { "q": "¿Cómo se calculan los aniversarios?", "a": "En la misma fecha del calendario cada año. Si la fecha de inicio es un 29 de febrero, en los años no bisiestos se muestra el 1 de marzo." }
+        {
+          "q": "¿Tiene en cuenta los años bisiestos?",
+          "a": "Sí. Todos los resultados usan el calendario real, incluido el 29 de febrero."
+        },
+        {
+          "q": "¿Cuándo debo incluir la fecha inicial?",
+          "a": "Cuando cuentan tanto el primer como el último día. Del 3 al 5 son 2 días sin incluirla y 3 días incluyéndola."
+        },
+        {
+          "q": "¿Cómo se calculan los aniversarios?",
+          "a": "En la misma fecha del calendario cada año. Si la fecha de inicio es un 29 de febrero, en los años no bisiestos se muestra el 1 de marzo."
+        }
       ]
     },
     "age-calculator": {
@@ -315,27 +510,88 @@
       "lead": "Introduce una fecha de nacimiento para ver la edad exacta hoy o en la fecha que elijas, además de los días vividos y la cuenta atrás para el próximo cumpleaños.",
       "card": "Edad exacta en años, meses y días y próximo cumpleaños",
       "ui": {
-        "birth": "Fecha de nacimiento", "base": "Edad el día", "today": "Hoy", "intlAge": "Edad",
-        "pickBirth": "Introduce una fecha de nacimiento", "futureBirth": "La fecha es anterior a la de nacimiento",
-        "ageUnit": "{n} años", "ymd": "{y} años, {m} meses y {d} días", "happyBirthday": "¡Feliz cumpleaños!",
+        "birth": "Fecha de nacimiento",
+        "base": "Edad el día",
+        "today": "Hoy",
+        "intlAge": "Edad",
+        "pickBirth": "Introduce una fecha de nacimiento",
+        "futureBirth": "La fecha es anterior a la de nacimiento",
+        "ageUnit": "{n} años",
+        "ymd": "{y} años, {m} meses y {d} días",
+        "happyBirthday": "¡Feliz cumpleaños!",
         "showKoreanAges": false,
-        "yearAge": "", "yearAgeSub": "", "countingAge": "", "countingAgeSub": "",
-        "daysLived": "Días vividos", "daysUnit": "{n} días", "weeksUnit": "{n} semanas",
-        "nextBirthday": "Próximo cumpleaños", "turns": "cumplirá {n}",
-        "chineseZodiac": "Horóscopo chino", "zodiacNote": "Por año natural; si naciste antes del Año Nuevo chino, corresponde al año anterior",
+        "yearAge": "",
+        "yearAgeSub": "",
+        "countingAge": "",
+        "countingAgeSub": "",
+        "daysLived": "Días vividos",
+        "daysUnit": "{n} días",
+        "weeksUnit": "{n} semanas",
+        "nextBirthday": "Próximo cumpleaños",
+        "turns": "cumplirá {n}",
+        "chineseZodiac": "Horóscopo chino",
+        "zodiacNote": "Por año natural; si naciste antes del Año Nuevo chino, corresponde al año anterior",
         "westernZodiac": "Signo del zodiaco",
-        "animals": { "rat": "Rata", "ox": "Buey", "tiger": "Tigre", "rabbit": "Conejo", "dragon": "Dragón", "snake": "Serpiente", "horse": "Caballo", "goat": "Cabra", "monkey": "Mono", "rooster": "Gallo", "dog": "Perro", "pig": "Cerdo" },
-        "signs": { "aries": "Aries", "taurus": "Tauro", "gemini": "Géminis", "cancer": "Cáncer", "leo": "Leo", "virgo": "Virgo", "libra": "Libra", "scorpio": "Escorpio", "sagittarius": "Sagitario", "capricorn": "Capricornio", "aquarius": "Acuario", "pisces": "Piscis" }
+        "animals": {
+          "rat": "Rata",
+          "ox": "Buey",
+          "tiger": "Tigre",
+          "rabbit": "Conejo",
+          "dragon": "Dragón",
+          "snake": "Serpiente",
+          "horse": "Caballo",
+          "goat": "Cabra",
+          "monkey": "Mono",
+          "rooster": "Gallo",
+          "dog": "Perro",
+          "pig": "Cerdo"
+        },
+        "signs": {
+          "aries": "Aries",
+          "taurus": "Tauro",
+          "gemini": "Géminis",
+          "cancer": "Cáncer",
+          "leo": "Leo",
+          "virgo": "Virgo",
+          "libra": "Libra",
+          "scorpio": "Escorpio",
+          "sagittarius": "Sagitario",
+          "capricorn": "Capricornio",
+          "aquarius": "Acuario",
+          "pisces": "Piscis"
+        }
       },
       "sections": [
-        { "h2": "Cómo se calcula la edad", "html": "<p>La edad es el número de años cumplidos: el año actual menos el año de nacimiento, <strong>menos uno si este año todavía no ha llegado el cumpleaños</strong>. Alguien nacido el 15 de octubre de 2000 tiene 25 años hasta el 14 de octubre de 2026 y cumple 26 el 15 de octubre.</p><p>El resultado detallado lo desglosa en años, meses y días. A quienes nacieron un 29 de febrero se les cuenta el cumpleaños el 1 de marzo en los años no bisiestos.</p>" },
-        { "h2": "Edad en una fecha concreta", "html": "<p>Cambia <em>Edad el día</em> a cualquier fecha para saber qué edad tenía o tendrá alguien ese día. Útil para fechas límite de escolarización, requisitos de edad, seguros o fechas históricas.</p>" }
+        {
+          "h2": "Cómo se calcula la edad",
+          "html": "<p>La edad es el número de años cumplidos: el año actual menos el año de nacimiento, <strong>menos uno si este año todavía no ha llegado el cumpleaños</strong>. Alguien nacido el 15 de octubre de 2000 tiene 25 años hasta el 14 de octubre de 2026 y cumple 26 el 15 de octubre.</p><p>El resultado detallado lo desglosa en años, meses y días. A quienes nacieron un 29 de febrero se les cuenta el cumpleaños el 1 de marzo en los años no bisiestos.</p>"
+        },
+        {
+          "h2": "Edad en una fecha concreta",
+          "html": "<p>Cambia <em>Edad el día</em> a cualquier fecha para saber qué edad tenía o tendrá alguien ese día. Útil para fechas límite de escolarización, requisitos de edad, seguros o fechas históricas.</p>"
+        }
       ],
       "faq": [
-        { "q": "¿Cuántos días tengo?", "a": "La tarjeta <strong>Días vividos</strong> muestra el número exacto de días (y semanas) desde tu nacimiento hasta la fecha elegida." },
-        { "q": "¿Y si nací un 29 de febrero?", "a": "En los años no bisiestos la calculadora toma el 1 de marzo como tu cumpleaños para contar la edad." },
-        { "q": "¿El horóscopo chino es exacto?", "a": "Se basa en el año natural. El año del horóscopo chino empieza en el Año Nuevo chino (entre finales de enero y mediados de febrero), así que si naciste a principios de año comprueba si te corresponde el signo anterior." }
+        {
+          "q": "¿Cuántos días tengo?",
+          "a": "La tarjeta <strong>Días vividos</strong> muestra el número exacto de días (y semanas) desde tu nacimiento hasta la fecha elegida."
+        },
+        {
+          "q": "¿Y si nací un 29 de febrero?",
+          "a": "En los años no bisiestos la calculadora toma el 1 de marzo como tu cumpleaños para contar la edad."
+        },
+        {
+          "q": "¿El horóscopo chino es exacto?",
+          "a": "Se basa en el año natural. El año del horóscopo chino empieza en el Año Nuevo chino (entre finales de enero y mediados de febrero), así que si naciste a principios de año comprueba si te corresponde el signo anterior."
+        }
       ]
     }
+  },
+  "home": {
+    "clockLabel": "Hora actual",
+    "quick": "Temporizador rápido",
+    "running": "Temporizador",
+    "minShort": " min",
+    "timeUp": "¡Se acabó el tiempo!"
   }
 }
