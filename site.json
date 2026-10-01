@@ -1,0 +1,12 @@
+{
+  "brand": "TimerDesk",
+  "baseUrl": "https://timerdesk.com",
+  "domain": "timerdesk.com",
+  "defaultLang": "en",
+  "languages": ["ko", "en"],
+  "tools": ["pomodoro-timer", "exam-timer", "visual-timer"],
+  "adsenseClient": "",
+  "adsenseSlots": { "afterTool": "", "inContent": "" },
+  "ga4": "",
+  "contactEmail": ""
+}

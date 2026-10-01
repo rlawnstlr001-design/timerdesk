@@ -1,0 +1,32 @@
+<div class="tool visual" id="tool">
+  <div class="tool-bar">
+    <div class="swatches" id="colors" role="radiogroup" aria-label="{{t.color}}"></div>
+    <button class="icon-btn" id="fsBtn" title="{{ui.fullscreen}} (F)" aria-label="{{ui.fullscreen}}"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  </div>
+
+  <div class="dial-wrap">
+    <svg id="dial" viewBox="-160 -160 320 320" role="img" aria-label="{{t.dialLabel}}"></svg>
+  </div>
+  <div class="big-time mid" id="time" role="timer" aria-live="off">10:00</div>
+
+  <div class="presets" id="presets"></div>
+
+  <div class="controls">
+    <button class="btn ghost" id="resetBtn" type="button" title="R">{{ui.reset}}</button>
+    <button class="btn primary big" id="startBtn" type="button" title="Space">{{ui.start}}</button>
+  </div>
+  <p class="hint center">{{t.dragHint}}</p>
+
+  <details class="settings">
+    <summary>{{ui.settings}}</summary>
+    <div class="settings-grid">
+      <label class="field"><span>{{t.scale}}</span><select id="scale" data-key="scale">
+        <option value="10">10{{t.minShort}}</option><option value="20">20{{t.minShort}}</option><option value="30">30{{t.minShort}}</option><option value="60">60{{t.minShort}}</option><option value="120">120{{t.minShort}}</option>
+      </select></label>
+      <label class="field"><span>{{ui.sound}}</span><select id="sound" data-key="sound"></select></label>
+      <label class="field"><span>{{ui.volume}}</span><input type="range" min="0" max="1" step="0.05" data-key="volume"></label>
+      <label class="check"><input type="checkbox" data-key="digital"> {{t.showDigital}}</label>
+      <div class="field-actions"><button class="btn ghost small" id="testSound" type="button">{{ui.testSound}}</button></div>
+    </div>
+  </details>
+</div>

@@ -1,0 +1,50 @@
+<div class="tool exam" id="tool">
+  <div class="tool-bar">
+    <span class="clock-now" id="clockNow" aria-label="{{t.currentTime}}">--:--:--</span>
+    <button class="icon-btn" id="fsBtn" title="{{ui.fullscreen}} (F)" aria-label="{{ui.fullscreen}}"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  </div>
+
+  <section id="setup" class="exam-setup">
+    <label class="field"><span>{{t.preset}}</span><select id="preset"></select></label>
+    <p class="hint" id="presetNote"></p>
+    <div class="sched-wrap">
+      <table class="sched">
+        <thead><tr><th>{{t.colName}}</th><th>{{t.colMin}}</th><th>{{t.colBreak}}</th><th><span class="sr">{{t.del}}</span></th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+    <button class="btn ghost small" id="addRow" type="button">+ {{t.addRow}}</button>
+
+    <div class="start-row">
+      <label class="field"><span>{{t.startAt}}</span><input type="time" id="startAt" step="60"></label>
+      <button class="btn ghost small" id="nowBtn" type="button">{{t.now}}</button>
+      <button class="btn ghost small" id="anchorBtn" type="button" hidden></button>
+    </div>
+
+    <details class="settings">
+      <summary>{{ui.settings}}</summary>
+      <div class="settings-grid">
+        <label class="check"><input type="checkbox" data-key="warn10"> {{t.warn10}}</label>
+        <label class="check"><input type="checkbox" data-key="warn5"> {{t.warn5}}</label>
+        <label class="field"><span>{{ui.sound}}</span><select id="sound" data-key="sound"></select></label>
+        <label class="field"><span>{{ui.volume}}</span><input type="range" min="0" max="1" step="0.05" data-key="volume"></label>
+        <div class="field-actions"><button class="btn ghost small" id="testSound" type="button">{{ui.testSound}}</button></div>
+      </div>
+    </details>
+
+    <div class="controls"><button class="btn primary big" id="startBtn" type="button">{{t.startExam}}</button></div>
+  </section>
+
+  <section id="run" class="exam-run" hidden>
+    <div class="exam-status" id="status"></div>
+    <div class="exam-name" id="curName"></div>
+    <div class="big-time" id="time" role="timer" aria-live="off">00:00</div>
+    <div class="progress" aria-hidden="true"><i id="bar"></i></div>
+    <div class="exam-meta" id="meta"></div>
+    <ol class="timeline" id="timeline"></ol>
+    <div class="controls">
+      <button class="btn ghost" id="stopBtn" type="button">{{ui.stop}}</button>
+      <button class="btn primary" id="pauseBtn" type="button">{{ui.pause}}</button>
+    </div>
+  </section>
+</div>

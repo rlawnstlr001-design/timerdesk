@@ -1,0 +1,53 @@
+<div class="tool pomo" id="tool" data-mode="focus">
+  <div class="tool-bar">
+    <div class="tabs" role="tablist">
+      <button class="tab active" role="tab" data-mode="focus" aria-selected="true">{{t.focus}}</button>
+      <button class="tab" role="tab" data-mode="short" aria-selected="false">{{t.short}}</button>
+      <button class="tab" role="tab" data-mode="long" aria-selected="false">{{t.long}}</button>
+    </div>
+    <button class="icon-btn" id="fsBtn" title="{{ui.fullscreen}} (F)" aria-label="{{ui.fullscreen}}"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  </div>
+
+  <div class="pomo-ring">
+    <svg viewBox="0 0 220 220" aria-hidden="true">
+      <circle class="ring-bg" cx="110" cy="110" r="100"/>
+      <circle class="ring-fg" id="ringFg" cx="110" cy="110" r="100" stroke-dasharray="628.32" stroke-dashoffset="0" transform="rotate(-90 110 110)"/>
+    </svg>
+    <div class="ring-center">
+      <div class="big-time" id="time" role="timer" aria-live="off">25:00</div>
+      <div class="sub" id="modeLabel">{{t.focusLabel}}</div>
+      <div class="dots" id="dots" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <input class="task-input" id="task" maxlength="60" placeholder="{{t.taskPlaceholder}}" aria-label="{{t.taskPlaceholder}}">
+
+  <div class="controls">
+    <button class="btn ghost" id="resetBtn" title="R">{{ui.reset}}</button>
+    <button class="btn primary big" id="startBtn" title="Space">{{ui.start}}</button>
+    <button class="btn ghost" id="skipBtn">{{ui.skip}}</button>
+  </div>
+
+  <details class="settings">
+    <summary>{{ui.settings}}</summary>
+    <div class="settings-grid">
+      <label class="field"><span>{{t.focusMin}}</span><input type="number" min="1" max="180" data-key="focus"></label>
+      <label class="field"><span>{{t.shortMin}}</span><input type="number" min="1" max="60" data-key="short"></label>
+      <label class="field"><span>{{t.longMin}}</span><input type="number" min="1" max="90" data-key="long"></label>
+      <label class="field"><span>{{t.longEvery}}</span><input type="number" min="2" max="10" data-key="longEvery"></label>
+      <label class="field"><span>{{ui.sound}}</span><select id="sound" data-key="sound"></select></label>
+      <label class="field"><span>{{ui.volume}}</span><input type="range" min="0" max="1" step="0.05" data-key="volume"></label>
+      <label class="check"><input type="checkbox" data-key="autoStart"> {{t.autoStart}}</label>
+      <div class="field-actions"><button class="btn ghost small" id="testSound" type="button">{{ui.testSound}}</button></div>
+    </div>
+  </details>
+
+  <div class="stats">
+    <div class="stat"><b id="todayCount">0</b><small>{{t.todayCount}}</small></div>
+    <div class="stat"><b id="todayMin">0</b><small>{{t.todayMin}}</small></div>
+    <div class="week-box">
+      <div class="week-head"><small>{{t.week}}</small><button class="link-btn" id="resetStats" type="button">{{t.resetStats}}</button></div>
+      <div class="week" id="week"></div>
+    </div>
+  </div>
+</div>

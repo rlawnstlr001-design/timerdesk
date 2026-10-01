@@ -1,0 +1,225 @@
+{
+  "name": "English",
+  "locale": "en_US",
+  "ui": {
+    "start": "Start",
+    "pause": "Pause",
+    "resume": "Resume",
+    "reset": "Reset",
+    "skip": "Skip",
+    "stop": "Stop",
+    "fullscreen": "Fullscreen",
+    "settings": "Settings",
+    "sound": "Alarm sound",
+    "volume": "Volume",
+    "testSound": "Test sound",
+    "home": "Home",
+    "tools": "Tools",
+    "allTools": "All tools",
+    "privacy": "Privacy Policy",
+    "language": "Language",
+    "relatedTools": "More free timers",
+    "faq": "Frequently asked questions",
+    "footerNote": "Free time tools with no install and no sign-up. Your settings and history stay in this browser and are never sent to a server.",
+    "viewInLang": "View in English",
+    "clock24": false,
+    "soundNames": { "bell": "Bell", "chime": "Chime", "beep": "Beep", "digital": "Digital alarm" }
+  },
+  "hub": {
+    "title": "TimerDesk – Free Online Timers for Study, Exams & Classrooms",
+    "description": "Free online Pomodoro timer, fullscreen exam timer and visual timer for kids and classrooms. No install, no sign-up, works on any device with fullscreen and keep-screen-on.",
+    "h1": "Free timers for focus, exams and classrooms",
+    "intro": "Deep work, mock exams, classroom activities. Simple timers that run right in your browser, with no install and no account.",
+    "aboutH2": "About TimerDesk",
+    "aboutHtml": "<p>TimerDesk is a set of focused time tools for students, teachers and anyone who needs to stay on track. Every tool is free, needs no login, and keeps your settings and history only in your own browser.</p><p>All timers support <strong>fullscreen</strong> and <strong>keep-screen-on</strong>, so they work well on a classroom TV or projector. Time is calculated from the real clock, so the countdown stays accurate even when you switch tabs.</p>"
+  },
+  "privacy": {
+    "title": "Privacy Policy – TimerDesk",
+    "description": "TimerDesk privacy policy. There are no accounts, and your settings and history are stored only in your browser.",
+    "h1": "Privacy Policy",
+    "effective": "Effective date:",
+    "contact": "Contact:",
+    "html": "<h2>1. Information we collect</h2><p>TimerDesk has no accounts or sign-in, and does not directly collect personal information such as your name, email address or phone number.</p><h2>2. Data stored in your browser</h2><p>Timer settings (durations, sounds, colors) and focus history are stored only in your device's browser storage (localStorage) and are never sent to our servers. Clearing your browser's site data removes them.</p><h2>3. Advertising and cookies</h2><p>To cover running costs, this site may show third-party ads such as Google AdSense. Third-party vendors, including Google, use cookies to serve ads based on your prior visits to this website or other websites. You can opt out of personalized advertising in <a href='https://adssettings.google.com' rel='nofollow noopener' target='_blank'>Google Ads Settings</a>. Learn more about how Google uses advertising cookies in <a href='https://policies.google.com/technologies/ads' rel='nofollow noopener' target='_blank'>Google's advertising policies</a>.</p><h2>4. Analytics</h2><p>To improve the service we may use analytics tools such as Google Analytics to collect anonymous usage statistics (page views, device type). This information is not used to identify you.</p><h2>5. Changes</h2><p>If this policy changes, the updated version will be posted on this page with a new effective date.</p>"
+  },
+  "tools": {
+    "pomodoro-timer": {
+      "nav": "Pomodoro Timer",
+      "icon": "🍅",
+      "title": "Pomodoro Timer – Free Online Focus Timer with Study Log",
+      "description": "Free online Pomodoro timer: 25 minutes of focus, 5-minute breaks, repeated automatically. Tracks today's focus time with a 7-day chart. Fullscreen, alarm sounds, no install.",
+      "h1": "Pomodoro Timer",
+      "lead": "Work in focused 25-minute sessions with short breaks in between. Press start and the timer switches between focus and break on its own while it logs your focus time.",
+      "card": "25 min focus, 5 min break, on repeat, with a daily focus log",
+      "ui": {
+        "focus": "Focus",
+        "short": "Short break",
+        "long": "Long break",
+        "focusLabel": "Time to focus",
+        "shortLabel": "Take a short break",
+        "longLabel": "Take a long break",
+        "taskPlaceholder": "What are you working on? (optional)",
+        "focusMin": "Focus (min)",
+        "shortMin": "Short break (min)",
+        "longMin": "Long break (min)",
+        "longEvery": "Long break every (sessions)",
+        "autoStart": "Auto-start next session",
+        "todayCount": "Pomodoros today",
+        "todayMin": "Focus minutes today",
+        "week": "Focus minutes, last 7 days",
+        "resetStats": "Clear history",
+        "resetConfirm": "Clear all of your focus history?",
+        "notifyFocusDone": "Focus session done! Take a break.",
+        "notifyBreakDone": "Break's over. Back to focus.",
+        "minUnit": " min"
+      },
+      "sections": [
+        {
+          "h2": "What is the Pomodoro Technique?",
+          "html": "<p>The Pomodoro Technique is a time management method created by Francesco Cirillo in the late 1980s, when he was a university student studying with a tomato-shaped kitchen timer. <em>Pomodoro</em> is Italian for tomato.</p><p>The idea is simple: <strong>focus on one task for 25 minutes</strong>, then <strong>take a 5-minute break</strong>. That's one pomodoro. After four of them, take a longer 15–30 minute break. A fixed end point makes it easier to start, and a scheduled break helps you rest before you burn out.</p>"
+        },
+        {
+          "h2": "How to use this timer",
+          "html": "<ol><li>Press <strong>Start</strong> to begin a 25-minute focus session. The space bar also starts and pauses.</li><li>When focus time ends, an alarm sounds and a short break begins automatically.</li><li>After four focus sessions you get a long break. The dots under the timer show where you are in the cycle.</li><li>Every completed session is added to <strong>Focus minutes today</strong> and the 7-day chart.</li></ol><p>Open <strong>Settings</strong> to change session lengths, the long-break interval, the alarm sound and auto-start. Your settings are remembered for next time.</p>"
+        },
+        {
+          "h2": "Tips for better focus",
+          "html": "<ul><li><strong>Start with 25/5.</strong> When 25 minutes starts to feel short, try 50/10.</li><li><strong>Write down one task.</strong> \"Finish 20 practice problems in chapter 3\" beats \"study math\".</li><li><strong>Leave your phone during breaks.</strong> Stand up, stretch or get water. One short video can easily turn a 5-minute break into 20.</li><li><strong>Set a daily goal in pomodoros</strong> instead of hours. It's easier to track and easier to hit.</li></ul>"
+        }
+      ],
+      "faq": [
+        { "q": "Does the timer keep running if I switch tabs or minimize the window?", "a": "Yes. Remaining time is calculated from the real end time, so it stays accurate in a background tab, and the tab title shows the time left. Closing the tab stops the timer." },
+        { "q": "Can I change the 25-minute focus length?", "a": "Yes. In <strong>Settings</strong> you can set focus from 1 to 180 minutes and adjust short breaks, long breaks and how often long breaks happen." },
+        { "q": "Where is my focus history saved?", "a": "Only in your browser's local storage. Nothing is sent to a server, so history doesn't sync across devices and is removed if you clear your browser's site data." },
+        { "q": "Does it work on my phone?", "a": "Yes, it works in any modern mobile or tablet browser. Where supported, the screen stays on while the timer runs." },
+        { "q": "I can't hear the alarm.", "a": "Check that your device isn't on silent and press <strong>Test sound</strong> in Settings. Some browsers block audio until you interact with the page, so start the timer with a tap or click." }
+      ]
+    },
+    "exam-timer": {
+      "nav": "Exam Timer",
+      "icon": "📝",
+      "title": "Exam Timer – Fullscreen Classroom Exam Clock (SAT, IELTS, TOEIC)",
+      "description": "Free online exam timer for classrooms and mock tests. Build a multi-section schedule or use SAT, IELTS, TOEIC presets. Big fullscreen countdown, 10 and 5 minute warnings, current time display.",
+      "h1": "Exam Timer",
+      "lead": "Put a big, clear countdown on the classroom screen or run a full mock test at home. When one section ends, the timer moves on to the break and the next section automatically.",
+      "card": "Multi-section exam countdown with SAT, IELTS and TOEIC presets",
+      "ui": {
+        "currentTime": "Current time",
+        "preset": "Schedule",
+        "colName": "Section",
+        "colMin": "Minutes",
+        "colBreak": "Break after (min)",
+        "del": "Delete",
+        "addRow": "Add section",
+        "startAt": "Start time",
+        "now": "Start now",
+        "useAnchor": "Use official time",
+        "warn10": "Alert 10 min before end",
+        "warn5": "Alert 5 min before end",
+        "startExam": "Start exam",
+        "before": "Not started",
+        "inProgress": "In progress",
+        "breakTime": "Break",
+        "finished": "Finished",
+        "next": "Next",
+        "allDone": "All sections are finished",
+        "startsAt": "Starts at",
+        "presetOrder": ["sat", "ielts", "toeic", "csat", "custom"],
+        "presets": {
+          "csat": "Korean CSAT (Suneung)",
+          "toeic": "TOEIC Listening & Reading",
+          "sat": "Digital SAT",
+          "ielts": "IELTS Academic (paper)",
+          "custom": "Custom schedule"
+        },
+        "presetNotes": {
+          "csat": "Based on the recent Korean CSAT timetable. Press 'Use official time' to start period 1 at 08:40, just like the real exam day. Always check the official KICE announcement, as times can change.",
+          "toeic": "Listening (45 min) is followed immediately by Reading (75 min), with no break.",
+          "sat": "No break between modules; a 10-minute break follows Reading and Writing.",
+          "ielts": "Paper-based format, including 10 minutes to transfer Listening answers.",
+          "custom": "Enter any sections and times you like. Your schedule is saved in this browser."
+        },
+        "items": {
+          "kor": "Period 1 · Korean",
+          "math": "Period 2 · Math",
+          "eng": "Period 3 · English",
+          "hist": "Period 4 · Korean History",
+          "inq1": "Period 4 · Elective 1",
+          "inq2": "Period 4 · Elective 2",
+          "lang2": "Period 5 · Second Language",
+          "lc": "Listening",
+          "rc": "Reading",
+          "rw1": "Reading & Writing · Module 1",
+          "rw2": "Reading & Writing · Module 2",
+          "m1": "Math · Module 1",
+          "m2": "Math · Module 2",
+          "listen": "Listening",
+          "transfer": "Transfer answers",
+          "read": "Reading",
+          "write": "Writing",
+          "custom1": "Section 1",
+          "custom2": "Section 2",
+          "newItem": "Section"
+        }
+      },
+      "sections": [
+        {
+          "h2": "Built for classrooms and mock exams",
+          "html": "<h3>Invigilating a classroom test</h3><p>Press fullscreen and the section name and time remaining fill the screen, which makes it easy to read from the back of the room on a TV or projector. At 10 and 5 minutes left the numbers change color and an alert sounds, so you don't have to announce the time yourself.</p><h3>Full-length practice tests</h3><p>Choose a preset such as the Digital SAT or IELTS and the breaks between sections are built in. Practicing with real timing, including the short gaps between modules, gets you used to the pace before test day.</p><h3>Your own schedule</h3><p>For school midterms, finals or certification exams, edit the section names, durations and breaks in the table. Your edits are saved as a custom schedule for next time.</p>"
+        },
+        {
+          "h2": "Preset timings",
+          "html": "<div class='table-scroll'><table><thead><tr><th>Exam</th><th>Sections</th><th>Total</th></tr></thead><tbody><tr><td>Digital SAT</td><td>Reading & Writing 32 + 32 min · 10 min break · Math 35 + 35 min</td><td>2 h 14 min + break</td></tr><tr><td>IELTS Academic (paper)</td><td>Listening 30 min + 10 min transfer · Reading 60 min · Writing 60 min</td><td>2 h 40 min</td></tr><tr><td>TOEIC Listening & Reading</td><td>Listening 45 min · Reading 75 min</td><td>2 h</td></tr><tr><td>Korean CSAT</td><td>Five periods from 08:40 to 17:45</td><td>Full day</td></tr></tbody></table></div><p class='muted'>Timings follow each test's published format. Always confirm with the official test provider before exam day.</p>"
+        },
+        {
+          "h2": "How to use",
+          "html": "<ol><li>Pick a preset under <strong>Schedule</strong>, or choose Custom schedule.</li><li>Edit section names, minutes and breaks in the table if needed.</li><li>Set the start time. <em>Start now</em> begins immediately; entering a time lines the schedule up with the clock.</li><li>Press <strong>Start exam</strong>, then go fullscreen (F key) for the classroom.</li></ol>"
+        }
+      ],
+      "faq": [
+        { "q": "Can I pause the exam timer?", "a": "Yes. Press <strong>Pause</strong> to stop, and when you resume, the rest of the schedule shifts later by the paused time. Handy for practice sessions." },
+        { "q": "When do the alerts sound?", "a": "At the start of each section, 10 and 5 minutes before the end (you can turn these off in Settings), and when a section ends. The countdown turns orange at 10 minutes and red at 5 minutes." },
+        { "q": "What happens if I enter a start time that has already passed?", "a": "The timer jumps to whichever section should be running now. If the whole schedule would already be over, it's moved to the same time tomorrow." },
+        { "q": "Is it accurate if I switch to another tab?", "a": "Yes. Everything is calculated from the real clock, so the remaining time is correct when you come back." },
+        { "q": "Can I build a schedule for my school exam?", "a": "Add or delete sections and change names and times in the table to match any exam. Changes are saved automatically in your browser." }
+      ]
+    },
+    "visual-timer": {
+      "nav": "Visual Timer",
+      "icon": "🔴",
+      "title": "Visual Timer – Free Online Countdown Disc for Classrooms & Kids",
+      "description": "Free online visual timer with a shrinking colored disc that shows time left at a glance. Drag to set, fullscreen for the classroom TV, great for kids' routines, group work and meetings.",
+      "h1": "Visual Timer",
+      "lead": "See time disappear instead of reading numbers. Drag the disc or tap a preset to set the time, then press start.",
+      "card": "A shrinking colored disc shows time left, great for kids and classes",
+      "ui": {
+        "color": "Color",
+        "colors": { "red": "Red", "blue": "Blue", "green": "Green", "orange": "Orange", "purple": "Purple" },
+        "dialLabel": "Disc showing the time remaining. Drag to set the time.",
+        "dragHint": "Drag around the disc with your finger or mouse to set the time.",
+        "scale": "Dial range",
+        "minShort": " min",
+        "showDigital": "Show digital time"
+      },
+      "sections": [
+        {
+          "h2": "What is a visual timer?",
+          "html": "<p>A visual timer shows time remaining as a <strong>shrinking area of color</strong> instead of numbers. Even children who can't read a clock yet understand right away that time is up when the red is gone.</p><p>Because time passing is visible at a glance, visual timers are widely used in preschool and elementary classrooms, special education and at home. They work just as well for adults keeping meetings and presentations on schedule.</p>"
+        },
+        {
+          "h2": "Ideas for using it",
+          "html": "<ul><li><strong>Kids' routines</strong>: 3 minutes for brushing teeth, 10 for tidying up, 30 for screen time. The disc ends the activity instead of you having to say \"time's up\".</li><li><strong>Classroom activities</strong>: Put group work, quiz time or recess on the classroom TV so students can check the time themselves.</li><li><strong>Meetings and talks</strong>: Give each speaker 5 minutes and Q&A 10 minutes to keep meetings from dragging on.</li><li><strong>Focused work</strong>: If the numbers distract you, turn off <em>Show digital time</em> and just watch the disc.</li></ul>"
+        },
+        {
+          "h2": "How to use",
+          "html": "<ol><li>Drag around the disc to set a time, or tap a preset from 1 to 60 minutes.</li><li>Press <strong>Start</strong> (or the space bar) and the disc starts shrinking.</li><li>When time is up, the alarm plays and the disc flashes.</li><li>In Settings, change the dial range (10, 20, 30, 60 or 120 minutes), the color and the alarm sound. A 10 or 20 minute range makes short activities easier to see.</li></ol>"
+        }
+      ],
+      "faq": [
+        { "q": "Can I set more than 60 minutes?", "a": "Yes. Change the <strong>Dial range</strong> to 120 minutes in Settings to set up to 2 hours." },
+        { "q": "Why are the numbers counterclockwise?", "a": "The numbers run counterclockwise from 12 so that the edge of the disc moves clockwise, like a clock hand, as time runs out. It's the same layout used by classic classroom visual timers." },
+        { "q": "Can I show it fullscreen on a classroom TV?", "a": "Press the fullscreen button at the top right (or the F key) and the disc fills the screen. The screen stays on while the timer runs." },
+        { "q": "Can I use it without sound?", "a": "Set the volume to 0 in Settings and the disc will just flash when time is up. Good for libraries and quiet rooms." }
+      ]
+    }
+  }
+}
