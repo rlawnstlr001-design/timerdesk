@@ -282,6 +282,7 @@ if __name__ == "__main__":
     shutil.copy(ROOT / "assets" / "style.css", DIST / "assets" / "style.css")
     shutil.copy(ROOT / "assets" / "common.js", DIST / "assets" / "common.js")
     shutil.copy(ROOT / "assets" / "favicon.svg", DIST / "favicon.svg")
+    shutil.copy(ROOT / "assets" / "og.png", DIST / "og.png")  # 링크 카드·공유 미리보기
     VER = {"css": asset_ver(ROOT / "assets" / "style.css"), "common": asset_ver(ROOT / "assets" / "common.js")}
     for slug in TOOLS:
         src = ROOT / "tools" / slug / "tool.js"

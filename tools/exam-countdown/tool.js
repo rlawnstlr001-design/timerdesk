@@ -12,12 +12,12 @@
   // 공유 링크로 들어온 경우 그 값을 우선
   var q = new URLSearchParams(location.search);
   if (q.get("d") && /^\d{4}-\d{2}-\d{2}$/.test(q.get("d"))) {
-    cfg = { preset: "custom", title: (q.get("title") || "").slice(0, 40), date: q.get("d"), time: /^\d{2}:\d{2}$/.test(q.get("t") || "") ? q.get("t") : "00:00" };
+    cfg = { preset: "custom", title: (q.get("title") || "").slice(0, 40), date: q.get("d"), time: /^\d{2}:\d{2}$/.test(q.get("t") || "") ? q.get("t") : "" };  // 시각이 없으면 날짜만 표시
   }
 
   function target() {
     var p = PRESETS[cfg.preset];
-    return p ? { title: T.presets[cfg.preset], date: p.date, time: p.time } : { title: cfg.title || T.myCountdown, date: cfg.date, time: cfg.time || "00:00" };
+    return p ? { title: T.presets[cfg.preset], date: p.date, time: p.time } : { title: cfg.title || T.myCountdown, date: cfg.date, time: cfg.time || "" };
   }
   function toMs(date, time) {
     var d = date.split("-"), t = (time || "00:00").split(":");
@@ -60,7 +60,7 @@
     $("#cdS").textContent = pad(rem % 60);
     root.classList.toggle("passed", rem === 0);
     $("#cdTarget").textContent = rem === 0 ? T.passed :
-      new Intl.DateTimeFormat(TD.lang, { dateStyle: "full" }).format(new Date(at)) + " " + TD.clock(at);
+      new Intl.DateTimeFormat(TD.lang, { dateStyle: "full" }).format(new Date(at)) + (tg.time ? " " + TD.clock(at) : "");
     TD.setTitle(dday + " " + tg.title);
   }
 
@@ -74,14 +74,14 @@
   });
   $("#applyBtn").addEventListener("click", function () {
     if (!$("#cdDate").value) { $("#cdDate").focus(); return; }
-    cfg = { preset: "custom", title: $("#cdLabel").value.trim(), date: $("#cdDate").value, time: $("#cdTime").value || "00:00" };
+    cfg = { preset: "custom", title: $("#cdLabel").value.trim(), date: $("#cdDate").value, time: $("#cdTime").value || "" };
     TD.save("countdown-cfg", cfg);
     renderPresets(); fillForm(); tick();
   });
   $("#copyBtn").addEventListener("click", function () {
     var tg = target(), b = $("#copyBtn");
     var url = location.origin + location.pathname;
-    if (cfg.preset === "custom" && tg.date) url += "?d=" + tg.date + "&t=" + tg.time + (cfg.title ? "&title=" + encodeURIComponent(cfg.title) : "");
+    if (cfg.preset === "custom" && tg.date) url += "?d=" + tg.date + (tg.time ? "&t=" + tg.time : "") + (cfg.title ? "&title=" + encodeURIComponent(cfg.title) : "");
     var done = function () { b.textContent = "✓ " + T.copied; setTimeout(function () { b.textContent = "🔗 " + T.copyLink; }, 2000); };
     if (navigator.clipboard) navigator.clipboard.writeText(url).then(done, function () { prompt(T.copyLink, url); });
     else prompt(T.copyLink, url);
