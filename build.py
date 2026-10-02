@@ -285,6 +285,9 @@ def build_misc():
         'xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + "\n".join(rows) + "\n</urlset>\n", "utf-8")
     if SITE.get("domain"):
         (DIST / "CNAME").write_text(SITE["domain"] + "\n", "utf-8")
+    if SITE.get("adsenseClient"):  # 애드센스 판매자 인증 (ca-pub-… → pub-…)
+        pub = SITE["adsenseClient"].replace("ca-", "")
+        (DIST / "ads.txt").write_text(f"google.com, {pub}, DIRECT, f08c47fec0942fa0\n", "utf-8")
     (DIST / ".nojekyll").write_text("", "utf-8")
 
 
