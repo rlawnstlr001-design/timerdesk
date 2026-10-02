@@ -63,6 +63,8 @@ async function resolve(url) {
 
 async function measure(url) {
   const first = await hit(url);
+  // 520~530은 Cloudflare가 대신 만든 오류 응답(없는 도메인·연결 실패) — Date가 엣지 시각이라 대상 서버 시각이 아니다
+  if (first.status >= 520 && first.status <= 530) return { error: "fetch-failed", status: first.status };
   if (isNaN(first.s)) return { error: "no-date-header", status: first.status };
   const rtt = first.t1 - first.t0;
   let prev = first, n = 1;
@@ -76,7 +78,7 @@ async function measure(url) {
     if (cur.s > prev.s) {
       // 대상 서버의 '초 시작(cur.s ms)'은 prev.mid 와 cur.mid 사이 어딘가에서 일어났다
       const boundary = (prev.mid + cur.mid) / 2;
-      return { offset: Math.round(cur.s - boundary), err: Math.round((cur.mid - prev.mid) / 2), rtt, samples: n };
+      return { offset: Math.round(cur.s - boundary), err: Math.round((cur.mid - prev.mid) / 2), rtt, samples: n, status: first.status };
     }
     prev = cur;
   }

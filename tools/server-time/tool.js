@@ -6,7 +6,7 @@
   var T = TD.i18n.t, $ = TD.$, pad = TD.pad;
   var API = (window.TD_TIME_API || "").replace(/\/$/, "");
   var root = $("#tool");
-  var SITES = T.sites; // [{label, url}]
+  var SITES = window.TD_SRV_CHIPS || T.sites; // [{label, url}] — 대학 수강신청 페이지는 대학 목록
   var PAGE_SITE = window.TD_SRV_SITE || null;  // 사이트별 페이지(/server-time/interpark/ 등)면 그 사이트
   var PAGES = window.TD_SRV_PAGES || {};       // 사이트 주소 → 전용 페이지 경로
   var st = { url: "", label: T.standard, dev: 0, devErr: null, srv: 0, srvErr: 0, measuredAt: 0, ok: false, error: "" };
@@ -172,7 +172,7 @@
   frame();
   if (!API) { st.error = T.errors["fetch-failed"]; render(); return; }
   syncDevice().then(function () {
-    setTarget(init.url || "", init.url ? (knownInit ? knownInit.label : init.label || init.url) : T.standard);
+    setTarget(init.url || "", init.url ? (init === PAGE_SITE ? PAGE_SITE.label : knownInit ? knownInit.label : init.label || init.url) : T.standard);
   }).catch(function () { st.error = T.errors["fetch-failed"]; render(); });
   // 주기적 재측정 (탭이 보일 때만)
   setInterval(function () { if (document.visibilityState === "visible") syncDevice().then(measureServer); }, 60000);

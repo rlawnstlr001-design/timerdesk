@@ -187,10 +187,20 @@ def variant_links(lang, slug, current=None):
     vs = t.get("variants", [])
     if not vs:
         return ""
-    items = "".join(
-        f'<a class="chip{" on" if v["slug"] == current else ""}" href="{path_of("tool", lang, slug)}{v["slug"]}/">{esc(v["label"])}</a>'
-        for v in vs)
-    return f'<section><h2>{esc(t["variantsH2"])}</h2><div class="presets variant-links">{items}</div></section>'
+    # variantGroups가 있으면 묶음별 섹션(예: 티켓 / 대학 수강신청), 지금 보는 페이지의 묶음을 먼저
+    groups = t.get("variantGroups") or [{"key": None, "h2": t["variantsH2"]}]
+    g0 = groups[0]["key"]  # group이 없는 변형은 첫 묶음 (정렬 전에 고정)
+    gkey = lambda v: v.get("group", g0)
+    cur = next((v for v in vs if v["slug"] == current), None)
+    if cur:
+        groups = sorted(groups, key=lambda g: g["key"] != gkey(cur))
+    out = ""
+    for g in groups:
+        items = "".join(
+            f'<a class="chip{" on" if v["slug"] == current else ""}" href="{path_of("tool", lang, slug)}{v["slug"]}/">{esc(v["label"])}</a>'
+            for v in vs if g["key"] is None or gkey(v) == g["key"])
+        out += f'<section><h2>{esc(g["h2"])}</h2><div class="presets variant-links">{items}</div></section>'
+    return out
 
 
 def build_tool(lang, slug, v=None):
@@ -221,10 +231,17 @@ def build_tool(lang, slug, v=None):
     extra = ""
     if slug == "server-time":
         extra += f"window.TD_TIME_API={json.dumps(SITE.get('timeApi', ''))};"
-        pages = {x["site"]: base + x["slug"] + "/" for x in t.get("variants", [])}
+        vs = t.get("variants", [])
+        pages = {x["site"]: base + x["slug"] + "/" for x in vs if x["site"]}
         extra += f"window.TD_SRV_PAGES={json.dumps(pages)};"
         if v:
-            extra += "window.TD_SRV_SITE=" + json.dumps({"url": v["site"], "label": v["label"]}, ensure_ascii=False) + ";"
+            extra += "window.TD_SRV_SITE=" + json.dumps({"url": v["site"], "label": v.get("target", v["label"])}, ensure_ascii=False) + ";"
+            # 첫 묶음이 아닌 페이지(대학 수강신청 등)는 위쪽 사이트 버튼도 그 묶음 사이트로 바꾼다
+            g0 = (t.get("variantGroups") or [{}])[0].get("key")
+            if v.get("group", g0) != g0:
+                chips = [{"label": x["label"], "url": x["site"]} for x in vs if x.get("group") == v["group"] and x["site"]]
+                chips += [s for s in t["ui"]["sites"] if not s["url"]]  # 표준시
+                extra += "window.TD_SRV_CHIPS=" + json.dumps(chips, ensure_ascii=False) + ";"
     scripts = (
         "<script>window.TD_I18N=" + json.dumps(i18n, ensure_ascii=False).replace("</", "<\\/") + ";" + extra + "</script>\n"
         f'<script src="/assets/common.js?v={VER["common"]}"></script>\n'
