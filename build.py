@@ -198,7 +198,8 @@ def build_tool(lang, slug):
     )
     i18n = {"lang": lang, "ui": S["ui"], "t": t["ui"]}
     scripts = (
-        "<script>window.TD_I18N=" + json.dumps(i18n, ensure_ascii=False).replace("</", "<\\/") + ";</script>\n"
+        "<script>window.TD_I18N=" + json.dumps(i18n, ensure_ascii=False).replace("</", "<\\/") + ";"
+        + (f"window.TD_TIME_API={json.dumps(SITE.get('timeApi', ''))};" if slug == "server-time" else "") + "</script>\n"
         f'<script src="/assets/common.js?v={VER["common"]}"></script>\n'
         + (f'<script src="/assets/tools/{slug}.data.js?v={VER[slug + ".data"]}"></script>\n' if slug + ".data" in VER else "")
         + f'<script src="/assets/tools/{slug}.js?v={VER[slug]}"></script>'

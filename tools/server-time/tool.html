@@ -1,0 +1,25 @@
+<div class="tool srv" id="tool">
+  <div class="tool-bar">
+    <form class="srv-form" id="srvForm" autocomplete="off">
+      <input id="srvUrl" inputmode="url" spellcheck="false" placeholder="{{t.placeholder}}" aria-label="{{t.placeholder}}">
+      <button class="btn primary small" type="submit">{{t.check}}</button>
+    </form>
+    <button class="icon-btn" id="fsBtn" title="{{ui.fullscreen}} (F)" aria-label="{{ui.fullscreen}}"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  </div>
+  <div class="presets srv-sites" id="srvSites"></div>
+
+  <div class="srv-view">
+    <div class="srv-target" id="srvTarget"></div>
+    <div class="srv-clock" role="timer" aria-live="off"><span id="srvTime">--:--:--</span><small id="srvTenth">.0</small></div>
+    <div class="srv-date" id="srvDate"></div>
+    <div class="srv-meta" id="srvMeta">{{t.syncing}}</div>
+    <div class="srv-count" id="srvCount" hidden></div>
+  </div>
+
+  <div class="srv-alarm">
+    <label class="field"><span>{{t.alarmAt}}</span><input type="time" id="alarmAt" step="1"></label>
+    <label class="check"><input type="checkbox" id="alarmBeeps" checked> {{t.beeps}}</label>
+    <button class="btn ghost small" id="alarmBtn" type="button">{{t.alarmOn}}</button>
+    <span class="hint" id="alarmStatus"></span>
+  </div>
+</div>

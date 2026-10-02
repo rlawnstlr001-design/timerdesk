@@ -370,3 +370,23 @@ html[lang="ja"] body, html[lang="ja"] button, html[lang="ja"] input, html[lang="
 .home-timer:fullscreen .ht-quick, .home-timer.pseudo-fs .ht-quick { display: none; }
 @media (max-width: 520px) { .ht-step { font-size: 14px; } .ht-colon { margin-top: -14px; } }
 @media (prefers-reduced-motion: reduce) { .home-timer.done .ht-display { animation: none; } }
+
+/* ---------- 서버시간 ---------- */
+.srv-form { display: flex; gap: 8px; flex: 1; max-width: 520px; }
+.srv-form input { flex: 1; min-width: 0; min-height: 40px; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); padding: 6px 12px; font-size: 15px; }
+.srv-sites { justify-content: flex-start; margin: 6px 0 4px; }
+.srv-sites .chip.on { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.srv-view { text-align: center; padding: 18px 0 8px; }
+.srv-target { font-weight: 700; color: var(--accent); font-size: 17px; }
+.srv-clock { font-family: var(--mono); font-variant-numeric: tabular-nums; font-weight: 800; letter-spacing: -.04em; line-height: 1; font-size: clamp(56px, 14vw, 124px); margin: 8px 0 6px; }
+.srv-clock small { font-size: .5em; color: var(--muted); letter-spacing: -.02em; }
+.srv-date { color: var(--muted); font-size: 14px; }
+.srv-meta { margin-top: 8px; font-size: 15px; font-weight: 600; color: var(--text); }
+.srv.err .srv-meta { color: var(--danger); }
+.srv-count { font-family: var(--mono); font-weight: 800; font-size: clamp(48px, 12vw, 96px); color: var(--danger); line-height: 1.1; margin-top: 6px; }
+.srv.soon .srv-clock span { color: var(--danger); }
+.srv-alarm { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: flex-end; justify-content: center; border-top: 1px solid var(--line); padding-top: 14px; margin-top: 10px; }
+.srv-alarm .field { min-width: 180px; }
+.srv:fullscreen .srv-clock, .srv.pseudo-fs .srv-clock { font-size: min(24vh, 15vw); }
+.srv:fullscreen .srv-sites, .srv.pseudo-fs .srv-sites, .srv:fullscreen .srv-form, .srv.pseudo-fs .srv-form { display: none; }
+@media (max-width: 520px) { .srv .tool-bar { align-items: stretch; } }

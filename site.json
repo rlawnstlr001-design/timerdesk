@@ -4,9 +4,10 @@
   "domain": "timerdesk.com",
   "defaultLang": "en",
   "languages": ["ko", "en", "ja", "es", "de"],
-  "tools": ["pomodoro-timer", "exam-timer", "visual-timer", "exam-countdown", "study-stopwatch", "dday-calculator", "age-calculator", "salary-calculator"],
+  "tools": ["pomodoro-timer", "exam-timer", "visual-timer", "exam-countdown", "study-stopwatch", "dday-calculator", "age-calculator", "salary-calculator", "server-time"],
   "adsenseClient": "ca-pub-1282900493404145",
   "adsenseSlots": { "afterTool": "", "inContent": "" },
   "ga4": "G-ZHL0W5RKVZ",
+  "timeApi": "https://timerdesk-time.timerdesk.workers.dev",
   "contactEmail": "contact@timerdesk.com"
 }

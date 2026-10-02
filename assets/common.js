@@ -62,15 +62,18 @@ window.TD = window.TD || {};
     digital: { len: 0.9, play: function (c, o, t) { [0, 0.12, 0.24, 0.36].forEach(function (d) { tone(c, o, 1250, t + d, 0.08, "square", 0.14); }); } }
   };
   TD.SOUND_KEYS = Object.keys(SOUNDS);
-  TD.play = function (name, volume, times) {
+  // delay(초)를 주면 오디오 시계로 예약 재생 — JS 타이머가 늦어져도 정확한 순간에 울린다.
+  // 반환값(out)을 out.disconnect() 하면 예약을 취소할 수 있다.
+  TD.play = function (name, volume, times, delay) {
     var c;
-    try { c = audio(); } catch (e) { return; }
-    if (!c) return;
+    try { c = audio(); } catch (e) { return null; }
+    if (!c) return null;
     var s = SOUNDS[name] || SOUNDS.bell, out = c.createGain();
     out.gain.value = volume == null ? 0.7 : volume;
     out.connect(c.destination);
-    var t = c.currentTime + 0.03;
+    var t = c.currentTime + Math.max(0.03, delay || 0);
     for (var i = 0; i < (times || 1); i++) s.play(c, out, t + i * (s.len + 0.25));
+    return out;
   };
   TD.fillSoundSelect = function (sel, current) {
     var names = I.ui.soundNames || {};

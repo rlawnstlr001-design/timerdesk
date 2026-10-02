@@ -1,0 +1,8 @@
+name = "timerdesk-time"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+workers_dev = true
+
+# 대상 사이트(주로 한국) 가까운 곳에서 실행 — 무료 플랜 한국 요청이 싱가포르로 가는 문제 완화
+[placement]
+mode = "smart"
