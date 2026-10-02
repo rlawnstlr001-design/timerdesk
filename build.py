@@ -103,7 +103,8 @@ def head_extra():
                    "gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',"
                    f"analytics_storage:'denied',region:{json.dumps(eea)},wait_for_update:500}});"
                    "gtag('consent','default',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',analytics_storage:'granted'});"
-                   f"gtag('js',new Date());gtag('config','{g}');</script>")
+                   # 탭 제목에 남은 시간·현재 시각이 들어가므로 page_title은 로드 시점 제목으로 고정
+                   f"gtag('js',new Date());gtag('config','{g}',{{page_title:document.title}});</script>")
     return "\n".join(out)
 
 
