@@ -83,6 +83,7 @@
     var tg = target(), b = $("#copyBtn");
     var url = location.origin + location.pathname;
     if (cfg.preset === "custom" && tg.date) url += "?d=" + tg.date + (tg.time ? "&t=" + tg.time : "") + (cfg.title ? "&title=" + encodeURIComponent(cfg.title) : "");
+    TD.track("share_link", { preset: cfg.preset });
     var done = function () { b.textContent = "✓ " + T.copied; setTimeout(function () { b.textContent = "🔗 " + T.copyLink; }, 2000); };
     if (navigator.clipboard) navigator.clipboard.writeText(url).then(done, function () { prompt(T.copyLink, url); });
     else prompt(T.copyLink, url);

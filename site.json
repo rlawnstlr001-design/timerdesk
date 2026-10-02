@@ -7,6 +7,6 @@
   "tools": ["pomodoro-timer", "exam-timer", "visual-timer", "exam-countdown", "study-stopwatch", "dday-calculator", "age-calculator", "salary-calculator"],
   "adsenseClient": "",
   "adsenseSlots": { "afterTool": "", "inContent": "" },
-  "ga4": "",
+  "ga4": "G-ZHL0W5RKVZ",
   "contactEmail": "contact@timerdesk.com"
 }

@@ -118,6 +118,11 @@ window.TD = window.TD || {};
     try { new Notification(title, { body: body, icon: "/favicon.svg" }); } catch (e) { /* 모바일 크롬 등 */ }
   };
 
+  /* ---------- 사용 이벤트 (GA4가 있을 때만) ---------- */
+  TD.track = function (name, params) {
+    try { if (window.gtag) window.gtag("event", name, Object.assign({ tool: location.pathname.split("/")[2] || "home", lang: TD.lang }, params || {})); } catch (e) { /* 무시 */ }
+  };
+
   /* ---------- 단축키 (입력창에서는 무시) ---------- */
   TD.keys = function (map) {
     document.addEventListener("keydown", function (e) {
@@ -146,6 +151,7 @@ window.TD = window.TD || {};
     if (this.running || this.left <= 0) return;
     var self = this;
     this.running = true;
+    if (this.left === this.total) TD.track("timer_start", { seconds: Math.round(this.total) }); // 처음 시작할 때만 (재개 제외)
     this.endAt = Date.now() + this.left * 1000;
     this._iv = setInterval(function () { self._tick(); }, 250);
     this._to = setTimeout(function () { self._tick(); }, this.left * 1000 + 30);

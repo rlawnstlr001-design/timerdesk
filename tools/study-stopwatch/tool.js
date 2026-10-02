@@ -45,6 +45,7 @@
     TD.unlockAudio();
     if (st.run && st.run.id === id) return;
     commit();
+    if (!st.run) TD.track("timer_start", {});
     st.run = { id: id, since: Date.now() };
     st.last = id;
     save(); renderAll();

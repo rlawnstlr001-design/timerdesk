@@ -120,6 +120,7 @@
       t += (r.dur + r.gap) * MIN;
     });
     fired = {}; pausedAt = 0; curIdx = -2;
+    TD.track("timer_start", { preset: cfg.preset });
     $("#setup").hidden = true;
     $("#run").hidden = false;
     $("#pauseBtn").textContent = U.pause;

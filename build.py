@@ -95,8 +95,15 @@ def head_extra():
         out.append(f'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={SITE["adsenseClient"]}" crossorigin="anonymous"></script>')
     if SITE.get("ga4"):
         g = SITE["ga4"]
+        # EEA·영국·스위스는 동의 전 쿠키 거부(Consent Mode v2 — 쿠키 없는 집계만), 그 외 지역은 허용
+        eea = ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT", "LU",
+               "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE", "IS", "LI", "NO", "GB", "CH"]
         out.append(f'<script async src="https://www.googletagmanager.com/gtag/js?id={g}"></script>'
-                   f"<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag('js',new Date());gtag('config','{g}');</script>")
+                   "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}"
+                   "gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',"
+                   f"analytics_storage:'denied',region:{json.dumps(eea)},wait_for_update:500}});"
+                   "gtag('consent','default',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',analytics_storage:'granted'});"
+                   f"gtag('js',new Date());gtag('config','{g}');</script>")
     return "\n".join(out)
 
 
