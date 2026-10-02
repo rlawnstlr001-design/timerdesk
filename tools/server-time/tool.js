@@ -7,6 +7,8 @@
   var API = (window.TD_TIME_API || "").replace(/\/$/, "");
   var root = $("#tool");
   var SITES = T.sites; // [{label, url}]
+  var PAGE_SITE = window.TD_SRV_SITE || null;  // 사이트별 페이지(/server-time/interpark/ 등)면 그 사이트
+  var PAGES = window.TD_SRV_PAGES || {};       // 사이트 주소 → 전용 페이지 경로
   var st = { url: "", label: T.standard, dev: 0, devErr: null, srv: 0, srvErr: 0, measuredAt: 0, ok: false, error: "" };
   var alarm = { at: null, scheduled: null, fired: false };
   var lastTenth = -1;
@@ -47,8 +49,9 @@
     $("#srvUrl").value = url;
     TD.save("srv-last", { url: url, label: st.label });
     TD.$$(".chip", $("#srvSites")).forEach(function (b) { b.classList.toggle("on", b.dataset.url === url); });
-    var q = url ? "?site=" + encodeURIComponent(url) : location.pathname;
-    try { history.replaceState(null, "", url ? location.pathname + q : location.pathname); } catch (e) { /* 무시 */ }
+    // 사이트별 페이지에서 그 페이지 사이트를 보면 주소에 ?site=를 붙이지 않는다
+    var keepClean = !url || (PAGE_SITE && PAGE_SITE.url === url);
+    try { history.replaceState(null, "", keepClean ? location.pathname : location.pathname + "?site=" + encodeURIComponent(url)); } catch (e) { /* 무시 */ }
     $("#srvMeta").textContent = T.syncing;
     measureServer();
     TD.track("server_time", { site: url || "standard" });
@@ -142,6 +145,11 @@
   }).join("");
   $("#srvSites").addEventListener("click", function (e) {
     var b = e.target.closest(".chip"); if (!b) return;
+    // 사이트별 페이지에서는 다른 사이트의 전용 페이지로 이동 (본 페이지에서는 그 자리에서 전환)
+    if (PAGE_SITE && b.dataset.url !== PAGE_SITE.url) {
+      location.href = PAGES[b.dataset.url] || (location.pathname.replace(/[^/]+\/$/, "") + (b.dataset.url ? "?site=" + encodeURIComponent(b.dataset.url) : ""));
+      return;
+    }
     setTarget(b.dataset.url, b.textContent);
   });
   $("#srvForm").addEventListener("submit", function (e) {
@@ -156,7 +164,7 @@
   // 기본값: 주소의 ?site= > 마지막 사용 > 표준시. 알림 시각 기본 = 다음 정각
   var q = new URLSearchParams(location.search).get("site");
   var last = TD.load("srv-last", null);
-  var init = q ? { url: q.replace(/^https?:\/\//i, "").replace(/\/.*$/, "") } : (last || { url: "" });
+  var init = q ? { url: q.replace(/^https?:\/\//i, "").replace(/\/.*$/, "") } : (PAGE_SITE || last || { url: "" });
   var knownInit = SITES.filter(function (s) { return s.url === init.url; })[0];
   var sn = new Date(); $("#alarmAt").value = pad((sn.getHours() + 1) % 24) + ":00:00";
 

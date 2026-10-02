@@ -181,42 +181,71 @@ def write_page(path, lang, kind, title, description, body, alts, xdef, scripts="
     SITEMAP.append((path, alts))
 
 
-def build_tool(lang, slug):
+def variant_links(lang, slug, current=None):
+    """사이트별 하위 페이지(variants) 목록 — 본 페이지·하위 페이지 모두에 내부 링크로 단다."""
+    t = L[lang]["tools"][slug]
+    vs = t.get("variants", [])
+    if not vs:
+        return ""
+    items = "".join(
+        f'<a class="chip{" on" if v["slug"] == current else ""}" href="{path_of("tool", lang, slug)}{v["slug"]}/">{esc(v["label"])}</a>'
+        for v in vs)
+    return f'<section><h2>{esc(t["variantsH2"])}</h2><div class="presets variant-links">{items}</div></section>'
+
+
+def build_tool(lang, slug, v=None):
+    """도구 페이지. v(variant)가 있으면 /<lang>/<slug>/<v.slug>/ 하위 페이지 — 같은 도구에 사이트를 미리 고르고 문구만 다르게."""
     S, t = L[lang], L[lang]["tools"][slug]
-    path = path_of("tool", lang, slug)
-    alts, xdef = alternates("tool", slug)
+    base = path_of("tool", lang, slug)
+    path = base + v["slug"] + "/" if v else base
+    P = v or t  # 제목·설명·본문 출처
+    if v:
+        alts, xdef = {lang: path}, path
+    else:
+        alts, xdef = alternates("tool", slug)
     frag = render((ROOT / "tools" / slug / "tool.html").read_text("utf-8"), {"ui": S["ui"], "t": t["ui"]}, f"{slug}/tool.html [{lang}]")
-    sections = "".join(f'<section><h2>{esc(s["h2"])}</h2>{s["html"]}</section>' for s in t["sections"])
-    faq = "".join(f'<details><summary>{esc(f["q"])}</summary><div>{f["a"]}</div></details>' for f in t["faq"])
+    sections = "".join(f'<section><h2>{esc(x["h2"])}</h2>{x["html"]}</section>' for x in P["sections"])
+    sections += variant_links(lang, slug, v["slug"] if v else None)
+    faq = "".join(f'<details><summary>{esc(f["q"])}</summary><div>{f["a"]}</div></details>' for f in P["faq"])
+    crumbs = f'<a href="{path_of("hub", lang)}">{esc(S["ui"]["home"])}</a> <span>›</span> '
+    crumbs += (f'<a href="{base}">{esc(t["nav"])}</a> <span>›</span> {esc(v["label"])}' if v else esc(t["nav"]))
     body = (
-        f'<nav class="crumbs"><a href="{path_of("hub", lang)}">{esc(S["ui"]["home"])}</a> <span>›</span> {esc(t["nav"])}</nav>'
-        f'<h1>{esc(t["h1"])}</h1><p class="lead">{t["lead"]}</p>'
+        f'<nav class="crumbs">{crumbs}</nav>'
+        f'<h1>{esc(P["h1"])}</h1><p class="lead">{P["lead"]}</p>'
         f"{frag}{ad_slot('afterTool')}"
         f'<article class="content">{sections}{ad_slot("inContent")}'
         f'<section class="faq"><h2>{esc(S["ui"]["faq"])}</h2>{faq}</section></article>'
         f'<section class="related"><h2>{esc(S["ui"]["relatedTools"])}</h2>{cards_html(lang, slug)}</section>'
     )
     i18n = {"lang": lang, "ui": S["ui"], "t": t["ui"]}
+    extra = ""
+    if slug == "server-time":
+        extra += f"window.TD_TIME_API={json.dumps(SITE.get('timeApi', ''))};"
+        pages = {x["site"]: base + x["slug"] + "/" for x in t.get("variants", [])}
+        extra += f"window.TD_SRV_PAGES={json.dumps(pages)};"
+        if v:
+            extra += "window.TD_SRV_SITE=" + json.dumps({"url": v["site"], "label": v["label"]}, ensure_ascii=False) + ";"
     scripts = (
-        "<script>window.TD_I18N=" + json.dumps(i18n, ensure_ascii=False).replace("</", "<\\/") + ";"
-        + (f"window.TD_TIME_API={json.dumps(SITE.get('timeApi', ''))};" if slug == "server-time" else "") + "</script>\n"
+        "<script>window.TD_I18N=" + json.dumps(i18n, ensure_ascii=False).replace("</", "<\\/") + ";" + extra + "</script>\n"
         f'<script src="/assets/common.js?v={VER["common"]}"></script>\n'
         + (f'<script src="/assets/tools/{slug}.data.js?v={VER[slug + ".data"]}"></script>\n' if slug + ".data" in VER else "")
         + f'<script src="/assets/tools/{slug}.js?v={VER[slug]}"></script>'
     )
+    trail = [{"@type": "ListItem", "position": 1, "name": S["ui"]["home"], "item": url(path_of("hub", lang))},
+             {"@type": "ListItem", "position": 2, "name": t["nav"], "item": url(base)}]
+    if v:
+        trail.append({"@type": "ListItem", "position": 3, "name": v["label"], "item": url(path)})
     ld = [
-        {"@context": "https://schema.org", "@type": "WebApplication", "name": t["h1"], "url": url(path),
-         "description": t["description"], "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any",
+        {"@context": "https://schema.org", "@type": "WebApplication", "name": P["h1"], "url": url(path),
+         "description": P["description"], "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any",
          "inLanguage": lang, "isAccessibleForFree": True,
          "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}},
         {"@context": "https://schema.org", "@type": "FAQPage",
          "mainEntity": [{"@type": "Question", "name": f["q"],
-                         "acceptedAnswer": {"@type": "Answer", "text": strip_tags(f["a"])}} for f in t["faq"]]},
-        {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": S["ui"]["home"], "item": url(path_of("hub", lang))},
-            {"@type": "ListItem", "position": 2, "name": t["nav"], "item": url(path)}]},
+                         "acceptedAnswer": {"@type": "Answer", "text": strip_tags(f["a"])}} for f in P["faq"]]},
+        {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": trail},
     ]
-    write_page(path, lang, "tool", t["title"], t["description"], body, alts, xdef, scripts, ld, slug)
+    write_page(path, lang, "tool", P["title"], P["description"], body, alts, xdef, scripts, ld, slug)
 
 
 def home_widget(lang):
@@ -325,6 +354,8 @@ if __name__ == "__main__":
         for slug in TOOLS:
             if slug in L[lg]["tools"]:
                 build_tool(lg, slug)
+                for v in L[lg]["tools"][slug].get("variants", []):
+                    build_tool(lg, slug, v)
     build_root()
     build_misc()
     print(f"빌드 완료: {len(SITEMAP)}페이지 -> {DIST}")

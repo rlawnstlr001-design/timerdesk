@@ -390,3 +390,7 @@ html[lang="ja"] body, html[lang="ja"] button, html[lang="ja"] input, html[lang="
 .srv:fullscreen .srv-clock, .srv.pseudo-fs .srv-clock { font-size: min(24vh, 15vw); }
 .srv:fullscreen .srv-sites, .srv.pseudo-fs .srv-sites, .srv:fullscreen .srv-form, .srv.pseudo-fs .srv-form { display: none; }
 @media (max-width: 520px) { .srv .tool-bar { align-items: stretch; } }
+.variant-links { justify-content: flex-start; }
+.variant-links .chip { text-decoration: none; color: var(--text); }
+.variant-links .chip.on { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+code { font-family: var(--mono); font-size: .92em; background: var(--surface-2); padding: 1px 6px; border-radius: 6px; }
