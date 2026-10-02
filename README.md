@@ -33,3 +33,13 @@ build.py             -> dist/ (페이지, sitemap.xml, robots.txt, 404, CNAME)
 - **언어 추가**: `i18n/ko.json`을 복사해 `i18n/ja.json` 번역 → `site.json`의 `languages`에 추가. 끝.
 - **광고**: 애드센스 승인 후 `adsenseClient`(ca-pub-…)와 `adsenseSlots` ID를 넣고 재빌드.
 - **도메인**: `baseUrl`·`domain`에 구매한 도메인 → 재빌드하면 `CNAME` 생성.
+
+## 추가 구조 (10/02)
+
+- `home/` — 첫 화면 타이머 위젯(`widget.html`·`home.js`). 모든 언어 허브와 루트에 들어간다.
+- 도구 JSON의 `variants` — 하위 페이지(`/<lang>/<slug>/<v.slug>/`). 서버시간 사이트별 페이지가 이 방식.
+- `tools/<slug>/data.js` — 큰 데이터(예: 간이세액표). 있으면 자동 복사·로드.
+- `worker/` — 서버시간 중계 Cloudflare Worker. 배포 `cd worker && npx wrangler deploy` (주소는 `site.json timeApi`).
+- `site.json`: `ga4`(GA4 측정 ID, Consent Mode 포함), `adsenseClient`(있으면 head 코드 + `/ads.txt` 생성), `timeApi`.
+
+운영 상태·할 일·판정 기준은 볼트 `SoloOS-Vault/10-채널/툴사이트-timerdesk.md`.
