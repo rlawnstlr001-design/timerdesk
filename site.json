@@ -4,7 +4,7 @@
   "domain": "timerdesk.com",
   "defaultLang": "en",
   "languages": ["ko", "en", "ja", "es", "de"],
-  "tools": ["pomodoro-timer", "exam-timer", "visual-timer", "exam-countdown", "study-stopwatch", "dday-calculator", "age-calculator", "salary-calculator", "server-time"],
+  "tools": ["pomodoro-timer", "exam-timer", "visual-timer", "exam-countdown", "study-stopwatch", "dday-calculator", "age-calculator", "salary-calculator", "holiday-pay-calculator", "severance-calculator", "unemployment-calculator", "server-time"],
   "adsenseClient": "ca-pub-1282900493404145",
   "adsenseSlots": { "afterTool": "", "inContent": "" },
   "ga4": "G-ZHL0W5RKVZ",

@@ -148,6 +148,11 @@ def cards_html(lang, exclude=None, group=None):
             continue
         out.append(f'<a class="card" href="{path_of("tool", lang, slug)}"><span class="card-icon">{t["icon"]}</span>'
                    f'<strong>{esc(t["nav"])}</strong><span>{esc(t["card"])}</span></a>')
+        if group:  # 홈 묶음에만: 하위 페이지 바로가기 카드 (hub.extraCards, after=도구 slug)
+            for x in L[lang]["hub"].get("extraCards", []):
+                if x["after"] == slug:
+                    out.append(f'<a class="card" href="{x["href"]}"><span class="card-icon">{x["icon"]}</span>'
+                               f'<strong>{esc(x["nav"])}</strong><span>{esc(x["card"])}</span></a>')
     return f'<div class="cards">{"".join(out)}</div>' if out else ""
 
 
@@ -217,11 +222,15 @@ def build_tool(lang, slug, v=None):
     sections = "".join(f'<section><h2>{esc(x["h2"])}</h2>{x["html"]}</section>' for x in P["sections"])
     sections += variant_links(lang, slug, v["slug"] if v else None)
     faq = "".join(f'<details><summary>{esc(f["q"])}</summary><div>{f["a"]}</div></details>' for f in P["faq"])
+    # 본 페이지 리드 아래 바로가기 (도구 JSON links, href는 도구 경로 기준 상대)
+    lead_links = "" if v or not t.get("links") else '<div class="presets variant-links lead-links">' + "".join(
+        f'<a class="chip" href="{base}{x["href"]}">{esc(x["label"])}</a>' for x in t["links"]) + "</div>"
     crumbs = f'<a href="{path_of("hub", lang)}">{esc(S["ui"]["home"])}</a> <span>›</span> '
     crumbs += (f'<a href="{base}">{esc(t["nav"])}</a> <span>›</span> {esc(v["label"])}' if v else esc(t["nav"]))
     body = (
         f'<nav class="crumbs">{crumbs}</nav>'
         f'<h1>{esc(P["h1"])}</h1><p class="lead">{P["lead"]}</p>'
+        f"{lead_links}"
         f"{frag}{ad_slot('afterTool')}"
         f'<article class="content">{sections}{ad_slot("inContent")}'
         f'<section class="faq"><h2>{esc(S["ui"]["faq"])}</h2>{faq}</section></article>'
