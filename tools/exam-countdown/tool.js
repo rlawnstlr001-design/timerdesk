@@ -7,7 +7,16 @@
   var root = $("#tool");
   // 2027학년도 수능: 2026-11-19(목) 08:40 (교육부) / 2027 共通テスト: 2027-01-16(土) 09:30 (大学入試センター)
   var PRESETS = { csat: { date: "2026-11-19", time: "08:40" }, kyotsu: { date: "2027-01-16", time: "09:30" } };
-  var cfg = Object.assign({ preset: T.presetOrder[0], title: "", date: "", time: "09:00" }, TD.load("countdown-cfg", {}));
+  // 시험별 하위 페이지(/ja/exam-countdown/takken/ 등)는 그 시험을 첫 프리셋으로 두고 저장값보다 우선한다
+  var PAGE = window.TD_EXAM || null;
+  if (PAGE) {
+    PRESETS.page = { date: PAGE.date, time: PAGE.time || "" };
+    T.presets = Object.assign({}, T.presets, { page: PAGE.title });
+    T.notes = Object.assign({}, T.notes, { page: PAGE.note || "" });
+    T.presetOrder = ["page"].concat(T.presetOrder);
+  }
+  var cfg = PAGE ? { preset: "page", title: "", date: "", time: "" }
+    : Object.assign({ preset: T.presetOrder[0], title: "", date: "", time: "09:00" }, TD.load("countdown-cfg", {}));
 
   // 공유 링크로 들어온 경우 그 값을 우선
   // 네이버 앱 등은 `&`를 `&#38;`로 바꿔 열어 title이 #뒤로 밀린다 → 해시도 쿼리로 읽는다
@@ -70,13 +79,13 @@
     if (!b) return;
     cfg.preset = b.dataset.p;
     if (cfg.preset === "custom") $("#cdSettings").open = true;
-    TD.save("countdown-cfg", cfg);
+    if (!PAGE || cfg.preset === "custom") TD.save("countdown-cfg", cfg);
     renderPresets(); fillForm(); tick();
   });
   $("#applyBtn").addEventListener("click", function () {
     if (!$("#cdDate").value) { $("#cdDate").focus(); return; }
     cfg = { preset: "custom", title: $("#cdLabel").value.trim(), date: $("#cdDate").value, time: $("#cdTime").value || "" };
-    TD.save("countdown-cfg", cfg);
+    if (!PAGE || cfg.preset === "custom") TD.save("countdown-cfg", cfg);
     renderPresets(); fillForm(); tick();
   });
   $("#copyBtn").addEventListener("click", function () {

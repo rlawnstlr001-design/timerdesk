@@ -238,6 +238,8 @@ def build_tool(lang, slug, v=None):
     )
     i18n = {"lang": lang, "ui": S["ui"], "t": t["ui"]}
     extra = ""
+    if slug == "exam-countdown" and v and v.get("exam"):
+        extra += "window.TD_EXAM=" + json.dumps(v["exam"], ensure_ascii=False) + ";"
     if slug == "server-time":
         extra += f"window.TD_TIME_API={json.dumps(SITE.get('timeApi', ''))};"
         vs = t.get("variants", [])
