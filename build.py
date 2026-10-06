@@ -98,13 +98,21 @@ def head_extra():
         # EEA·영국·스위스는 동의 전 쿠키 거부(Consent Mode v2 — 쿠키 없는 집계만), 그 외 지역은 허용
         eea = ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT", "LU",
                "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE", "IS", "LI", "NO", "GB", "CH"]
-        out.append(f'<script async src="https://www.googletagmanager.com/gtag/js?id={g}"></script>'
-                   "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}"
+        # 실제 도메인에서만 수집 — localhost 미리보기·테스트가 통계를 오염시키지 않게.
+        # 운영자 기기 제외: 주소에 ?noga=1을 한 번 붙여 열면 그 브라우저는 이후 수집 안 함(?noga=0 해제)
+        hosts = json.dumps([SITE["domain"], "www." + SITE["domain"]])
+        out.append("<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}"
+                   "(function(){try{var q=new URLSearchParams(location.search).get('noga');"
+                   "if(q==='1')localStorage.setItem('td-noga','1');if(q==='0')localStorage.removeItem('td-noga');"
+                   "if(localStorage.getItem('td-noga'))return}catch(e){}"
+                   f"if({hosts}.indexOf(location.hostname)<0)return;"
+                   "var s=document.createElement('script');s.async=true;"
+                   f"s.src='https://www.googletagmanager.com/gtag/js?id={g}';document.head.appendChild(s);"
                    "gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',"
                    f"analytics_storage:'denied',region:{json.dumps(eea)},wait_for_update:500}});"
                    "gtag('consent','default',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',analytics_storage:'granted'});"
                    # 탭 제목에 남은 시간·현재 시각이 들어가므로 page_title은 로드 시점 제목으로 고정
-                   f"gtag('js',new Date());gtag('config','{g}',{{page_title:document.title}});</script>")
+                   f"gtag('js',new Date());gtag('config','{g}',{{page_title:document.title}})}})();</script>")
     return "\n".join(out)
 
 
