@@ -32,7 +32,9 @@
     "groups": {
       "timer": "Temporizadores",
       "calc": "Calculadoras"
-    }
+    },
+    "install": "Instalar app",
+    "appName": "Temporizadores online"
   },
   "hub": {
     "title": "TimerDesk – Reloj online, temporizadores y herramientas de estudio gratis",

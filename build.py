@@ -185,6 +185,7 @@ def write_page(path, lang, kind, title, description, body, alts, xdef, scripts="
             "privacy": path_of("privacy", lang), "nav": nav_html(lang, current),
             "langSwitch": lang_switch(alts, lang), "body": body, "scripts": scripts,
             "head": head_extra() + ("\n" + json_ld(ld) if ld else ""),
+            "manifest": path_of("hub", lang) + "manifest.webmanifest",
         },
         "v": VER,
     }
@@ -355,6 +356,29 @@ def build_misc():
         pub = SITE["adsenseClient"].replace("ca-", "")
         (DIST / "ads.txt").write_text(f"google.com, {pub}, DIRECT, f08c47fec0942fa0\n", "utf-8")
     (DIST / ".nojekyll").write_text("", "utf-8")
+    build_pwa()
+
+
+def build_pwa():
+    """홈 화면 앱(PWA): 언어별 manifest + 아이콘 + 서비스 워커(/sw.js).
+    sw: 페이지는 네트워크 우선(오프라인이면 저장본), /assets·/icons는 캐시 우선(주소에 ?v= 버전이 붙어 갱신됨).
+    다른 도메인(서버시간 Worker·GA·애드센스)은 건드리지 않는다."""
+    icons_dir = DIST / "icons"
+    icons_dir.mkdir(parents=True, exist_ok=True)
+    for f in ["icon-192.png", "icon-512.png", "maskable-512.png"]:
+        shutil.copy(ROOT / "assets" / "icons" / f, icons_dir / f)
+    shutil.copy(ROOT / "assets" / "icons" / "apple-touch-icon.png", DIST / "apple-touch-icon.png")
+    icons = [{"src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png"},
+             {"src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png"},
+             {"src": "/icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}]
+    for lg in LANGS:
+        man = {"name": f'{SITE["brand"]} – {L[lg]["ui"]["appName"]}', "short_name": SITE["brand"],
+               "description": L[lg]["hub"]["description"], "lang": lg, "start_url": path_of("hub", lg), "scope": "/",
+               "display": "standalone", "background_color": "#f6f7f6", "theme_color": "#0f766e", "icons": icons}
+        (DIST / lg).mkdir(parents=True, exist_ok=True)
+        (DIST / lg / "manifest.webmanifest").write_text(json.dumps(man, ensure_ascii=False, indent=1), "utf-8")
+    ver = hashlib.md5(json.dumps(VER, sort_keys=True).encode()).hexdigest()[:10]
+    (DIST / "sw.js").write_text((ROOT / "assets" / "sw.js").read_text("utf-8").replace("__VERSION__", ver), "utf-8")
 
 
 if __name__ == "__main__":

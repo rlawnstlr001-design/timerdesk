@@ -32,7 +32,9 @@
     "groups": {
       "timer": "Timer",
       "calc": "Rechner"
-    }
+    },
+    "install": "App installieren",
+    "appName": "Online-Timer"
   },
   "hub": {
     "title": "TimerDesk – Online-Uhr, Timer und Lern-Tools kostenlos",

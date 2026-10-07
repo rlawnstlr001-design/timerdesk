@@ -32,7 +32,9 @@
     "groups": {
       "timer": "Timers",
       "calc": "Calculators"
-    }
+    },
+    "install": "Install app",
+    "appName": "Online timers & calculators"
   },
   "hub": {
     "title": "TimerDesk – Online Clock, Timers & Study Tools (Free)",

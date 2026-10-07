@@ -395,3 +395,6 @@ html[lang="ja"] body, html[lang="ja"] button, html[lang="ja"] input, html[lang="
 .lead-links { margin: -4px 0 14px; }
 .variant-links .chip.on { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
 code { font-family: var(--mono); font-size: .92em; background: var(--surface-2); padding: 1px 6px; border-radius: 6px; }
+
+/* 홈 화면 앱 설치 버튼 (브라우저가 설치 가능 신호를 줄 때만 보임) */
+.install-btn[hidden] { display: none; }

@@ -177,4 +177,25 @@ window.TD = window.TD || {};
     }
     this.onTick(r);
   };
+
+  /* ---------- 홈 화면 앱(PWA) ---------- */
+  // 서비스 워커: 오프라인에서도 열리게. 설치 버튼은 브라우저가 설치 가능하다고 알릴 때만(안드로이드·PC 크롬) 보인다
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function () { navigator.serviceWorker.register("/sw.js").catch(function () {}); });
+  }
+  var installEvt = null;
+  window.addEventListener("beforeinstallprompt", function (e) {
+    e.preventDefault();
+    installEvt = e;
+    var b = document.getElementById("tdInstall");
+    if (b) b.hidden = false;
+  });
+  document.addEventListener("click", function (e) {
+    if (!installEvt || !e.target.closest("#tdInstall")) return;
+    installEvt.prompt();
+    installEvt.userChoice.then(function (c) { TD.track("pwa_install", { outcome: c.outcome }); });
+    installEvt = null;
+    e.target.closest("#tdInstall").hidden = true;
+  });
+  window.addEventListener("appinstalled", function () { TD.track("pwa_installed"); });
 })(window.TD);

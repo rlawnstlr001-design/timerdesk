@@ -18,6 +18,9 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0f766e">
+<link rel="manifest" href="{{page.manifest}}">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="{{site.brand}}">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/style.css?v={{v.css}}">
 {{page.head}}
@@ -37,6 +40,7 @@
   <div class="wrap">
     <p>{{L.ui.footerNote}}</p>
     <p><a href="{{page.home}}">{{L.ui.allTools}}</a> · <a href="{{page.privacy}}">{{L.ui.privacy}}</a> · © {{year}} {{site.brand}}</p>
+    <p><button class="btn ghost small install-btn" id="tdInstall" type="button" hidden>📲 {{L.ui.install}}</button></p>
   </div>
 </footer>
 {{page.scripts}}
