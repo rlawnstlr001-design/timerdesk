@@ -42,4 +42,6 @@ build.py             -> dist/ (페이지, sitemap.xml, robots.txt, 404, CNAME)
 - `worker/` — 서버시간 중계 Cloudflare Worker. 배포 `cd worker && npx wrangler deploy` (주소는 `site.json timeApi`).
 - `site.json`: `ga4`(GA4 측정 ID, Consent Mode 포함), `adsenseClient`(있으면 head 코드 + `/ads.txt` 생성), `timeApi`.
 
+- PWA(10/07): `assets/sw.js`(빌드 시 `__VERSION__` 치환), `assets/icons/`, 언어별 manifest는 `build_pwa()`가 생성. GA는 운영 도메인에서만(`?noga=1` 제외).
+
 운영 상태·할 일·판정 기준은 볼트 `SoloOS-Vault/10-채널/툴사이트-timerdesk.md`.
