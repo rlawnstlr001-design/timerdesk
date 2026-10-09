@@ -91,6 +91,10 @@ def ad_slot(name):
 
 def head_extra():
     out = []
+    # 검색엔진 소유 확인 (site.json: naverVerification·bingVerification — 값만 넣으면 전 페이지 head에 들어간다)
+    for key, name in (("naverVerification", "naver-site-verification"), ("bingVerification", "msvalidate.01")):
+        if SITE.get(key):
+            out.append(f'<meta name="{name}" content="{esc(SITE[key])}">')
     if SITE.get("adsenseClient"):
         out.append(f'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={SITE["adsenseClient"]}" crossorigin="anonymous"></script>')
     if SITE.get("ga4"):
