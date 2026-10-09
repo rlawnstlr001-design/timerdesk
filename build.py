@@ -360,6 +360,9 @@ def build_misc():
         pub = SITE["adsenseClient"].replace("ca-", "")
         (DIST / "ads.txt").write_text(f"google.com, {pub}, DIRECT, f08c47fec0942fa0\n", "utf-8")
     (DIST / ".nojekyll").write_text("", "utf-8")
+    for f in (ROOT / "root").glob("*"):  # 루트에 그대로 두는 파일 (검색엔진 소유 확인 파일 등)
+        if f.is_file():
+            shutil.copy(f, DIST / f.name)
     build_pwa()
 
 
