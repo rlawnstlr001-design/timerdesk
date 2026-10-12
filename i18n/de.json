@@ -34,7 +34,9 @@
       "calc": "Rechner"
     },
     "install": "App installieren",
-    "appName": "Online-Timer"
+    "appName": "Online-Timer",
+    "about": "Über uns",
+    "contact": "Kontakt"
   },
   "hub": {
     "title": "TimerDesk – Online-Uhr, Timer und Lern-Tools kostenlos",
@@ -601,5 +603,17 @@
     "setFirst": "Stell zuerst eine Zeit ein",
     "minShort": " Min.",
     "tzNote": "Angezeigt in der Zeitzone deines Geräts"
+  },
+  "about": {
+    "title": "Über TimerDesk – Kostenlose Zeit-Tools ohne Installation",
+    "description": "TimerDesk ist eine kostenlose Sammlung von Timern, Uhren, Countdowns und Rechnern, die direkt im Browser laufen – ohne Installation und ohne Anmeldung.",
+    "h1": "Über TimerDesk",
+    "html": "<p>TimerDesk ist eine kostenlose Website mit <strong>Zeit-Tools, die direkt im Browser funktionieren – ohne Installation, ohne Konto</strong>: Pomodoro-Timer, Prüfungstimer, visueller Timer, Countdowns, Lern-Stoppuhr und Datumsrechner.</p><h2>Wer betreibt die Seite?</h2><p>TimerDesk ist ein unabhängiges Projekt eines einzelnen Entwicklers aus Korea – mit dem Ziel, schnelle und einfache Werkzeuge ohne App-Installation und überladene Seiten anzubieten.</p><h2>Genauigkeit</h2><ul><li>Prüfungstermine stammen nur aus <strong>offiziellen Bekanntmachungen</strong>, nie aus Schätzungen.</li><li>Rechner folgen den veröffentlichten Regeln und werden bei Änderungen aktualisiert.</li></ul><h2>Datenschutz und Finanzierung</h2><p>Es gibt keine Konten. Einstellungen und Verlauf bleiben in deinem Browser. Die Seite finanziert sich über Werbung, alle Tools sind kostenlos. Details stehen in der Datenschutzerklärung.</p><h2>Fehler gefunden?</h2><p>Wenn sich ein Termin geändert hat oder etwas nicht stimmt, schreib uns: {email}</p>"
+  },
+  "contact": {
+    "title": "Kontakt – TimerDesk",
+    "description": "Fehler melden, geänderte Termine mitteilen, Tools vorschlagen oder Kooperationen anfragen – per E-Mail.",
+    "h1": "Kontakt",
+    "html": "<p>Fragen und Feedback nehmen wir per E-Mail entgegen.</p><p style='font-size:1.15em'><strong>📧 {email}</strong></p><h2>Was du uns schicken kannst</h2><ul><li><strong>Fehlermeldungen</strong> – bitte Gerät und Browser angeben</li><li><strong>Terminänderungen</strong> – wenn sich ein Prüfungstermin geändert hat</li><li><strong>Ideen</strong> – Timer oder Rechner, die dir fehlen</li><li>Kooperationen und sonstige Anfragen</li></ul><p>Wir antworten in der Regel innerhalb weniger Tage. Bitte sende keine persönlichen Daten, die für deine Nachricht nicht nötig sind.</p>"
   }
 }

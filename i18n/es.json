@@ -34,7 +34,9 @@
       "calc": "Calculadoras"
     },
     "install": "Instalar app",
-    "appName": "Temporizadores online"
+    "appName": "Temporizadores online",
+    "about": "Acerca de",
+    "contact": "Contacto"
   },
   "hub": {
     "title": "TimerDesk – Reloj online, temporizadores y herramientas de estudio gratis",
@@ -601,5 +603,17 @@
     "setFirst": "Primero fija un tiempo",
     "minShort": " min",
     "tzNote": "Se muestra en la zona horaria de tu dispositivo"
+  },
+  "about": {
+    "title": "Acerca de TimerDesk – Herramientas de tiempo gratis, sin instalar",
+    "description": "TimerDesk es una colección gratuita de temporizadores, relojes, cuentas regresivas y calculadoras que funcionan en el navegador, sin instalar ni registrarse.",
+    "h1": "Acerca de TimerDesk",
+    "html": "<p>TimerDesk es un sitio gratuito de <strong>herramientas de tiempo que funcionan en tu navegador, sin instalar nada ni crear cuenta</strong>: temporizador Pomodoro, temporizador de examen, temporizador visual, cuentas regresivas, cronómetro de estudio y calculadoras de fechas.</p><h2>¿Quién lo mantiene?</h2><p>Es un sitio independiente creado y mantenido por un desarrollador individual en Corea, con la idea de ofrecer herramientas rápidas y sencillas, sin instalar apps ni páginas recargadas.</p><h2>Precisión</h2><ul><li>Las fechas de exámenes provienen solo de <strong>anuncios oficiales</strong>, nunca de estimaciones.</li><li>Las calculadoras siguen las reglas publicadas y se actualizan cuando cambian.</li></ul><h2>Privacidad y financiación</h2><p>No hay cuentas. Tus ajustes e historial se guardan solo en tu navegador. El sitio se financia con publicidad y todas las herramientas son gratuitas. Consulta la política de privacidad para más detalles.</p><h2>¿Encontraste un error?</h2><p>Si una fecha cambió o algo no funciona bien, escríbenos: {email}</p>"
+  },
+  "contact": {
+    "title": "Contacto – TimerDesk",
+    "description": "Informa de errores, avísanos de cambios de fechas, sugiere herramientas o consulta sobre colaboraciones por correo.",
+    "h1": "Contacto",
+    "html": "<p>Recibimos preguntas y comentarios por correo electrónico.</p><p style='font-size:1.15em'><strong>📧 {email}</strong></p><h2>Qué puedes enviarnos</h2><ul><li><strong>Errores</strong> — indica tu dispositivo y navegador</li><li><strong>Cambios de fecha</strong> — si una fecha de examen cambió</li><li><strong>Ideas</strong> — temporizadores o calculadoras que te gustaría tener</li><li>Colaboraciones y otras consultas</li></ul><p>Solemos responder en pocos días. No envíes más datos personales de los necesarios.</p>"
   }
 }

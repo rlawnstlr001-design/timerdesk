@@ -34,7 +34,9 @@
       "calc": "Calculators"
     },
     "install": "Install app",
-    "appName": "Online timers & calculators"
+    "appName": "Online timers & calculators",
+    "about": "About",
+    "contact": "Contact"
   },
   "hub": {
     "title": "TimerDesk – Online Clock, Timers & Study Tools (Free)",
@@ -595,5 +597,17 @@
     "setFirst": "Set a time first",
     "minShort": " min",
     "tzNote": "Shown in your device's time zone"
+  },
+  "about": {
+    "title": "About TimerDesk – Free Time Tools, No Install",
+    "description": "TimerDesk is a free collection of timers, clocks, exam countdowns and calculators that run in your browser with no install or sign-up. Learn how it is run and how we keep it accurate.",
+    "h1": "About TimerDesk",
+    "html": "<p>TimerDesk is a free site of <strong>time tools that work right in your browser — no install, no sign-up</strong>: Pomodoro and exam timers, a visual timer, exam countdowns, a study stopwatch and date calculators.</p><h2>Who runs it?</h2><p>TimerDesk is an independent site built and maintained by a solo developer in Korea, who wanted fast, simple tools without app installs or cluttered pages.</p><h2>Accuracy</h2><ul><li>Exam dates come only from <strong>official announcements</strong> by the organizing bodies — never estimates.</li><li>Calculators follow published rules and are updated when those rules change.</li></ul><h2>Privacy and funding</h2><p>There are no accounts. Your timer settings and history stay in your own browser. The site is supported by ads, and every tool is free. See the privacy policy for details.</p><h2>Found a mistake?</h2><p>If a date has changed or something looks wrong, please let us know: {email}</p>"
+  },
+  "contact": {
+    "title": "Contact – TimerDesk",
+    "description": "Report a bug, tell us about a changed exam date, suggest a tool or ask about partnerships by email.",
+    "h1": "Contact",
+    "html": "<p>We take questions and feedback by email.</p><p style='font-size:1.15em'><strong>📧 {email}</strong></p><h2>What to send</h2><ul><li><strong>Bug reports</strong> — please include your device and browser</li><li><strong>Date changes</strong> — if an exam date shown here has changed</li><li><strong>Tool ideas</strong> — timers or calculators you would like</li><li>Partnerships and other questions</li></ul><p>We usually reply within a few days. Please don't send personal information beyond what your message needs.</p>"
   }
 }

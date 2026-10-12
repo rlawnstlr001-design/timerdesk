@@ -59,8 +59,8 @@ def url(path):
 def path_of(kind, lang, slug=None):
     if kind == "hub":
         return f"/{lang}/"
-    if kind == "privacy":
-        return f"/{lang}/privacy/"
+    if kind in ("privacy", "about", "contact"):
+        return f"/{lang}/{kind}/"
     return f"/{lang}/{slug}/"
 
 
@@ -187,6 +187,7 @@ def write_page(path, lang, kind, title, description, body, alts, xdef, scripts="
             "lang": lang, "kind": kind, "title": esc(title), "description": esc(description),
             "url": url(path), "alternates": alt_tags(alts, xdef), "home": path_of("hub", lang),
             "privacy": path_of("privacy", lang), "nav": nav_html(lang, current),
+            "about": path_of("about", lang), "contact": path_of("contact", lang),
             "langSwitch": lang_switch(alts, lang), "body": body, "scripts": scripts,
             "head": head_extra() + ("\n" + json_ld(ld) if ld else ""),
             "manifest": path_of("hub", lang) + "manifest.webmanifest",
@@ -322,6 +323,17 @@ def build_privacy(lang):
     write_page(path_of("privacy", lang), lang, "privacy", p["title"], p["description"], body, alts, xdef)
 
 
+def build_info(lang, kind):
+    """소개(about)·문의(contact) 페이지 — i18n의 같은 이름 키(title·description·h1·html). html의 {email}은 문의 메일 링크로."""
+    S, p = L[lang], L[lang][kind]
+    alts, xdef = alternates(kind)
+    email = SITE.get("contactEmail", "")
+    mail = f'<a href="mailto:{esc(email)}">{esc(email)}</a>'
+    body = (f'<article class="content legal"><h1>{esc(p["h1"])}</h1>{p["html"].replace("{email}", mail)}'
+            f'<p><a class="btn ghost small" href="{path_of("hub", lang)}">{esc(S["ui"]["allTools"])}</a></p></article>')
+    write_page(path_of(kind, lang), lang, kind, p["title"], p["description"], body, alts, xdef)
+
+
 def build_root():
     """루트 '/' = x-default. 자동 리다이렉트는 하지 않고 언어 선택 + 기본 언어 허브를 보여준다."""
     S, h = L[DEFAULT], L[DEFAULT]["hub"]
@@ -418,6 +430,8 @@ if __name__ == "__main__":
     for lg in LANGS:
         build_hub(lg)
         build_privacy(lg)
+        build_info(lg, "about")
+        build_info(lg, "contact")
         for slug in TOOLS:
             if slug in L[lg]["tools"]:
                 build_tool(lg, slug)
