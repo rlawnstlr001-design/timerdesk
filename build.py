@@ -19,6 +19,9 @@ LANGS = SITE["languages"]
 DEFAULT = SITE["defaultLang"]
 TOOLS = SITE["tools"]
 L = {lg: json.loads((ROOT / "i18n" / f"{lg}.json").read_text("utf-8")) for lg in LANGS}
+# 가이드 글: guides/<lang>/<slug>.json — {title, description, h1, lead, date, updated, tools[], sources[{name,url}], html}
+GUIDES = {lg: sorted((dict(json.loads(f.read_text("utf-8")), slug=f.stem) for f in (ROOT / "guides" / lg).glob("*.json")),
+                     key=lambda g: (g.get("order", 99), g["slug"])) if (ROOT / "guides" / lg).exists() else [] for lg in LANGS}
 BASE_TPL = (ROOT / "templates" / "base.html").read_text("utf-8")
 TODAY = datetime.date.today().isoformat()
 SITEMAP = []  # (path, {lang: path})
@@ -59,8 +62,10 @@ def url(path):
 def path_of(kind, lang, slug=None):
     if kind == "hub":
         return f"/{lang}/"
-    if kind in ("privacy", "about", "contact"):
+    if kind in ("privacy", "about", "contact", "guides"):
         return f"/{lang}/{kind}/"
+    if kind == "guide":
+        return f"/{lang}/guides/{slug}/"
     return f"/{lang}/{slug}/"
 
 
@@ -139,6 +144,8 @@ def nav_html(lang, current=None):
     for g, label in L[lang]["ui"]["groups"].items():
         if g != group and any(tools[s].get("group", "timer") == g for s in TOOLS if s in tools):
             links.append(f'<a class="nav-group" href="{path_of("hub", lang)}#{g}">{esc(label)} →</a>')
+    if GUIDES.get(lang):
+        links.append(f'<a class="nav-group" href="{path_of("guides", lang)}">{esc(L[lang]["ui"]["guides"])}</a>')
     return "".join(links)
 
 
@@ -248,6 +255,7 @@ def build_tool(lang, slug, v=None):
         f"{frag}{ad_slot('afterTool')}"
         f'<article class="content">{sections}{ad_slot("inContent")}'
         f'<section class="faq"><h2>{esc(S["ui"]["faq"])}</h2>{faq}</section></article>'
+        f'{guide_section(lang, slug)}'
         f'<section class="related"><h2>{esc(S["ui"]["relatedTools"])}</h2>{cards_html(lang, slug)}</section>'
     )
     i18n = {"lang": lang, "ui": S["ui"], "t": t["ui"]}
@@ -306,7 +314,7 @@ def build_hub(lang):
     alts, xdef = alternates("hub")
     widget, scripts = home_widget(lang)
     body = (f'<section class="hero hero-home"><h1>{esc(h["h1"])}</h1>{widget}<p class="lead">{h["intro"]}</p></section>'
-            f"{grouped_cards(lang)}"
+            f"{grouped_cards(lang)}{guide_section(lang)}"
             f'<article class="content"><section><h2>{esc(h["aboutH2"])}</h2>{h["aboutHtml"]}</section></article>')
     ld = [{"@context": "https://schema.org", "@type": "WebSite", "name": SITE["brand"], "url": url(path_of("hub", lang)),
            "inLanguage": lang}]
@@ -332,6 +340,58 @@ def build_info(lang, kind):
     body = (f'<article class="content legal"><h1>{esc(p["h1"])}</h1>{p["html"].replace("{email}", mail)}'
             f'<p><a class="btn ghost small" href="{path_of("hub", lang)}">{esc(S["ui"]["allTools"])}</a></p></article>')
     write_page(path_of(kind, lang), lang, kind, p["title"], p["description"], body, alts, xdef)
+
+
+def guide_cards(lang, items):
+    return '<div class="cards">' + "".join(
+        f'<a class="card" href="{path_of("guide", lang, g["slug"])}"><span class="card-icon">{g.get("icon", "📘")}</span>'
+        f'<strong>{esc(g["h1"])}</strong><span>{esc(g["description"][:70])}…</span></a>' for g in items) + "</div>"
+
+
+def guide_section(lang, tool=None):
+    """허브(전체)·도구 페이지(그 도구를 다루는 가이드만) 하단 가이드 카드."""
+    items = [g for g in GUIDES.get(lang, []) if tool is None or tool in g.get("tools", [])]
+    if not items:
+        return ""
+    h2 = L[lang]["ui"]["guides"] if tool is None else L[lang]["ui"]["relatedGuides"]
+    return f'<section class="related" id="guides"><h2>{esc(h2)}</h2>{guide_cards(lang, items)}</section>'
+
+
+def build_guide(lang, g):
+    S = L[lang]; u = S["ui"]
+    path = path_of("guide", lang, g["slug"])
+    tools = [t for t in g.get("tools", []) if t in S["tools"]]
+    tool_cards = "".join(
+        f'<a class="card" href="{path_of("tool", lang, t)}"><span class="card-icon">{S["tools"][t]["icon"]}</span>'
+        f'<strong>{esc(S["tools"][t]["nav"])}</strong><span>{esc(S["tools"][t]["card"])}</span></a>' for t in tools)
+    sources = "".join(f'<li><a href="{esc(x["url"])}" target="_blank" rel="noopener">{esc(x["name"])}</a></li>' for x in g.get("sources", []))
+    others = [x for x in GUIDES[lang] if x["slug"] != g["slug"]][:4]
+    crumbs = (f'<a href="{path_of("hub", lang)}">{esc(u["home"])}</a> <span>›</span> '
+              f'<a href="{path_of("guides", lang)}">{esc(u["guides"])}</a> <span>›</span> {esc(g["h1"])}')
+    body = (f'<nav class="crumbs">{crumbs}</nav><article class="content guide">'
+            f'<h1>{esc(g["h1"])}</h1><p class="muted">{esc(u["updated"])} {g.get("updated", g["date"])}</p>'
+            f'<p class="lead">{g["lead"]}</p>{g["html"]}'
+            + (f'<section><h2>{esc(u["useTools"])}</h2><div class="cards">{tool_cards}</div></section>' if tool_cards else "")
+            + (f'<section><h2>{esc(u["sources"])}</h2><ul>{sources}</ul></section>' if sources else "")
+            + "</article>"
+            + (f'<section class="related"><h2>{esc(u["moreGuides"])}</h2>{guide_cards(lang, others)}</section>' if others else ""))
+    ld = [{"@context": "https://schema.org", "@type": "Article", "headline": g["h1"], "description": g["description"],
+           "inLanguage": lang, "datePublished": g["date"], "dateModified": g.get("updated", g["date"]),
+           "author": {"@type": "Organization", "name": SITE["brand"], "url": url(path_of("about", lang))},
+           "publisher": {"@type": "Organization", "name": SITE["brand"]}, "mainEntityOfPage": url(path)},
+          {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+              {"@type": "ListItem", "position": 1, "name": u["home"], "item": url(path_of("hub", lang))},
+              {"@type": "ListItem", "position": 2, "name": u["guides"], "item": url(path_of("guides", lang))},
+              {"@type": "ListItem", "position": 3, "name": g["h1"], "item": url(path)}]}]
+    write_page(path, lang, "guide", g["title"], g["description"], body, {lang: path}, path, ld=ld)
+
+
+def build_guides_index(lang):
+    S = L[lang]; u = S["ui"]
+    path = path_of("guides", lang)
+    body = (f'<nav class="crumbs"><a href="{path_of("hub", lang)}">{esc(u["home"])}</a> <span>›</span> {esc(u["guides"])}</nav>'
+            f'<h1>{esc(u["guidesH1"])}</h1><p class="lead">{esc(u["guidesLead"])}</p>{guide_cards(lang, GUIDES[lang])}')
+    write_page(path, lang, "guides", f'{u["guidesH1"]} – {SITE["brand"]}', u["guidesLead"], body, {lang: path}, path)
 
 
 def build_root():
@@ -432,6 +492,10 @@ if __name__ == "__main__":
         build_privacy(lg)
         build_info(lg, "about")
         build_info(lg, "contact")
+        if GUIDES.get(lg):
+            build_guides_index(lg)
+            for g in GUIDES[lg]:
+                build_guide(lg, g)
         for slug in TOOLS:
             if slug in L[lg]["tools"]:
                 build_tool(lg, slug)

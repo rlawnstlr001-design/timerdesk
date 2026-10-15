@@ -36,7 +36,15 @@
     "install": "앱으로 설치",
     "appName": "온라인 타이머·계산기",
     "about": "소개",
-    "contact": "문의"
+    "contact": "문의",
+    "guides": "가이드",
+    "guidesH1": "TimerDesk 가이드",
+    "guidesLead": "타이머·서버시간·계산기를 제대로 쓰는 방법과, 공식 자료로 확인한 기준을 정리한 글 모음입니다.",
+    "relatedGuides": "이 도구와 함께 읽을 가이드",
+    "updated": "확인일",
+    "useTools": "이 글에서 쓰는 도구",
+    "sources": "참고한 공식 자료",
+    "moreGuides": "다른 가이드"
   },
   "hub": {
     "title": "TimerDesk – 온라인 시계·타이머와 공부·시험 도구 모음 (무료)",

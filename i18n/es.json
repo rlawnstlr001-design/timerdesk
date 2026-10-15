@@ -36,7 +36,15 @@
     "install": "Instalar app",
     "appName": "Temporizadores online",
     "about": "Acerca de",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "guides": "Guías",
+    "guidesH1": "Guías de TimerDesk",
+    "guidesLead": "Cómo aprovechar nuestros temporizadores y cuentas regresivas, con datos verificados en fuentes oficiales.",
+    "relatedGuides": "Guías para esta herramienta",
+    "updated": "Revisado",
+    "useTools": "Herramientas de esta guía",
+    "sources": "Fuentes oficiales",
+    "moreGuides": "Más guías"
   },
   "hub": {
     "title": "TimerDesk – Reloj online, temporizadores y herramientas de estudio gratis",

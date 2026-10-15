@@ -36,7 +36,15 @@
     "install": "App installieren",
     "appName": "Online-Timer",
     "about": "Über uns",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "guides": "Ratgeber",
+    "guidesH1": "TimerDesk-Ratgeber",
+    "guidesLead": "So nutzt du unsere Timer und Countdowns optimal – mit Fakten aus offiziellen Quellen.",
+    "relatedGuides": "Ratgeber zu diesem Tool",
+    "updated": "Geprüft am",
+    "useTools": "Tools in diesem Ratgeber",
+    "sources": "Offizielle Quellen",
+    "moreGuides": "Weitere Ratgeber"
   },
   "hub": {
     "title": "TimerDesk – Online-Uhr, Timer und Lern-Tools kostenlos",

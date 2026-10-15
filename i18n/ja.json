@@ -36,7 +36,15 @@
     "install": "アプリとしてインストール",
     "appName": "オンラインタイマー",
     "about": "このサイトについて",
-    "contact": "お問い合わせ"
+    "contact": "お問い合わせ",
+    "guides": "ガイド",
+    "guidesH1": "TimerDesk ガイド",
+    "guidesLead": "タイマーや試験カウントダウンを上手に使う方法を、公式情報で確認した内容とあわせてまとめた記事です。",
+    "relatedGuides": "このツールと一緒に読みたいガイド",
+    "updated": "確認日",
+    "useTools": "この記事で使うツール",
+    "sources": "参考にした公式情報",
+    "moreGuides": "ほかのガイド"
   },
   "hub": {
     "title": "TimerDesk – オンライン時計・タイマーと勉強ツール（無料）",

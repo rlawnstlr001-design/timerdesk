@@ -36,7 +36,15 @@
     "install": "Install app",
     "appName": "Online timers & calculators",
     "about": "About",
-    "contact": "Contact"
+    "contact": "Contact",
+    "guides": "Guides",
+    "guidesH1": "TimerDesk Guides",
+    "guidesLead": "How to get the most out of our timers and countdowns, with facts checked against official sources.",
+    "relatedGuides": "Guides for this tool",
+    "updated": "Last checked",
+    "useTools": "Tools used in this guide",
+    "sources": "Official sources",
+    "moreGuides": "More guides"
   },
   "hub": {
     "title": "TimerDesk – Online Clock, Timers & Study Tools (Free)",
