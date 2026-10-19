@@ -207,6 +207,38 @@ def write_page(path, lang, kind, title, description, body, alts, xdef, scripts="
     SITEMAP.append((path, alts))
 
 
+SRV_FACTS = json.loads((ROOT / "data" / "srv_facts.json").read_text("utf-8")) if (ROOT / "data" / "srv_facts.json").exists() else {}
+SRV_META = json.loads((ROOT / "data" / "srv_meta.json").read_text("utf-8")) if (ROOT / "data" / "srv_meta.json").exists() else {}
+
+
+def srv_facts_html(lang, t, v):
+    """서버시간 하위 페이지 고유 정보: 실측 서버 시계 차이·접속 시 이동 화면·대표 홈페이지 (data/srv_facts.json·srv_meta.json).
+    수치는 3회 측정 중앙값, 측정 2회 미만이거나 오차 100ms 초과면 수치를 싣지 않는다."""
+    f, m, T = SRV_FACTS.get(v["site"]), SRV_META.get(v["slug"], {}), t["ui"].get("facts")
+    if not f or not T or "error" in f:
+        return ""
+    name = v.get("target", v["label"])
+    rows = [(T["host"], f'<code>{esc(v["site"])}</code>')]
+    final = f.get("final", "").rstrip("/")
+    if final and final != v["site"]:
+        rows.append((T["lands"], f'<code>{esc(final)}</code>'))
+    if m.get("access"):
+        rows.append((T["access"], T["accessPortal"] if m["access"] == "포털" else T["accessOwn"]))
+    if m.get("home"):
+        rows.append((T["home"], f'<a href="{esc(m["home"])}" target="_blank" rel="noopener">{esc(m["home"].split("//")[1].rstrip("/"))}</a>'))
+    good = f.get("n", 0) >= 2 and f.get("err", 999) <= 100
+    if good:
+        sec = abs(f["offset"]) / 1000
+        word = T["ahead"] if f["offset"] > 0 else T["behind"]
+        meas = T["measured"].replace("{d}", f["measured"]).replace("{n}", str(f["n"])).replace("{s}", f"{sec:.2f}").replace("{w}", word).replace("{e}", f'{f["err"] / 1000:.2f}')
+    else:
+        meas = T["noisy"].replace("{d}", f["measured"])
+    rows.append((T["clock"], meas))
+    table = "".join(f"<tr><th>{k}</th><td>{val}</td></tr>" for k, val in rows)
+    note = T["note"].replace("{name}", esc(name))
+    return f'<section><h2>{esc(T["h2"].replace("{name}", name))}</h2><div class="table-scroll"><table><tbody>{table}</tbody></table></div><p>{note}</p></section>'
+
+
 def variant_links(lang, slug, current=None):
     """사이트별 하위 페이지(variants) 목록 — 본 페이지·하위 페이지 모두에 내부 링크로 단다."""
     t = L[lang]["tools"][slug]
@@ -241,6 +273,8 @@ def build_tool(lang, slug, v=None):
         alts, xdef = alternates("tool", slug)
     frag = render((ROOT / "tools" / slug / "tool.html").read_text("utf-8"), {"ui": S["ui"], "t": t["ui"]}, f"{slug}/tool.html [{lang}]")
     sections = "".join(f'<section><h2>{esc(x["h2"])}</h2>{x["html"]}</section>' for x in P["sections"])
+    if v and slug == "server-time":
+        sections += srv_facts_html(lang, t, v)
     sections += variant_links(lang, slug, v["slug"] if v else None)
     faq = "".join(f'<details><summary>{esc(f["q"])}</summary><div>{f["a"]}</div></details>' for f in P["faq"])
     # 본 페이지 리드 아래 바로가기 (도구 JSON links, href는 도구 경로 기준 상대)

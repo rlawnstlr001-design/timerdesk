@@ -1,0 +1,237 @@
+{
+ "tickets.interpark.com": {
+  "offset": 116,
+  "err": 64,
+  "rtt": 146,
+  "final": "nol.yanolja.com/ticket",
+  "n": 3,
+  "measured": "2026-10-19"
+ },
+ "ticket.yes24.com": {
+  "offset": 121,
+  "err": 28,
+  "rtt": 230,
+  "final": "ticket.yes24.com/",
+  "n": 3,
+  "measured": "2026-10-19"
+ },
+ "ticket.melon.com": {
+  "offset": 52,
+  "err": 16,
+  "rtt": 88,
+  "final": "ticket.melon.com/",
+  "n": 3,
+  "measured": "2026-10-19"
+ },
+ "www.ticketlink.co.kr": {
+  "offset": 38,
+  "err": 19,
+  "rtt": 70,
+  "final": "www.ticketlink.co.kr/",
+  "n": 3,
+  "measured": "2026-10-19"
+ },
+ "www.letskorail.com": {
+  "offset": 83,
+  "err": 23,
+  "rtt": 149,
+  "final": "www.korail.com/",
+  "n": 3,
+  "measured": "2026-10-19"
+ },
+ "etk.srail.kr": {
+  "offset": 62,
+  "err": 39,
+  "rtt": 77,
+  "final": "etk.srail.kr/main.do",
+  "n": 3,
+  "measured": "2026-10-19"
+ },
+ "www.coupang.com": {
+  "offset": 22,
+  "err": 17,
+  "rtt": 24,
+  "final": "www.coupang.com/",
+  "n": 3,
+  "measured": "2026-10-19"
+ },
+ "www.naver.com": {
+  "offset": 60,
+  "err": 36,
+  "rtt": 88,
+  "final": "www.naver.com/",
+  "n": 3,
+  "measured": "2026-10-19"
+ },
+ "sugang.korea.ac.kr": {
+  "offset": 111,
+  "err": 24,
+  "rtt": 204,
+  "final": "sugang.korea.ac.kr/error/error.html",
+  "n": 3,
+  "measured": "2026-10-19"
+ },
+ "portal.yonsei.ac.kr": {
+  "offset": 85,
+  "err": 32,
+  "rtt": 149,
+  "final": "portal.yonsei.ac.kr/",
+  "n": 3,
+  "measured": "2026-10-19"
+ },
+ "sugang.snu.ac.kr": {
+  "offset": 232,
+  "err": 125,
+  "rtt": 284,
+  "final": "sugang.snu.ac.kr/",
+  "n": 3,
+  "measured": "2026-10-19"
+ },
+ "sugang.skku.edu": {
+  "offset": 43,
+  "err": 12,
+  "rtt": 66,
+  "final": "sugang.skku.edu/skku/",
+  "n": 3,
+  "measured": "2026-10-19"
+ },
+ "portal.hanyang.ac.kr": {
+  "offset": 38,
+  "err": 13,
+  "rtt": 68,
+  "final": "portal.hanyang.ac.kr/",
+  "n": 3,
+  "measured": "2026-10-19"
+ },
+ "sugang.khu.ac.kr": {
+  "offset": 35,
+  "err": 14,
+  "rtt": 66,
+  "final": "sugang.khu.ac.kr/",
+  "n": 3,
+  "measured": "2026-10-19"
+ },
+ "sugang.cau.ac.kr": {
+  "offset": 47,
+  "err": 16,
+  "rtt": 69,
+  "final": "sugang.cau.ac.kr/",
+  "n": 3,
+  "measured": "2026-10-19"
+ },
+ "sugang.konkuk.ac.kr": {
+  "offset": 28,
+  "err": 17,
+  "rtt": 64,
+  "final": "sugang.konkuk.ac.kr/",
+  "n": 3,
+  "measured": "2026-10-19"
+ },
+ "sugang.ewha.ac.kr": {
+  "offset": 90,
+  "err": 35,
+  "rtt": 189,
+  "final": "sugang.ewha.ac.kr/",
+  "n": 3,
+  "measured": "2026-10-19"
+ },
+ "sugang.kookmin.ac.kr": {
+  "offset": 65,
+  "err": 21,
+  "rtt": 94,
+  "final": "sugang.kookmin.ac.kr/slogin",
+  "n": 3,
+  "measured": "2026-10-19"
+ },
+ "portal.sookmyung.ac.kr": {
+  "offset": 37,
+  "err": 21,
+  "rtt": 82,
+  "final": "portal.sookmyung.ac.kr/irj/portal",
+  "n": 3,
+  "measured": "2026-10-19"
+ },
+ "sugang.uos.ac.kr": {
+  "offset": 48,
+  "err": 19,
+  "rtt": 83,
+  "final": "sugang.uos.ac.kr/error.html",
+  "n": 3,
+  "measured": "2026-10-19"
+ },
+ "sugang.kw.ac.kr": {
+  "offset": 109,
+  "err": 22,
+  "rtt": 191,
+  "final": "sugang.kw.ac.kr/",
+  "n": 3,
+  "measured": "2026-10-19"
+ },
+ "sugang.inha.ac.kr": {
+  "offset": 49,
+  "err": 31,
+  "rtt": 143,
+  "final": "sugang.inha.ac.kr/",
+  "n": 3,
+  "measured": "2026-10-19"
+ },
+ "sugang.ajou.ac.kr": {
+  "error": "fetch-failed"
+ },
+ "sugang.dankook.ac.kr": {
+  "offset": 45,
+  "err": 11,
+  "rtt": 71,
+  "final": "sugang.dankook.ac.kr/logon.do",
+  "n": 3,
+  "measured": "2026-10-19"
+ },
+ "sg.gachon.ac.kr": {
+  "offset": 108,
+  "err": 36,
+  "rtt": 168,
+  "final": "sg.gachon.ac.kr/",
+  "n": 2,
+  "measured": "2026-10-19"
+ },
+ "sugang.inu.ac.kr": {
+  "offset": 163,
+  "err": 46,
+  "rtt": 200,
+  "final": "sugang.inu.ac.kr/",
+  "n": 3,
+  "measured": "2026-10-19"
+ },
+ "sugang.pusan.ac.kr": {
+  "offset": 108,
+  "err": 17,
+  "rtt": 216,
+  "final": "sugang.pusan.ac.kr/login",
+  "n": 3,
+  "measured": "2026-10-19"
+ },
+ "sugang.knu.ac.kr": {
+  "offset": 489,
+  "err": 84,
+  "rtt": 960,
+  "final": "sugang.knu.ac.kr/login.knu",
+  "n": 1,
+  "measured": "2026-10-19"
+ },
+ "sugang.cnu.ac.kr": {
+  "offset": 277,
+  "err": 84,
+  "rtt": 496,
+  "final": "sugang.cnu.ac.kr/",
+  "n": 3,
+  "measured": "2026-10-19"
+ },
+ "sugang.jnu.ac.kr": {
+  "offset": 31,
+  "err": 17,
+  "rtt": 75,
+  "final": "sugang.jnu.ac.kr/",
+  "n": 3,
+  "measured": "2026-10-19"
+ }
+}

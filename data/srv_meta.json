@@ -1,0 +1,90 @@
+{
+ "korea-univ": {
+  "home": "https://www.korea.ac.kr/",
+  "access": "전용"
+ },
+ "yonsei": {
+  "home": "https://www.yonsei.ac.kr/",
+  "access": "포털"
+ },
+ "snu": {
+  "home": "https://www.snu.ac.kr/",
+  "access": "전용"
+ },
+ "skku": {
+  "home": "https://www.skku.edu/",
+  "access": "전용"
+ },
+ "hanyang": {
+  "home": "https://www.hanyang.ac.kr/",
+  "access": "포털"
+ },
+ "khu": {
+  "home": "https://www.khu.ac.kr/",
+  "access": "전용"
+ },
+ "cau": {
+  "home": "https://www.cau.ac.kr/",
+  "access": "전용"
+ },
+ "konkuk": {
+  "home": "https://www.konkuk.ac.kr/",
+  "access": "전용"
+ },
+ "ewha": {
+  "home": "https://www.ewha.ac.kr/",
+  "access": "전용"
+ },
+ "kookmin": {
+  "home": "https://www.kookmin.ac.kr/",
+  "access": "전용"
+ },
+ "sookmyung": {
+  "home": "https://www.sookmyung.ac.kr/",
+  "access": "포털"
+ },
+ "uos": {
+  "home": "https://www.uos.ac.kr/",
+  "access": "전용"
+ },
+ "kw": {
+  "home": "https://www.kw.ac.kr/",
+  "access": "전용"
+ },
+ "inha": {
+  "home": "https://www.inha.ac.kr/",
+  "access": "전용"
+ },
+ "ajou": {
+  "home": "https://www.ajou.ac.kr/",
+  "access": "전용"
+ },
+ "dankook": {
+  "home": "https://www.dankook.ac.kr/",
+  "access": "전용"
+ },
+ "gachon": {
+  "home": "https://www.gachon.ac.kr/",
+  "access": "전용"
+ },
+ "inu": {
+  "home": "https://www.inu.ac.kr/",
+  "access": "전용"
+ },
+ "pusan": {
+  "home": "https://www.pusan.ac.kr/",
+  "access": "전용"
+ },
+ "knu": {
+  "home": "https://www.knu.ac.kr/",
+  "access": "전용"
+ },
+ "cnu": {
+  "home": "https://www.cnu.ac.kr/",
+  "access": "전용"
+ },
+ "jnu": {
+  "home": "https://www.jnu.ac.kr/",
+  "access": "전용"
+ }
+}
