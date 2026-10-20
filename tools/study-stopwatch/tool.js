@@ -55,6 +55,10 @@
     commit();
     st.run = null;
     save(); renderAll();
+    // 멈출 때 오늘 합계가 5분 이상이면 칭찬 (삭제한 과목 기록 포함)
+    var lg = st.log[TD.dateKey(new Date())] || {}, sum = 0;
+    Object.keys(lg).forEach(function (id) { sum += lg[id]; });
+    if (sum >= 300) TD.cheerDone("study", { time: TD.fmtHM(sum) });
   }
   function toggleMain() {
     if (st.run) pause();

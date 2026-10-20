@@ -1,0 +1,53 @@
+{
+  "fmt": { "hm": "{h} Std. {m} Min.", "m": "{m} Min." },
+  "lines": {
+    "exam": [
+      "Die Aufgabe, die du heute löst, fällt dir vielleicht in der Prüfung wieder ein.",
+      "Wer die Tage zählt, hat mit der Vorbereitung schon begonnen.",
+      "Es muss nicht perfekt sein. Ein Schritt weiter als gestern reicht.",
+      "Die Zeit, die du investierst, geht nicht verloren.",
+      "Nervosität heißt nur, dass es dir wichtig ist.",
+      "Denk nur an das Pensum von heute. Den Rest schafft dein Morgen-Ich.",
+      "Schlaf gehört zum Lernen. Ruh dich heute gut aus.",
+      "Du bist schon so weit gekommen. Du machst das besser, als du denkst."
+    ],
+    "focus": [
+      "25 Minuten geschafft – du bist schon weiter als gestern.",
+      "Anfangen ist das Schwerste, und genau das tust du gerade.",
+      "Handy umdrehen und erst mal nur eine Runde.",
+      "Konzentration verloren? Kein Problem. Einfach zurückkommen.",
+      "Kleine Einheiten ergeben große Fortschritte.",
+      "Pausen gehören dazu. Nimm sie dir richtig.",
+      "Du hast dich heute hingesetzt. Das zählt.",
+      "Lieber regelmäßig als viel. Fülle heute noch einen Block."
+    ],
+    "day": [
+      "Einen Tag zu haben, auf den man sich freut, ist schön.",
+      "Tag für Tag rückt er näher. Hab einen schönen Tag.",
+      "Was auch immer der große Tag ist – deine Vorbereitung wird sich zeigen.",
+      "Heute ist der Tag mit dem meisten Spielraum, der noch bleibt.",
+      "Pass bis dahin gut auf dich auf.",
+      "Falls es etwas zu feiern gibt: Herzlichen Glückwunsch im Voraus! 🎉"
+    ]
+  },
+  "done": {
+    "focus": [
+      "🍅 Fokus-Einheit {n} geschafft! Heute {min} Minuten konzentriert.",
+      "🍅 Runde fertig! Heute schon {min} Minuten. Gut gemacht.",
+      "🍅 Geschafft – {n} Einheiten heute. Mach kurz Pause."
+    ],
+    "study": [
+      "📚 Heute {time} gelernt. Du bist auf einem guten Weg.",
+      "📚 {time} heute gesammelt. Diese Zeit bleibt dir.",
+      "📚 {time}! Darauf kannst du stolz sein."
+    ],
+    "timer": [
+      "⏰ Fertig! Du hast bis zum Ende durchgehalten.",
+      "⏰ Die Zeit ist um. Gut gemacht!"
+    ],
+    "exam": [
+      "📝 Komplette Probeprüfung geschafft! Das zahlt sich am Prüfungstag aus.",
+      "📝 Bis zum Ende durchgezogen. Gönn dir heute etwas."
+    ]
+  }
+}

@@ -126,6 +126,37 @@ window.TD = window.TD || {};
     try { if (window.gtag) window.gtag("event", name, Object.assign({ tool: location.pathname.split("/")[2] || "home", lang: TD.lang }, params || {})); } catch (e) { /* 무시 */ }
   };
 
+  /* ---------- 응원 한 줄 ----------
+     페이지를 열 때마다 무작위 문구, 타이머를 끝내면 그날 기록을 넣은 칭찬. 빈 칸으로 배포하고 여기서만 채운다 (검색 본문 아님). */
+  var CH = I.cheer;
+  function pick(arr, key) {
+    if (!arr || !arr.length) return "";
+    var last = TD.load(key, -1), i = Math.floor(Math.random() * arr.length);
+    if (arr.length > 1 && i === last) i = (i + 1) % arr.length; // 연달아 같은 문구 방지
+    TD.save(key, i);
+    return arr[i];
+  }
+  function cheerSet(text, done) {
+    var el = document.getElementById("tdCheer");
+    if (!el || !text) return;
+    el.textContent = text;
+    el.classList.toggle("cheer-done", !!done);
+    el.hidden = false;
+  }
+  TD.fmtHM = function (sec) {
+    var m = Math.floor(sec / 60), h = Math.floor(m / 60);
+    m %= 60;
+    if (!CH) return h + ":" + pad(m);
+    return (h ? CH.fmt.hm.replace("{h}", h) : CH.fmt.m).replace("{m}", m);
+  };
+  TD.cheerDone = function (type, vars) {
+    if (!CH || !CH.done[type]) return;
+    cheerSet(pick(CH.done[type], "td-cheer-" + type).replace(/\{(\w+)\}/g, function (_, k) {
+      return vars && vars[k] != null ? vars[k] : "";
+    }), true);
+  };
+  if (CH) cheerSet(pick(CH.lines, "td-cheer"));
+
   /* ---------- 단축키 (입력창에서는 무시) ---------- */
   TD.keys = function (map) {
     document.addEventListener("keydown", function (e) {

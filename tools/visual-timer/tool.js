@@ -82,6 +82,7 @@
   function finish() {
     TD.play(cfg.sound, cfg.volume, 3);
     root.classList.add("done");
+    TD.cheerDone("timer");
     doneTimer = setTimeout(clearDone, 6000);
     syncBtn();
   }

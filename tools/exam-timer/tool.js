@@ -217,6 +217,7 @@
     if (phase === "done") TD.keepAwake(false);
     if (idx !== curIdx) {
       curIdx = idx;
+      if (phase === "done") TD.cheerDone("exam");
       TD.$$("#timeline li").forEach(function (li) {
         var j = +li.dataset.i;
         li.className = j < idx ? "done" : j === idx ? "current" : "";

@@ -1,0 +1,53 @@
+{
+  "fmt": { "hm": "{h}h {m}m", "m": "{m} min" },
+  "lines": {
+    "exam": [
+      "The question you solve today might be the one you remember on exam day.",
+      "Counting the days means you've already started preparing.",
+      "It doesn't have to be perfect. One step past yesterday is enough.",
+      "The hours you put in don't disappear.",
+      "Nerves just mean you care. That's a good sign.",
+      "Focus on today's work. Tomorrow-you can handle the rest.",
+      "Sleep counts as studying too. Get some rest tonight.",
+      "You've made it this far. You're doing better than you think."
+    ],
+    "focus": [
+      "Twenty-five minutes in, and you're already ahead of yesterday.",
+      "Starting is the hardest part, and you're doing it.",
+      "Flip your phone over and try just one round.",
+      "Lost focus? That's fine. Just come back.",
+      "Small sessions add up to big results.",
+      "Breaks are part of the work. Take them properly.",
+      "You showed up today. That matters.",
+      "Consistency beats intensity. Fill in one more block today."
+    ],
+    "day": [
+      "Having a day to look forward to is a nice thing.",
+      "Day by day, it's getting closer. Have a good one.",
+      "Whatever the big day is, your preparation will show.",
+      "Today is the day with the most time left. Use it kindly.",
+      "Take care of yourself until then.",
+      "If it's a celebration, congratulations in advance! 🎉"
+    ]
+  },
+  "done": {
+    "focus": [
+      "🍅 Focus session {n} done! {min} minutes of focus today.",
+      "🍅 Round complete! Already {min} minutes today. Nice work.",
+      "🍅 You did it — that's {n} today. Take a short break."
+    ],
+    "study": [
+      "📚 {time} studied today. You're doing great.",
+      "📚 {time} logged today. That time is yours to keep.",
+      "📚 {time}! Give yourself some credit."
+    ],
+    "timer": [
+      "⏰ Done! You stuck with it to the end.",
+      "⏰ Time's up. Well done!"
+    ],
+    "exam": [
+      "📝 Full practice run complete! It'll pay off on exam day.",
+      "📝 You finished the whole thing. Treat yourself tonight."
+    ]
+  }
+}

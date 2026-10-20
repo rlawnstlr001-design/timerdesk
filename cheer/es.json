@@ -1,0 +1,53 @@
+{
+  "fmt": { "hm": "{h} h {m} min", "m": "{m} min" },
+  "lines": {
+    "exam": [
+      "La pregunta que resuelvas hoy puede ser la que recuerdes el día del examen.",
+      "Si estás contando los días, ya empezaste a prepararte.",
+      "No tiene que ser perfecto. Un paso más que ayer es suficiente.",
+      "Las horas que dedicas no desaparecen.",
+      "Los nervios solo significan que te importa.",
+      "Piensa solo en lo de hoy. Mañana te encargas del resto.",
+      "Dormir también es estudiar. Descansa bien esta noche.",
+      "Has llegado hasta aquí. Lo estás haciendo mejor de lo que crees."
+    ],
+    "focus": [
+      "Veinticinco minutos y ya vas por delante de ayer.",
+      "Empezar es lo más difícil, y lo estás haciendo.",
+      "Pon el móvil boca abajo y prueba solo una ronda.",
+      "¿Te desconcentraste? No pasa nada. Vuelve cuando puedas.",
+      "Las sesiones pequeñas suman grandes resultados.",
+      "Los descansos también cuentan. Tómalos de verdad.",
+      "Hoy te sentaste a trabajar. Eso importa.",
+      "Mejor constante que intenso. Completa un bloque más hoy."
+    ],
+    "day": [
+      "Tener un día que esperar es algo bonito.",
+      "Día a día, ya falta menos. Que tengas un buen día.",
+      "Sea cual sea el gran día, tu preparación se notará.",
+      "Hoy es el día con más margen de todos los que quedan.",
+      "Cuídate mucho hasta entonces.",
+      "Si es una celebración, ¡felicidades por adelantado! 🎉"
+    ]
+  },
+  "done": {
+    "focus": [
+      "🍅 ¡Sesión {n} completada! Hoy llevas {min} minutos de concentración.",
+      "🍅 ¡Ronda terminada! Ya son {min} minutos hoy. Buen trabajo.",
+      "🍅 Lo lograste: {n} sesiones hoy. Toma un pequeño descanso."
+    ],
+    "study": [
+      "📚 Hoy has estudiado {time}. Vas muy bien.",
+      "📚 {time} acumulados hoy. Ese tiempo es tuyo.",
+      "📚 ¡{time}! Date un poco de reconocimiento."
+    ],
+    "timer": [
+      "⏰ ¡Listo! Aguantaste hasta el final.",
+      "⏰ Se acabó el tiempo. ¡Bien hecho!"
+    ],
+    "exam": [
+      "📝 ¡Simulacro completo! Te servirá el día del examen.",
+      "📝 Lo terminaste entero. Date un capricho esta noche."
+    ]
+  }
+}

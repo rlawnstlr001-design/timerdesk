@@ -398,3 +398,10 @@ code { font-family: var(--mono); font-size: .92em; background: var(--surface-2);
 
 /* 홈 화면 앱 설치 버튼 (브라우저가 설치 가능 신호를 줄 때만 보임) */
 .install-btn[hidden] { display: none; }
+
+/* 응원 한 줄 (도구 바로 아래, 페이지를 열 때마다 바뀜 · 타이머 완료 시 강조) */
+.cheer { margin: 12px 4px 0; text-align: center; color: var(--muted); font-size: 14.5px; line-height: 1.5; }
+.cheer[hidden] { display: none; }
+.cheer.cheer-done { color: var(--accent); font-weight: 700; font-size: 15.5px; animation: cheer-in .5s ease-out; }
+@keyframes cheer-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .cheer.cheer-done { animation: none; } }

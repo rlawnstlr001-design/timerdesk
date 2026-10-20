@@ -23,6 +23,12 @@ L = {lg: json.loads((ROOT / "i18n" / f"{lg}.json").read_text("utf-8")) for lg in
 GUIDES = {lg: sorted((dict(json.loads(f.read_text("utf-8")), slug=f.stem) for f in (ROOT / "guides" / lg).glob("*.json")),
                      key=lambda g: (g.get("order", 99), g["slug"])) if (ROOT / "guides" / lg).exists() else [] for lg in LANGS}
 BASE_TPL = (ROOT / "templates" / "base.html").read_text("utf-8")
+# 응원 한 줄: cheer/<lang>.json — 도구 아래에 새로고침마다 무작위로, 완료 순간엔 기록을 넣은 칭찬 (브라우저에서만 표시)
+CHEER = {lg: json.loads((ROOT / "cheer" / f"{lg}.json").read_text("utf-8")) for lg in LANGS if (ROOT / "cheer" / f"{lg}.json").exists()}
+CHEER_KIND = {"exam-timer": "exam", "exam-countdown": "exam", "pomodoro-timer": "focus", "study-stopwatch": "focus",
+              "visual-timer": "focus", "dday-calculator": "day", "age-calculator": "day", "salary-calculator": "work",
+              "holiday-pay-calculator": "work", "severance-calculator": "change", "unemployment-calculator": "change",
+              "server-time": "ticket"}
 TODAY = datetime.date.today().isoformat()
 SITEMAP = []  # (path, {lang: path})
 
@@ -261,6 +267,18 @@ def variant_links(lang, slug, current=None):
     return out
 
 
+def cheer_cfg(lang, slug, v):
+    C = CHEER.get(lang)
+    kind = CHEER_KIND.get(slug)
+    if v and v.get("group") == "univ":
+        kind = "sugang"
+    if v and slug == "exam-countdown" and v["slug"] == "takken":
+        kind = "day"  # 시험은 끝나고 합격발표를 기다리는 페이지 — 공부 응원은 어울리지 않는다
+    if not C or kind not in C["lines"]:
+        return None
+    return {"lines": C["lines"][kind], "done": C["done"], "fmt": C["fmt"]}
+
+
 def build_tool(lang, slug, v=None):
     """도구 페이지. v(variant)가 있으면 /<lang>/<slug>/<v.slug>/ 하위 페이지 — 같은 도구에 사이트를 미리 고르고 문구만 다르게."""
     S, t = L[lang], L[lang]["tools"][slug]
@@ -272,6 +290,9 @@ def build_tool(lang, slug, v=None):
     else:
         alts, xdef = alternates("tool", slug)
     frag = render((ROOT / "tools" / slug / "tool.html").read_text("utf-8"), {"ui": S["ui"], "t": t["ui"]}, f"{slug}/tool.html [{lang}]")
+    cheer = cheer_cfg(lang, slug, v)
+    if cheer:
+        frag += '<p class="cheer" id="tdCheer" data-nosnippet hidden></p>'
     sections = "".join(f'<section><h2>{esc(x["h2"])}</h2>{x["html"]}</section>' for x in P["sections"])
     if v and slug == "server-time":
         sections += srv_facts_html(lang, t, v)
@@ -293,6 +314,8 @@ def build_tool(lang, slug, v=None):
         f'<section class="related"><h2>{esc(S["ui"]["relatedTools"])}</h2>{cards_html(lang, slug)}</section>'
     )
     i18n = {"lang": lang, "ui": S["ui"], "t": t["ui"]}
+    if cheer:
+        i18n["cheer"] = cheer
     extra = ""
     if slug == "exam-countdown" and v and v.get("exam"):
         extra += "window.TD_EXAM=" + json.dumps(v["exam"], ensure_ascii=False) + ";"
