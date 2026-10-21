@@ -405,3 +405,21 @@ code { font-family: var(--mono); font-size: .92em; background: var(--surface-2);
 .cheer.cheer-done { color: var(--accent); font-weight: 700; font-size: 15.5px; animation: cheer-in .5s ease-out; }
 @keyframes cheer-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .cheer.cheer-done { animation: none; } }
+
+/* ---------- 좁은 화면(갤럭시 폴드 접힘 344px 등) · 터치 대상 (10/21 기기 점검) ---------- */
+/* 한국어는 기본값이 글자 단위 줄바꿈이라 "집/중"처럼 깨진다 → 단어 단위로 */
+html:lang(ko) body { word-break: keep-all; overflow-wrap: break-word; }
+.tab { word-break: keep-all; line-height: 1.25; }
+.tool-bar .tabs { min-width: 0; }
+@media (max-width: 400px) {
+  .tool { padding: 14px; }
+  .tab { padding: 7px 9px; font-size: 14px; }
+  /* 탭이 길면(스페인어 등) 탭이 한 줄을 다 쓰고 전체화면 버튼은 다음 줄 오른쪽으로 */
+  .tool-bar { flex-wrap: wrap; }
+  .tool-bar .tabs { display: flex; flex: 1 1 auto; }
+  .tool-bar .tab { flex: 1 1 auto; }
+  .tool-bar > .icon-btn { margin-left: auto; }
+}
+.link-btn { padding: 6px 2px; }
+.subject-del { width: 32px; height: 32px; top: 2px; right: 2px; }
+.swatch { width: 32px; height: 32px; }
