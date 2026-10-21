@@ -83,6 +83,7 @@
     TD.play(cfg.sound, cfg.volume, 3);
     root.classList.add("done");
     TD.cheerDone("timer");
+    TD.track("timer_complete", { kind: "timer", minutes: Math.round(cd.total / 60) });
     doneTimer = setTimeout(clearDone, 6000);
     syncBtn();
   }

@@ -63,6 +63,7 @@
       TD.save("pomo-stats", stats);
       renderStats();
       TD.cheerDone("focus", { n: s.count, min: s.min });
+      TD.track("timer_complete", { kind: "focus", minutes: cfg.focus, count_today: s.count });
       TD.notify("🍅 " + T.focus, T.notifyFocusDone);
       setMode(done % cfg.longEvery === 0 ? "long" : "short", cfg.autoStart);
     } else {

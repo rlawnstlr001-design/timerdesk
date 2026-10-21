@@ -44,15 +44,18 @@
   function start(id) {
     TD.unlockAudio();
     if (st.run && st.run.id === id) return;
+    var t0 = st.run ? st.run.t0 || st.run.since : Date.now(); // 과목을 바꿔도 이어지는 세션 시작 (commit 전에 읽는다)
     commit();
     if (!st.run) TD.track("timer_start", {});
-    st.run = { id: id, since: Date.now() };
+    st.run = { id: id, since: Date.now(), t0: t0 };
     st.last = id;
     save(); renderAll();
   }
   function pause() {
     if (!st.run) return;
+    var mins = Math.round((Date.now() - (st.run.t0 || st.run.since)) / 60000);
     commit();
+    if (mins >= 1) TD.track("timer_complete", { kind: "study", minutes: mins });
     st.run = null;
     save(); renderAll();
     // 멈출 때 오늘 합계가 5분 이상이면 칭찬 (삭제한 과목 기록 포함)
