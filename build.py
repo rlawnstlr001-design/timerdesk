@@ -106,6 +106,13 @@ def head_extra():
     for key, name in (("naverVerification", "naver-site-verification"), ("bingVerification", "msvalidate.01")):
         if SITE.get(key):
             out.append(f'<meta name="{name}" content="{esc(SITE[key])}">')
+    # 광고·분석 서버 미리 연결 (Lighthouse 10/21: 약 0.4초 단축). crossorigin은 실제 요청 방식과 맞춰야 연결이 재사용된다
+    if SITE.get("adsenseClient"):
+        out.append('<link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>'
+                   '<link rel="dns-prefetch" href="https://googleads.g.doubleclick.net">')
+    if SITE.get("ga4"):
+        out.append('<link rel="preconnect" href="https://www.googletagmanager.com">'
+                   '<link rel="dns-prefetch" href="https://www.google-analytics.com">')
     if SITE.get("adsenseClient"):
         out.append(f'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={SITE["adsenseClient"]}" crossorigin="anonymous"></script>')
     if SITE.get("ga4"):
