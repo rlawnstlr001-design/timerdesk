@@ -8,6 +8,11 @@
     <small>{{t.totalToday}}</small>
     <div class="big-time" id="total" role="timer" aria-live="off">0:00:00</div>
     <div class="study-current" id="current">{{t.pickSubject}}</div>
+    <div class="pomo-line" id="pomoLine" hidden>
+      <div class="pomo-bar"><i id="pomoFill"></i></div>
+      <div class="pomo-info"><span id="pomoText"></span> <span class="pomo-sets" id="pomoSets"></span>
+        <button class="link-btn" id="pomoSkip" type="button" hidden>{{t.pomoSkip}}</button></div>
+    </div>
   </div>
 
   <div class="subjects" id="subjects"></div>
@@ -20,6 +25,15 @@
   <div class="controls">
     <button class="btn primary big" id="mainBtn" type="button" title="Space">{{ui.start}}</button>
   </div>
+
+  <div class="pomo-opt">
+    <label class="check"><input type="checkbox" id="pomoOn"> {{t.pomoMode}}</label>
+    <select id="pomoLen" aria-label="{{t.pomoMode}}">
+      <option value="25-5">25 / 5</option>
+      <option value="50-10">50 / 10</option>
+    </select>
+  </div>
+  <p class="hint center pomo-hint" id="pomoHint" hidden>{{t.pomoHint}}</p>
 
   <div class="stats">
     <div class="stat"><b id="weekTotal">0</b><small>{{t.weekTotal}}</small></div>

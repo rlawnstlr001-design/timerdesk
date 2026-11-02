@@ -423,3 +423,18 @@ html:lang(ko) body { word-break: keep-all; overflow-wrap: break-word; }
 .link-btn { padding: 6px 2px; }
 .subject-del { width: 32px; height: 32px; top: 2px; right: 2px; }
 .swatch { width: 32px; height: 32px; }
+
+/* 공부 스톱워치 — 뽀모도로 모드 (11/2) */
+.pomo-opt { display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
+.pomo-opt select { border: 1px solid var(--line); background: var(--surface-2); color: var(--text); border-radius: 10px; padding: 6px 10px; min-height: 40px; font: inherit; font-size: 14px; }
+.pomo-opt select:disabled { opacity: .5; }
+.pomo-hint { max-width: 520px; margin: 4px auto 0; font-size: 13px; }
+.pomo-hint[hidden], .pomo-line[hidden] { display: none; }
+.pomo-line { max-width: 360px; margin: 10px auto 0; }
+.pomo-bar { height: 6px; border-radius: 999px; background: var(--surface-2); overflow: hidden; }
+.pomo-bar i { display: block; height: 100%; width: 0; background: var(--focus-c); border-radius: inherit; transition: width .25s linear; }
+.pomo-line.break .pomo-bar i { background: var(--short-c); }
+.pomo-info { margin-top: 6px; font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.pomo-sets { font-weight: 700; color: var(--text); }
+.pomo-info .link-btn { margin-left: 6px; }
+.study:fullscreen .pomo-opt, .study.pseudo-fs .pomo-opt, .study:fullscreen .pomo-hint, .study.pseudo-fs .pomo-hint { display: none; }

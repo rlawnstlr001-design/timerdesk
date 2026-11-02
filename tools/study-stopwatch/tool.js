@@ -12,6 +12,12 @@
     log: {}, run: null, last: null, seq: T.defaultSubjects.length
   };
 
+  // 뽀모도로 모드 설정·오늘 세트 수 (예전 저장본엔 없음)
+  function norm() { st.pomo = Object.assign({ on: false, len: "25-5", breakEnd: 0, sets: {} }, st.pomo || {}); }
+  norm();
+  if (st.pomo.breakEnd && st.pomo.breakEnd < Date.now() - 60000) st.pomo.breakEnd = 0; // 오래전에 끝난 휴식은 조용히 정리
+  var pomoTo = null, breakDone = false;
+
   function save() { TD.save(KEY, st); }
   function dayStart(ms) { var d = new Date(ms); return new Date(d.getFullYear(), d.getMonth(), d.getDate()).getTime(); }
   function addLog(dateMs, id, sec) {
@@ -48,6 +54,7 @@
     commit();
     if (!st.run) TD.track("timer_start", {});
     st.run = { id: id, since: Date.now(), t0: t0 };
+    st.pomo.breakEnd = 0; breakDone = false; // 휴식 중에 시작하면 휴식은 끝
     st.last = id;
     save(); renderAll();
   }
@@ -63,6 +70,68 @@
     Object.keys(lg).forEach(function (id) { sum += lg[id]; });
     if (sum >= 300) TD.cheerDone("study", { time: TD.fmtHM(sum) });
   }
+  /* ---------- 뽀모도로 모드 ----------
+     켜 두면 한 세션(과목을 바꿔도 이어지는 t0 기준)이 집중 시간에 닿을 때 알림과 함께 자동으로 멈추고 휴식 카운트다운.
+     휴식이 끝나도 저절로 다시 재지는 않는다 — 자리를 비운 시간이 순공에 들어가지 않게. */
+  function pomoLen() { var p = st.pomo.len.split("-"); return { f: +p[0] * 60000, b: +p[1] * 60000 }; }
+  function sessionStart() { return st.run ? st.run.t0 || st.run.since : 0; }
+  function pomoDue(now) {
+    return st.pomo.on && ((st.run && now - sessionStart() >= pomoLen().f) || (!st.run && st.pomo.breakEnd && now >= st.pomo.breakEnd));
+  }
+  // 끝나는 순간은 1회성 타이머로 잡는다 (반복 타이머보다 백그라운드 탭에서 덜 늦음). 250ms 표시 갱신이 보조.
+  function pomoSchedule() {
+    clearTimeout(pomoTo);
+    if (!st.pomo.on) return;
+    var now = Date.now(), at = st.run ? sessionStart() + pomoLen().f : (st.pomo.breakEnd > now ? st.pomo.breakEnd : 0);
+    if (at) pomoTo = setTimeout(pomoCheck, Math.max(0, at - now) + 50);
+  }
+  function pomoCheck() {
+    var now = Date.now(), L = pomoLen();
+    if (!pomoDue(now)) return;
+    if (st.run) {
+      pause(); // 시간 반영·완료 이벤트는 pause가 처리
+      var k = TD.dateKey(new Date()), lg = st.log[k] || {}, sum = 0;
+      st.pomo.sets[k] = (st.pomo.sets[k] || 0) + 1;
+      st.pomo.breakEnd = now + L.b;
+      save();
+      Object.keys(lg).forEach(function (id) { sum += lg[id]; });
+      TD.play("bell", 0.7, 2);
+      TD.notify("🍅 " + T.pomoFocus, T.pomoNotifyFocus.replace("{m}", L.f / 60000).replace("{b}", L.b / 60000));
+      TD.cheerDone("focus", { n: st.pomo.sets[k], min: Math.round(sum / 60) });
+    } else {
+      st.pomo.breakEnd = 0; breakDone = true;
+      save();
+      TD.play("chime", 0.7, 2);
+      TD.notify("☕ " + T.pomoBreak, T.pomoNotifyBreak);
+    }
+    renderAll();
+  }
+  function renderPomo() {
+    var on = st.pomo.on, line = $("#pomoLine");
+    line.hidden = !on; $("#pomoHint").hidden = !on; $("#pomoLen").disabled = !on;
+    if (!on) return;
+    var now = Date.now(), L = pomoLen(), sets = st.pomo.sets[TD.dateKey(new Date())] || 0, prog = 0, brk = false, txt;
+    if (st.run) {
+      var el = now - sessionStart();
+      prog = el / L.f;
+      txt = "🍅 " + T.pomoFocus + " " + TD.fmt(Math.max(0, (L.f - el) / 1000));
+    } else if (st.pomo.breakEnd > now) {
+      var left = st.pomo.breakEnd - now;
+      brk = true; prog = 1 - left / L.b;
+      txt = "☕ " + T.pomoBreak + " " + TD.fmt(left / 1000);
+      $("#current").textContent = T.pomoBreakNow.replace("{m}", L.b / 60000);
+      TD.setTitle("☕ " + TD.fmt(left / 1000));
+    } else {
+      txt = breakDone ? T.pomoBreakDone : T.pomoIdle.replace("{m}", L.f / 60000);
+    }
+    line.classList.toggle("break", brk);
+    $("#pomoFill").style.width = (Math.min(1, Math.max(0, prog)) * 100).toFixed(1) + "%";
+    $("#pomoText").textContent = txt;
+    $("#pomoSets").textContent = sets ? "· " + T.pomoSets.replace("{n}", sets) : "";
+    $("#pomoSkip").hidden = !brk;
+    if (pomoDue(now)) pomoCheck(); // 예약 타이머가 늦었을 때 대비
+  }
+
   function toggleMain() {
     if (st.run) pause();
     else if (st.last && subj(st.last)) start(st.last);
@@ -98,6 +167,7 @@
     $("#mainBtn").textContent = st.run ? U.pause : (st.last && subj(st.last) ? U.resume + " · " + subj(st.last).name : U.start);
     root.classList.toggle("running", !!st.run);
     TD.setTitle(cur ? fmtH(total) + " " + cur.name : null);
+    renderPomo();
   }
   function renderWeek() {
     var now = new Date(), days = [], max = 60, sum = 0, bySub = {};
@@ -120,6 +190,7 @@
     $("#todayLabel").textContent = new Intl.DateTimeFormat(TD.lang, { dateStyle: "full" }).format(new Date());
     renderSubjects(); renderTimes(); renderWeek();
     TD.keepAwake(!!st.run);
+    pomoSchedule();
   }
 
   $("#subjects").addEventListener("click", function (e) {
@@ -151,6 +222,20 @@
     delete st.log[TD.dateKey(new Date())];
     save(); renderAll();
   });
+  $("#pomoOn").checked = st.pomo.on;
+  $("#pomoLen").value = st.pomo.len;
+  $("#pomoOn").addEventListener("change", function () {
+    st.pomo.on = this.checked;
+    st.pomo.breakEnd = 0; breakDone = false;
+    if (st.pomo.on) {
+      TD.askNotify();
+      if (st.run) st.run.t0 = Date.now(); // 측정 중에 켜면 집중 시간은 지금부터 센다
+    }
+    TD.track("pomo_mode", { on: st.pomo.on ? 1 : 0 });
+    save(); renderAll();
+  });
+  $("#pomoLen").addEventListener("change", function () { st.pomo.len = this.value; save(); renderAll(); });
+  $("#pomoSkip").addEventListener("click", function () { st.pomo.breakEnd = 0; breakDone = false; save(); renderAll(); });
   $("#fsBtn").addEventListener("click", function () { TD.toggleFullscreen(root); });
   TD.keys({ Space: toggleMain, KeyF: function () { TD.toggleFullscreen(root); } });
 
@@ -164,6 +249,8 @@
   // 기록은 최근 120일만 보관
   var keys = Object.keys(st.log).sort();
   while (keys.length > 120) delete st.log[keys.shift()];
+  var pk = Object.keys(st.pomo.sets).sort();
+  while (pk.length > 120) delete st.pomo.sets[pk.shift()];
 
   renderAll();
   setInterval(renderTimes, 250);
@@ -174,5 +261,5 @@
     if (k !== lastDay) { lastDay = k; commit(); save(); renderAll(); }
   }, 30000);
   // 다른 탭에서 바꾼 기록 반영
-  window.addEventListener("storage", function (e) { if (e.key === KEY) { st = TD.load(KEY, st); renderAll(); } });
+  window.addEventListener("storage", function (e) { if (e.key === KEY) { st = TD.load(KEY, st); norm(); renderAll(); } });
 })(window.TD);
