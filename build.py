@@ -366,6 +366,11 @@ def home_widget(lang):
     """첫 화면 시계 위젯 (home/widget.html + home/home.js). (body_html, scripts) 반환."""
     S = L[lang]
     html = render((ROOT / "home" / "widget.html").read_text("utf-8"), {"ui": S["ui"], "t": S["home"]}, f"home/widget.html [{lang}]")
+    # 핵심 도구(공부 스톱워치 — 체류·재방문 1위) 바로가기: 휴대폰 메뉴에선 화면 밖으로 밀려 잘 안 보였다 (11/2)
+    sw = S["tools"].get("study-stopwatch")
+    if sw:
+        html += (f'<a class="home-cta" href="{path_of("tool", lang, "study-stopwatch")}"><span class="card-icon">{sw["icon"]}</span>'
+                 f'<span><strong>{esc(sw["nav"])}</strong><small>{esc(sw["card"])}</small></span><span class="home-cta-go">→</span></a>')
     i18n = {"lang": lang, "ui": S["ui"], "t": S["home"]}
     scripts = ("<script>window.TD_I18N=" + json.dumps(i18n, ensure_ascii=False).replace("</", "<\\/") + ";</script>\n"
                f'<script src="/assets/common.js?v={VER["common"]}"></script>\n'

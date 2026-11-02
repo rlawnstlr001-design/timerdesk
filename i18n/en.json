@@ -378,7 +378,7 @@
       "description": "Free online study stopwatch. Tap a subject to start timing, switch subjects with one tap, and see today's total, per-subject time and a 7-day chart. Keeps counting after a refresh.",
       "h1": "Study Stopwatch",
       "lead": "Tap a subject to start the clock and tap another to switch. Your study time for today and each subject adds up automatically.",
-      "card": "Time each subject with one tap, see daily and weekly totals",
+      "card": "Time each subject in one tap, with a Pomodoro mode and daily/weekly totals",
       "ui": {
         "totalToday": "Studied today",
         "pickSubject": "Tap a subject to start timing",

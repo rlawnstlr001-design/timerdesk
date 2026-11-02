@@ -438,3 +438,11 @@ html:lang(ko) body { word-break: keep-all; overflow-wrap: break-word; }
 .pomo-sets { font-weight: 700; color: var(--text); }
 .pomo-info .link-btn { margin-left: 6px; }
 .study:fullscreen .pomo-opt, .study.pseudo-fs .pomo-opt, .study:fullscreen .pomo-hint, .study.pseudo-fs .pomo-hint { display: none; }
+
+/* 홈: 공부 스톱워치 바로가기 (11/2) */
+.home-cta { display: flex; align-items: center; gap: 14px; margin: 14px 0 0; padding: 14px 18px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow); color: var(--text); text-decoration: none; }
+.home-cta:hover { border-color: var(--accent); }
+.home-cta .card-icon { font-size: 28px; line-height: 1; }
+.home-cta strong { display: block; font-size: 17px; }
+.home-cta small { display: block; color: var(--muted); font-size: 14px; margin-top: 2px; }
+.home-cta-go { margin-left: auto; color: var(--accent); font-size: 22px; font-weight: 700; }

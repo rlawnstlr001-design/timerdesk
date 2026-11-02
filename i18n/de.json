@@ -384,7 +384,7 @@
       "description": "Kostenlose Online-Lern-Stoppuhr: Fach antippen, und die Zeit läuft; mit einem Tipp das Fach wechseln. Zeigt die Lernzeit heute, pro Fach und als 7-Tage-Diagramm und zählt auch nach dem Neuladen weiter.",
       "h1": "Lern-Stoppuhr",
       "lead": "Tipp auf ein Fach, um die Uhr zu starten, und auf ein anderes, um zu wechseln. Deine Lernzeit für heute und für jedes Fach summiert sich automatisch.",
-      "card": "Lernzeit pro Fach mit einem Tipp, mit Tages- und Wochensumme",
+      "card": "Lernzeit pro Fach mit einem Tipp, mit Pomodoro-Modus und Tages-/Wochensumme",
       "ui": {
         "totalToday": "Heute gelernt",
         "pickSubject": "Tipp auf ein Fach, um zu starten",

@@ -384,7 +384,7 @@
       "description": "Cronómetro de estudio online gratis. Toca una asignatura para empezar a medir, cambia con un toque y ve el total del día, el tiempo por asignatura y un gráfico de 7 días. Sigue contando aunque recargues la página.",
       "h1": "Cronómetro de estudio",
       "lead": "Toca una asignatura para empezar a contar y toca otra para cambiar. Tu tiempo de estudio de hoy y de cada asignatura se suma automáticamente.",
-      "card": "Mide cada asignatura con un toque, con totales diarios y semanales",
+      "card": "Mide cada asignatura con un toque, con modo Pomodoro y totales diarios y semanales",
       "ui": {
         "totalToday": "Estudiado hoy",
         "pickSubject": "Toca una asignatura para empezar",
