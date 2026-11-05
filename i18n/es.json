@@ -380,10 +380,10 @@
       "nav": "Cronómetro de estudio",
       "icon": "⏱️",
       "group": "timer",
-      "title": "Cronómetro de estudio – Mide tu tiempo de estudio por asignatura (gratis)",
-      "description": "Cronómetro de estudio online gratis. Toca una asignatura para empezar a medir, cambia con un toque y ve el total del día, el tiempo por asignatura y un gráfico de 7 días. Sigue contando aunque recargues la página.",
+      "title": "Cronómetro para estudiar – Contador de tiempo de estudio por asignatura (gratis)",
+      "description": "Cronómetro y contador de tiempo para estudiar, gratis y online. Toca una asignatura para medir, cambia con un toque y ve el total del día, el tiempo por asignatura y un gráfico de 7 días. Incluye modo Pomodoro (25/5 o 50/10).",
       "h1": "Cronómetro de estudio",
-      "lead": "Toca una asignatura para empezar a contar y toca otra para cambiar. Tu tiempo de estudio de hoy y de cada asignatura se suma automáticamente.",
+      "lead": "Toca una asignatura para empezar a contar y toca otra para cambiar. Tu tiempo de estudio de hoy y de cada asignatura se suma automáticamente. Si quieres, activa el <strong>modo Pomodoro</strong> para estudiar con 25 minutos de concentración y 5 de descanso.",
       "card": "Mide cada asignatura con un toque, con modo Pomodoro y totales diarios y semanales",
       "ui": {
         "totalToday": "Estudiado hoy",
@@ -433,6 +433,10 @@
         }
       ],
       "faq": [
+        {
+          "q": "¿Cómo funciona el modo Pomodoro?",
+          "a": "Activa «🍅 Modo Pomodoro» debajo del botón de inicio y elige 25/5 o 50/10. Al terminar cada bloque suena un aviso, el cronómetro se pausa y empieza la cuenta atrás del descanso. El tiempo se sigue sumando a la asignatura. Después del descanso no vuelve a contar solo: toca una asignatura para seguir."
+        },
         {
           "q": "¿Sigue contando si recargo o cierro la pestaña?",
           "a": "Sí. Se guarda la hora de inicio, así que el tiempo transcurrido se suma al volver. Si pasan más de 6 horas, te pregunta si quieres conservarlo."

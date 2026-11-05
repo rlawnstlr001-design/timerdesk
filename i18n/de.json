@@ -381,9 +381,9 @@
       "icon": "⏱️",
       "group": "timer",
       "title": "Lern-Stoppuhr – Lernzeit pro Fach erfassen (kostenlos)",
-      "description": "Kostenlose Online-Lern-Stoppuhr: Fach antippen, und die Zeit läuft; mit einem Tipp das Fach wechseln. Zeigt die Lernzeit heute, pro Fach und als 7-Tage-Diagramm und zählt auch nach dem Neuladen weiter.",
+      "description": "Kostenlose Online-Lern-Stoppuhr: Fach antippen, und die Zeit läuft; mit einem Tipp das Fach wechseln. Zeigt die Lernzeit heute, pro Fach und als 7-Tage-Diagramm, mit optionalem Pomodoro-Modus (25/5 oder 50/10).",
       "h1": "Lern-Stoppuhr",
-      "lead": "Tipp auf ein Fach, um die Uhr zu starten, und auf ein anderes, um zu wechseln. Deine Lernzeit für heute und für jedes Fach summiert sich automatisch.",
+      "lead": "Tipp auf ein Fach, um die Uhr zu starten, und auf ein anderes, um zu wechseln. Deine Lernzeit für heute und für jedes Fach summiert sich automatisch. Mit dem <strong>Pomodoro-Modus</strong> lernst du auf Wunsch im Rhythmus 25 Minuten Fokus, 5 Minuten Pause.",
       "card": "Lernzeit pro Fach mit einem Tipp, mit Pomodoro-Modus und Tages-/Wochensumme",
       "ui": {
         "totalToday": "Heute gelernt",
@@ -433,6 +433,10 @@
         }
       ],
       "faq": [
+        {
+          "q": "Wie funktioniert der Pomodoro-Modus?",
+          "a": "Schalte unter dem Start-Knopf „🍅 Pomodoro-Modus“ ein und wähle 25/5 oder 50/10. Am Ende jeder Fokuseinheit ertönt ein Signal, die Stoppuhr pausiert und ein Pausen-Countdown startet. Die Zeit zählt weiter für das Fach. Nach der Pause läuft sie nicht von selbst weiter – tippe auf ein Fach, um fortzufahren."
+        },
         {
           "q": "Läuft die Uhr weiter, wenn ich neu lade oder den Tab schließe?",
           "a": "Ja. Die Startzeit wird gespeichert, die vergangene Zeit wird beim Zurückkehren addiert. Nach mehr als 6 Stunden wirst du gefragt, ob sie behalten werden soll."

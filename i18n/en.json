@@ -374,10 +374,10 @@
       "nav": "Study Stopwatch",
       "icon": "⏱️",
       "group": "timer",
-      "title": "Study Stopwatch – Track Study Time by Subject (Free Study Timer)",
-      "description": "Free online study stopwatch. Tap a subject to start timing, switch subjects with one tap, and see today's total, per-subject time and a 7-day chart. Keeps counting after a refresh.",
+      "title": "Study Stopwatch – Study Timer with Subject Tracking & Pomodoro Mode (Free)",
+      "description": "Free online study stopwatch and study timer. Tap a subject to start timing, switch with one tap, and see today's total, per-subject time and a 7-day chart. Optional Pomodoro mode (25/5 or 50/10). Keeps counting after a refresh.",
       "h1": "Study Stopwatch",
-      "lead": "Tap a subject to start the clock and tap another to switch. Your study time for today and each subject adds up automatically.",
+      "lead": "Tap a subject to start the clock and tap another to switch. Your study time for today and each subject adds up automatically. Turn on <strong>Pomodoro mode</strong> if you want a 25-minute focus / 5-minute break rhythm.",
       "card": "Time each subject in one tap, with a Pomodoro mode and daily/weekly totals",
       "ui": {
         "totalToday": "Studied today",
@@ -427,6 +427,10 @@
         }
       ],
       "faq": [
+        {
+          "q": "How does Pomodoro mode work?",
+          "a": "Turn on '🍅 Pomodoro mode' under the Start button and pick 25/5 or 50/10. When a focus block ends you get an alert, the stopwatch pauses and a break countdown starts. Focus time still counts toward the subject. It doesn't restart on its own after the break, so tap a subject to continue."
+        },
         {
           "q": "Does it keep running if I refresh or close the tab?",
           "a": "Yes. The start time is saved, so the elapsed time is added when you come back. After more than 6 hours you'll be asked whether to keep it."
