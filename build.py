@@ -504,6 +504,8 @@ def build_misc():
     for f in (ROOT / "root").glob("*"):  # 루트에 그대로 두는 파일 (검색엔진 소유 확인 파일 등)
         if f.is_file():
             shutil.copy(f, DIST / f.name)
+        elif f.is_dir():  # 디렉터리째 (shots/ = 외부 등록용 스크린샷)
+            shutil.copytree(f, DIST / f.name, dirs_exist_ok=True)
     build_pwa()
 
 
