@@ -446,3 +446,10 @@ html:lang(ko) body { word-break: keep-all; overflow-wrap: break-word; }
 .home-cta strong { display: block; font-size: 17px; }
 .home-cta small { display: block; color: var(--muted); font-size: 14px; margin-top: 2px; }
 .home-cta-go { margin-left: auto; color: var(--accent); font-size: 22px; font-weight: 700; }
+
+/* 서버시간 사이트별 페이지: 휴대폰에선 시계·알림을 입력칸·사이트 버튼보다 위로 (11/9) */
+@media (max-width: 640px) {
+  .srv.site-page { display: flex; flex-direction: column; }
+  .srv.site-page .srv-view { order: -2; padding-top: 4px; }
+  .srv.site-page .srv-alarm { order: -1; margin-bottom: 14px; }
+}

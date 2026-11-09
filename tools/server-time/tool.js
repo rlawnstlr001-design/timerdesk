@@ -8,6 +8,7 @@
   var root = $("#tool");
   var SITES = window.TD_SRV_CHIPS || T.sites; // [{label, url}] — 대학 수강신청 페이지는 대학 목록
   var PAGE_SITE = window.TD_SRV_SITE || null;  // 사이트별 페이지(/server-time/interpark/ 등)면 그 사이트
+  if (PAGE_SITE) document.getElementById("tool").classList.add("site-page"); // 휴대폰에선 시계를 맨 위로 (11/9 — 네이버 검색 유입은 시각만 보러 온다)
   var PAGES = window.TD_SRV_PAGES || {};       // 사이트 주소 → 전용 페이지 경로
   var st = { url: "", label: T.standard, dev: 0, devErr: null, srv: 0, srvErr: 0, measuredAt: 0, ok: false, error: "" };
   var alarm = { at: null, scheduled: null, fired: false };
