@@ -453,3 +453,5 @@ html:lang(ko) body { word-break: keep-all; overflow-wrap: break-word; }
   .srv.site-page .srv-view { order: -2; padding-top: 4px; }
   .srv.site-page .srv-alarm { order: -1; margin-bottom: 14px; }
 }
+
+.page-updated { margin: 28px 0 0; text-align: center; color: var(--muted); font-size: 13px; }

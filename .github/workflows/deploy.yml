@@ -22,6 +22,8 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2  # indexnow.py가 직전 커밋의 page_dates.json과 비교
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -32,3 +34,6 @@ jobs:
           path: dist
       - id: deployment
         uses: actions/deploy-pages@v4
+      - name: IndexNow
+        continue-on-error: true
+        run: python indexnow.py

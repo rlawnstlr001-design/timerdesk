@@ -1,0 +1,458 @@
+{
+"/": {
+"hash": "58550e86945c",
+"date": "2026-11-09"
+},
+"/de/": {
+"hash": "8180e0d75bff",
+"date": "2026-11-09"
+},
+"/de/about/": {
+"hash": "bb9c50c0a2b5",
+"date": "2026-11-09"
+},
+"/de/age-calculator/": {
+"hash": "d21f9d823308",
+"date": "2026-11-09"
+},
+"/de/contact/": {
+"hash": "2ba6d0439f3b",
+"date": "2026-11-09"
+},
+"/de/dday-calculator/": {
+"hash": "737b1a731d83",
+"date": "2026-11-09"
+},
+"/de/exam-countdown/": {
+"hash": "be8691486fc5",
+"date": "2026-11-09"
+},
+"/de/exam-timer/": {
+"hash": "e951e9e4ff71",
+"date": "2026-11-09"
+},
+"/de/pomodoro-timer/": {
+"hash": "16ab8dee284a",
+"date": "2026-11-09"
+},
+"/de/privacy/": {
+"hash": "81fa768fe95a",
+"date": "2026-11-09"
+},
+"/de/study-stopwatch/": {
+"hash": "880d633319ef",
+"date": "2026-11-09"
+},
+"/de/visual-timer/": {
+"hash": "9a2f0b407b19",
+"date": "2026-11-09"
+},
+"/en/": {
+"hash": "e303bc1d1ae8",
+"date": "2026-11-09"
+},
+"/en/about/": {
+"hash": "21e1d38b65c2",
+"date": "2026-11-09"
+},
+"/en/age-calculator/": {
+"hash": "72889bece0eb",
+"date": "2026-11-09"
+},
+"/en/contact/": {
+"hash": "c4ecb332ba5e",
+"date": "2026-11-09"
+},
+"/en/dday-calculator/": {
+"hash": "6aa33a62d47f",
+"date": "2026-11-09"
+},
+"/en/exam-countdown/": {
+"hash": "043f9a5784b2",
+"date": "2026-11-09"
+},
+"/en/exam-timer/": {
+"hash": "1e60d4a2e1f8",
+"date": "2026-11-09"
+},
+"/en/pomodoro-timer/": {
+"hash": "70e9c13c29e9",
+"date": "2026-11-09"
+},
+"/en/privacy/": {
+"hash": "640bac13963e",
+"date": "2026-11-09"
+},
+"/en/study-stopwatch/": {
+"hash": "311a65cc0f5d",
+"date": "2026-11-09"
+},
+"/en/visual-timer/": {
+"hash": "510895015cab",
+"date": "2026-11-09"
+},
+"/es/": {
+"hash": "ea765409ac6b",
+"date": "2026-11-09"
+},
+"/es/about/": {
+"hash": "1970e8bb8062",
+"date": "2026-11-09"
+},
+"/es/age-calculator/": {
+"hash": "e1179bcda926",
+"date": "2026-11-09"
+},
+"/es/contact/": {
+"hash": "44d368c5556c",
+"date": "2026-11-09"
+},
+"/es/dday-calculator/": {
+"hash": "9bfcca712994",
+"date": "2026-11-09"
+},
+"/es/exam-countdown/": {
+"hash": "7e14d391dbf7",
+"date": "2026-11-09"
+},
+"/es/exam-timer/": {
+"hash": "cc1e32ad5b3b",
+"date": "2026-11-09"
+},
+"/es/pomodoro-timer/": {
+"hash": "d016902a4201",
+"date": "2026-11-09"
+},
+"/es/privacy/": {
+"hash": "440edd95c7f4",
+"date": "2026-11-09"
+},
+"/es/study-stopwatch/": {
+"hash": "ad9a550b2473",
+"date": "2026-11-09"
+},
+"/es/visual-timer/": {
+"hash": "e2ad5c9a2d9d",
+"date": "2026-11-09"
+},
+"/ja/": {
+"hash": "2136a0103549",
+"date": "2026-11-09"
+},
+"/ja/about/": {
+"hash": "0b405bece1b0",
+"date": "2026-11-09"
+},
+"/ja/age-calculator/": {
+"hash": "5a738f84a512",
+"date": "2026-11-09"
+},
+"/ja/contact/": {
+"hash": "52f2450dd792",
+"date": "2026-11-09"
+},
+"/ja/dday-calculator/": {
+"hash": "3222c664af0e",
+"date": "2026-11-09"
+},
+"/ja/exam-countdown/": {
+"hash": "7a3ab0740c81",
+"date": "2026-11-09"
+},
+"/ja/exam-countdown/boki/": {
+"hash": "653b0a941cf6",
+"date": "2026-11-09"
+},
+"/ja/exam-countdown/chugaku-juken/": {
+"hash": "d8c5f0ca9cbf",
+"date": "2026-11-09"
+},
+"/ja/exam-countdown/eiken/": {
+"hash": "9acab376ea95",
+"date": "2026-11-09"
+},
+"/ja/exam-countdown/kokkouritsu/": {
+"hash": "9a8c25f62813",
+"date": "2026-11-09"
+},
+"/ja/exam-countdown/takken/": {
+"hash": "723d08ab9e19",
+"date": "2026-11-09"
+},
+"/ja/exam-countdown/toritsu/": {
+"hash": "f8f56c43e6e7",
+"date": "2026-11-09"
+},
+"/ja/exam-timer/": {
+"hash": "9749c73da9df",
+"date": "2026-11-09"
+},
+"/ja/guides/": {
+"hash": "a2be1ff05395",
+"date": "2026-11-09"
+},
+"/ja/guides/exam-countdown-planning/": {
+"hash": "348ed53423c1",
+"date": "2026-11-09"
+},
+"/ja/guides/kyotsu-2027-schedule/": {
+"hash": "3b8464fae8db",
+"date": "2026-11-09"
+},
+"/ja/guides/pomodoro-technique/": {
+"hash": "804361ee7a62",
+"date": "2026-11-09"
+},
+"/ja/pomodoro-timer/": {
+"hash": "f1737eee8baa",
+"date": "2026-11-09"
+},
+"/ja/privacy/": {
+"hash": "709e165bc8f0",
+"date": "2026-11-09"
+},
+"/ja/study-stopwatch/": {
+"hash": "883a7f7791c9",
+"date": "2026-11-09"
+},
+"/ja/visual-timer/": {
+"hash": "d7d3cc61cd0c",
+"date": "2026-11-09"
+},
+"/ko/": {
+"hash": "482bff234cfe",
+"date": "2026-11-09"
+},
+"/ko/about/": {
+"hash": "ac1ab8987614",
+"date": "2026-11-09"
+},
+"/ko/age-calculator/": {
+"hash": "08e40b22cb13",
+"date": "2026-11-09"
+},
+"/ko/contact/": {
+"hash": "6be788851272",
+"date": "2026-11-09"
+},
+"/ko/dday-calculator/": {
+"hash": "b6270b80e81b",
+"date": "2026-11-09"
+},
+"/ko/exam-countdown/": {
+"hash": "c58ecaede45f",
+"date": "2026-11-09"
+},
+"/ko/exam-countdown/jeongsi/": {
+"hash": "3ddb64cbd049",
+"date": "2026-11-09"
+},
+"/ko/exam-countdown/score/": {
+"hash": "1fe28a47e5fe",
+"date": "2026-11-09"
+},
+"/ko/exam-timer/": {
+"hash": "8b9bd7bab1d3",
+"date": "2026-11-09"
+},
+"/ko/guides/": {
+"hash": "d76329ef8dcf",
+"date": "2026-11-09"
+},
+"/ko/guides/holiday-pay-guide/": {
+"hash": "30d6b458605b",
+"date": "2026-11-09"
+},
+"/ko/guides/pomodoro-technique/": {
+"hash": "24535f41a73d",
+"date": "2026-11-09"
+},
+"/ko/guides/server-time-guide/": {
+"hash": "c8254b7cd10e",
+"date": "2026-11-09"
+},
+"/ko/guides/severance-mistakes/": {
+"hash": "5adfe9532f4f",
+"date": "2026-11-09"
+},
+"/ko/guides/sugang-checklist/": {
+"hash": "f85e9b2523b2",
+"date": "2026-11-09"
+},
+"/ko/guides/suneung-practice/": {
+"hash": "f7d92040e89c",
+"date": "2026-11-09"
+},
+"/ko/guides/ticket-sites-server-time/": {
+"hash": "6667726ba786",
+"date": "2026-11-09"
+},
+"/ko/guides/ticketing-checklist/": {
+"hash": "14f90782992d",
+"date": "2026-11-09"
+},
+"/ko/guides/unemployment-2026/": {
+"hash": "44bb48ac630f",
+"date": "2026-11-09"
+},
+"/ko/holiday-pay-calculator/": {
+"hash": "1dcdba2184de",
+"date": "2026-11-09"
+},
+"/ko/pomodoro-timer/": {
+"hash": "8b6486b55e56",
+"date": "2026-11-09"
+},
+"/ko/privacy/": {
+"hash": "a797db95f8cb",
+"date": "2026-11-09"
+},
+"/ko/salary-calculator/": {
+"hash": "a288cac50c0e",
+"date": "2026-11-09"
+},
+"/ko/server-time/": {
+"hash": "62275a3ae0ef",
+"date": "2026-11-09"
+},
+"/ko/server-time/ajou/": {
+"hash": "c7e3fd83ca0e",
+"date": "2026-11-09"
+},
+"/ko/server-time/cau/": {
+"hash": "6a79d8a53afa",
+"date": "2026-11-09"
+},
+"/ko/server-time/cnu/": {
+"hash": "c6b554c2b722",
+"date": "2026-11-09"
+},
+"/ko/server-time/coupang/": {
+"hash": "469731ef214d",
+"date": "2026-11-09"
+},
+"/ko/server-time/dankook/": {
+"hash": "48ad74186e7e",
+"date": "2026-11-09"
+},
+"/ko/server-time/ewha/": {
+"hash": "035bb5aa1bec",
+"date": "2026-11-09"
+},
+"/ko/server-time/gachon/": {
+"hash": "f132b58dc4e3",
+"date": "2026-11-09"
+},
+"/ko/server-time/hanyang/": {
+"hash": "8f2976cb7dfe",
+"date": "2026-11-09"
+},
+"/ko/server-time/inha/": {
+"hash": "41302a1ee2c8",
+"date": "2026-11-09"
+},
+"/ko/server-time/interpark/": {
+"hash": "6bd6f7a8c6c2",
+"date": "2026-11-09"
+},
+"/ko/server-time/inu/": {
+"hash": "77a38455471d",
+"date": "2026-11-09"
+},
+"/ko/server-time/jnu/": {
+"hash": "3bfe56c34cca",
+"date": "2026-11-09"
+},
+"/ko/server-time/khu/": {
+"hash": "6e0a36d26615",
+"date": "2026-11-09"
+},
+"/ko/server-time/knu/": {
+"hash": "4188858d801f",
+"date": "2026-11-09"
+},
+"/ko/server-time/konkuk/": {
+"hash": "aad8842232f9",
+"date": "2026-11-09"
+},
+"/ko/server-time/kookmin/": {
+"hash": "9ec38953aa26",
+"date": "2026-11-09"
+},
+"/ko/server-time/korail/": {
+"hash": "2266c1e6089d",
+"date": "2026-11-09"
+},
+"/ko/server-time/korea-univ/": {
+"hash": "0875ab111d69",
+"date": "2026-11-09"
+},
+"/ko/server-time/kw/": {
+"hash": "bcf524532127",
+"date": "2026-11-09"
+},
+"/ko/server-time/melon/": {
+"hash": "9be8c65f0796",
+"date": "2026-11-09"
+},
+"/ko/server-time/naver/": {
+"hash": "ce5ba2eaeddd",
+"date": "2026-11-09"
+},
+"/ko/server-time/pusan/": {
+"hash": "7a49bf46d416",
+"date": "2026-11-09"
+},
+"/ko/server-time/skku/": {
+"hash": "ab7de8d3c23b",
+"date": "2026-11-09"
+},
+"/ko/server-time/snu/": {
+"hash": "8077deeea35d",
+"date": "2026-11-09"
+},
+"/ko/server-time/sookmyung/": {
+"hash": "5114b84ccb13",
+"date": "2026-11-09"
+},
+"/ko/server-time/srt/": {
+"hash": "64c6862bdde7",
+"date": "2026-11-09"
+},
+"/ko/server-time/sugang/": {
+"hash": "8048cc91004f",
+"date": "2026-11-09"
+},
+"/ko/server-time/ticketlink/": {
+"hash": "09e9e29b0672",
+"date": "2026-11-09"
+},
+"/ko/server-time/uos/": {
+"hash": "275fe8a1f73b",
+"date": "2026-11-09"
+},
+"/ko/server-time/yes24/": {
+"hash": "a142cf88cbbb",
+"date": "2026-11-09"
+},
+"/ko/server-time/yonsei/": {
+"hash": "002ec9bd472d",
+"date": "2026-11-09"
+},
+"/ko/severance-calculator/": {
+"hash": "fa372203fc62",
+"date": "2026-11-09"
+},
+"/ko/study-stopwatch/": {
+"hash": "5389757f2428",
+"date": "2026-11-09"
+},
+"/ko/unemployment-calculator/": {
+"hash": "ac8afba00a99",
+"date": "2026-11-09"
+},
+"/ko/visual-timer/": {
+"hash": "3a58e2e1cc05",
+"date": "2026-11-09"
+}
+}

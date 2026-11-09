@@ -7,6 +7,7 @@ import datetime
 import hashlib
 import html
 import json
+import os
 import re
 import shutil
 from pathlib import Path
@@ -30,7 +31,11 @@ CHEER_KIND = {"exam-timer": "exam", "exam-countdown": "exam", "pomodoro-timer": 
               "holiday-pay-calculator": "work", "severance-calculator": "change", "unemployment-calculator": "change",
               "server-time": "ticket"}
 TODAY = datetime.date.today().isoformat()
-SITEMAP = []  # (path, {lang: path})
+SITEMAP = []  # (path, {lang: path}, lastmod)
+# 페이지별 실제 수정일: 내용 해시가 바뀐 페이지만 날짜 갱신 (data/page_dates.json — 로컬 빌드만 쓰고, CI는 읽기만 하므로 함께 커밋할 것)
+PAGE_DATES_F = ROOT / "data" / "page_dates.json"
+PAGE_DATES = json.loads(PAGE_DATES_F.read_text("utf-8")) if PAGE_DATES_F.exists() else {}
+IS_CI = bool(os.environ.get("CI"))
 
 
 def esc(s):
@@ -197,8 +202,23 @@ def grouped_cards(lang):
     return "".join(out)
 
 
+def page_date(path, title, description, body):
+    h = hashlib.sha1(f"{title}\n{description}\n{body}".encode("utf-8")).hexdigest()[:12]
+    e = PAGE_DATES.get(path)
+    if not IS_CI and (not e or e["hash"] != h):
+        PAGE_DATES[path] = {"hash": h, "date": TODAY}
+    return PAGE_DATES.get(path, {}).get("date", TODAY)
+
+
 def write_page(path, lang, kind, title, description, body, alts, xdef, scripts="", ld=None, current=None):
     S = L[lang]
+    modified = page_date(path, title, description, body)  # 수정일 줄을 넣기 전 본문으로 판단
+    if kind == "tool":
+        body += f'<p class="page-updated">{esc(S["ui"]["lastUpdated"])}: <time datetime="{modified}">{modified}</time> · {esc(SITE["brand"])}</p>'
+        for o in ld or []:
+            if o.get("@type") == "WebApplication":
+                o["dateModified"] = modified
+                o["publisher"] = {"@type": "Organization", "name": SITE["brand"], "url": url("/")}
     ctx = {
         "site": SITE,
         "L": S,
@@ -217,7 +237,7 @@ def write_page(path, lang, kind, title, description, body, alts, xdef, scripts="
     out = DIST / path.lstrip("/") / "index.html"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(render(BASE_TPL, ctx, path), "utf-8")
-    SITEMAP.append((path, alts))
+    SITEMAP.append((path, alts, modified))
 
 
 SRV_FACTS = json.loads((ROOT / "data" / "srv_facts.json").read_text("utf-8")) if (ROOT / "data" / "srv_facts.json").exists() else {}
@@ -489,9 +509,9 @@ def build_misc():
         "utf-8")
     (DIST / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {url('/sitemap.xml')}\n", "utf-8")
     rows = []
-    for path, alts in SITEMAP:
+    for path, alts, modified in SITEMAP:
         alt = "".join(f'<xhtml:link rel="alternate" hreflang="{lg}" href="{url(p)}"/>' for lg, p in alts.items())
-        rows.append(f"<url><loc>{url(path)}</loc><lastmod>{TODAY}</lastmod>{alt}</url>")
+        rows.append(f"<url><loc>{url(path)}</loc><lastmod>{modified}</lastmod>{alt}</url>")
     (DIST / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
         'xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + "\n".join(rows) + "\n</urlset>\n", "utf-8")
@@ -574,4 +594,7 @@ if __name__ == "__main__":
                     build_tool(lg, slug, v)
     build_root()
     build_misc()
+    if not IS_CI:  # 사라진 페이지는 정리하고 저장
+        keep = {p for p, *_ in SITEMAP}
+        PAGE_DATES_F.write_text(json.dumps({k: v for k, v in sorted(PAGE_DATES.items()) if k in keep}, ensure_ascii=False, indent=0) + "\n", "utf-8")
     print(f"빌드 완료: {len(SITEMAP)}페이지 -> {DIST}")
