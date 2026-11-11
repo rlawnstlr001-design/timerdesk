@@ -156,32 +156,52 @@
 "date": "2026-11-09"
 },
 "/ja/exam-countdown/": {
-"hash": "7a3ab0740c81",
-"date": "2026-11-09"
+"hash": "6ed0a52d198a",
+"date": "2026-11-11"
+},
+"/ja/exam-countdown/aichi-kouritsu/": {
+"hash": "ccf49bd4ca47",
+"date": "2026-11-11"
 },
 "/ja/exam-countdown/boki/": {
-"hash": "653b0a941cf6",
-"date": "2026-11-09"
+"hash": "48fda043c5f2",
+"date": "2026-11-11"
+},
+"/ja/exam-countdown/chiba-kouritsu/": {
+"hash": "ddb2d3fee5ed",
+"date": "2026-11-11"
 },
 "/ja/exam-countdown/chugaku-juken/": {
-"hash": "d8c5f0ca9cbf",
-"date": "2026-11-09"
+"hash": "d229865b22dd",
+"date": "2026-11-11"
 },
 "/ja/exam-countdown/eiken/": {
-"hash": "9acab376ea95",
-"date": "2026-11-09"
+"hash": "a210f775c625",
+"date": "2026-11-11"
+},
+"/ja/exam-countdown/kanagawa-kouritsu/": {
+"hash": "63da78afe074",
+"date": "2026-11-11"
 },
 "/ja/exam-countdown/kokkouritsu/": {
-"hash": "9a8c25f62813",
-"date": "2026-11-09"
+"hash": "40021e5a1413",
+"date": "2026-11-11"
+},
+"/ja/exam-countdown/osaka-kouritsu/": {
+"hash": "f5340ba68c2f",
+"date": "2026-11-11"
+},
+"/ja/exam-countdown/saitama-kouritsu/": {
+"hash": "1e80089c2414",
+"date": "2026-11-11"
 },
 "/ja/exam-countdown/takken/": {
-"hash": "723d08ab9e19",
-"date": "2026-11-09"
+"hash": "7c279812b13b",
+"date": "2026-11-11"
 },
 "/ja/exam-countdown/toritsu/": {
-"hash": "f8f56c43e6e7",
-"date": "2026-11-09"
+"hash": "0395d4a349a4",
+"date": "2026-11-11"
 },
 "/ja/exam-timer/": {
 "hash": "9749c73da9df",
