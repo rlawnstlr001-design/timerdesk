@@ -32,6 +32,7 @@ CHEER_KIND = {"exam-timer": "exam", "exam-countdown": "exam", "pomodoro-timer": 
               "server-time": "ticket"}
 TODAY = datetime.date.today().isoformat()
 SITEMAP = []  # (path, {lang: path}, lastmod)
+NOINDEX = []  # 검색 제외(noindex) 페이지 — 사이트맵에서 빼고 page_dates만 유지
 # 페이지별 실제 수정일: 내용 해시가 바뀐 페이지만 날짜 갱신 (data/page_dates.json — 로컬 빌드만 쓰고, CI는 읽기만 하므로 함께 커밋할 것)
 PAGE_DATES_F = ROOT / "data" / "page_dates.json"
 PAGE_DATES = json.loads(PAGE_DATES_F.read_text("utf-8")) if PAGE_DATES_F.exists() else {}
@@ -210,7 +211,7 @@ def page_date(path, title, description, body):
     return PAGE_DATES.get(path, {}).get("date", TODAY)
 
 
-def write_page(path, lang, kind, title, description, body, alts, xdef, scripts="", ld=None, current=None):
+def write_page(path, lang, kind, title, description, body, alts, xdef, scripts="", ld=None, current=None, noindex=False):
     S = L[lang]
     modified = page_date(path, title, description, body)  # 수정일 줄을 넣기 전 본문으로 판단
     if kind == "tool":
@@ -229,7 +230,7 @@ def write_page(path, lang, kind, title, description, body, alts, xdef, scripts="
             "privacy": path_of("privacy", lang), "nav": nav_html(lang, current),
             "about": path_of("about", lang), "contact": path_of("contact", lang),
             "langSwitch": lang_switch(alts, lang), "body": body, "scripts": scripts,
-            "head": head_extra() + ("\n" + json_ld(ld) if ld else ""),
+            "head": ('<meta name="robots" content="noindex, follow">\n' if noindex else "") + head_extra() + ("\n" + json_ld(ld) if ld else ""),
             "manifest": path_of("hub", lang) + "manifest.webmanifest",
         },
         "v": VER,
@@ -237,7 +238,7 @@ def write_page(path, lang, kind, title, description, body, alts, xdef, scripts="
     out = DIST / path.lstrip("/") / "index.html"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(render(BASE_TPL, ctx, path), "utf-8")
-    SITEMAP.append((path, alts, modified))
+    (NOINDEX if noindex else SITEMAP).append((path, alts, modified))
 
 
 SRV_FACTS = json.loads((ROOT / "data" / "srv_facts.json").read_text("utf-8")) if (ROOT / "data" / "srv_facts.json").exists() else {}
@@ -379,7 +380,8 @@ def build_tool(lang, slug, v=None):
                          "acceptedAnswer": {"@type": "Answer", "text": strip_tags(f["a"])}} for f in P["faq"]]},
         {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": trail},
     ]
-    write_page(path, lang, "tool", P["title"], P["description"], body, alts, xdef, scripts, ld, slug)
+    # 틀만 같고 본문이 거의 같은 하위 페이지(대학 수강신청 22곳 — 유사도 0.93~0.97)는 고유 내용을 채울 때까지 검색 제외 (11/12 애드센스 대비)
+    write_page(path, lang, "tool", P["title"], P["description"], body, alts, xdef, scripts, ld, slug, noindex=bool(v and v.get("noindex")))
 
 
 def home_widget(lang):
@@ -595,6 +597,6 @@ if __name__ == "__main__":
     build_root()
     build_misc()
     if not IS_CI:  # 사라진 페이지는 정리하고 저장
-        keep = {p for p, *_ in SITEMAP}
+        keep = {p for p, *_ in SITEMAP + NOINDEX}
         PAGE_DATES_F.write_text(json.dumps({k: v for k, v in sorted(PAGE_DATES.items()) if k in keep}, ensure_ascii=False, indent=0) + "\n", "utf-8")
-    print(f"빌드 완료: {len(SITEMAP)}페이지 -> {DIST}")
+    print(f"빌드 완료: {len(SITEMAP) + len(NOINDEX)}페이지 (검색 제외 {len(NOINDEX)}) -> {DIST}")
