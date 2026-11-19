@@ -327,8 +327,7 @@
         "pickDate": "Pick your exam date below",
         "passed": "Exam time has passed. Well done!",
         "presetOrder": [
-          "custom",
-          "csat"
+          "custom"
         ],
         "presets": {
           "csat": "Korean CSAT 2027"

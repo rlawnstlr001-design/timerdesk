@@ -6,14 +6,19 @@
   var T = TD.i18n.t, $ = TD.$, pad = TD.pad;
   var root = $("#tool");
   // 2027학년도 수능: 2026-11-19(목) 08:40 (교육부) / 2027 共通テスト: 2027-01-16(土) 09:30 (大学入試センター)
-  var PRESETS = { csat: { date: "2026-11-19", time: "08:40" }, kyotsu: { date: "2027-01-16", time: "09:30" } };
+  // 수능 뒤(11/19~)에는 ko 기본 프리셋이 성적 통지(12/11, 평가원)·정시 원서접수 시작(1/4, 대교협)으로 넘어간다
+  var PRESETS = {
+    csat: { date: "2026-11-19", time: "08:40" }, kyotsu: { date: "2027-01-16", time: "09:30" },
+    score: { date: "2026-12-11", time: "" }, jeongsi: { date: "2027-01-04", time: "" }
+  };
   // 시험별 하위 페이지(/ja/exam-countdown/takken/ 등)는 그 시험을 첫 프리셋으로 두고 저장값보다 우선한다
   var PAGE = window.TD_EXAM || null;
   if (PAGE) {
     PRESETS.page = { date: PAGE.date, time: PAGE.time || "" };
     T.presets = Object.assign({}, T.presets, { page: PAGE.title });
     T.notes = Object.assign({}, T.notes, { page: PAGE.note || "" });
-    T.presetOrder = ["page"].concat(T.presetOrder);
+    // 같은 날짜 프리셋(예: 성적 발표 하위 페이지의 score)은 page와 겹치므로 뺀다
+    T.presetOrder = ["page"].concat(T.presetOrder.filter(function (k) { return !PRESETS[k] || k === "page" || PRESETS[k].date !== PAGE.date; }));
   }
   var cfg = PAGE ? { preset: "page", title: "", date: "", time: "" }
     : Object.assign({ preset: T.presetOrder[0], title: "", date: "", time: "09:00" }, TD.load("countdown-cfg", {}));
