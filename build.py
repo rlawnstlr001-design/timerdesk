@@ -499,7 +499,9 @@ def build_root():
                "var l=(navigator.language||'').slice(0,2).toLowerCase();"
                f"if(l!=='{DEFAULT}'&&S[l]){{var b=document.getElementById('langSuggest');"
                "b.innerHTML='<a href=\"'+S[l].href+'\">'+S[l].msg+' →</a>';b.hidden=false;}})();</script>")
-    write_page("/", DEFAULT, "root", h["title"], h["description"], body, alts, xdef, scripts)
+    # 루트는 /en/ 과 제목·설명이 겹치지 않게 별도 문구(rootTitle·rootDescription)를 쓴다 (11/23 애드센스 2차 거절 후 보강)
+    write_page("/", DEFAULT, "root", h.get("rootTitle", h["title"]), h.get("rootDescription", h["description"]),
+               body, alts, xdef, scripts)
 
 
 def build_misc():
