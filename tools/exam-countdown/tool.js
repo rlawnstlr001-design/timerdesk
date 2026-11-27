@@ -56,7 +56,7 @@
   function tick() {
     var tg = target();
     if (!tg.date) {
-      $("#cdTitle").textContent = T.myCountdown;
+      $("#cdTitle").textContent = tg.title || T.myCountdown;  // 일정 발표 전 하위 페이지(宅建 등)는 페이지 제목을 그대로
       $("#dday").textContent = "D-?";
       $("#cdTarget").textContent = T.pickDate;
       return;

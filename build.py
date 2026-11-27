@@ -300,8 +300,6 @@ def cheer_cfg(lang, slug, v):
     kind = CHEER_KIND.get(slug)
     if v and v.get("group") == "univ":
         kind = "sugang"
-    if v and slug == "exam-countdown" and v["slug"] == "takken":
-        kind = "day"  # 시험은 끝나고 합격발표를 기다리는 페이지 — 공부 응원은 어울리지 않는다
     if not C or kind not in C["lines"]:
         return None
     return {"lines": C["lines"][kind], "done": C["done"], "fmt": C["fmt"]}
